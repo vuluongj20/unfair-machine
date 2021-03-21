@@ -1298,20 +1298,10 @@ export const generalAnimations = [
         location: 'start'
       },
       {
-        target: '.eov-points-wrap > .eov-point',
+        target: '.eov-points-wrap',
         from: { opacity: 0 },
         to: { opacity: 1 },
-        location: 'start',
-        stagger: true,
-        microStagger: true
-      },
-      {
-        target: '.eov-points-wrap > .eov-cross-wrap',
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-        location: 'start',
-        stagger: true,
-        microStagger: true
+        location: 'start'
       },
       {
         target: '.eov-x-axis > .eov-x-axis-line',
@@ -1452,7 +1442,7 @@ export const generalAnimations = [
       },
       {
         target: '.eov-rates > .eov-rates-text.true-positive',
-        from: { x: `+=70%`, opacity: 1 },
+        from: { x: `+=70%`, opacity: 0 },
         to: { x: 0, opacity: 0.4 },
         location: 'start'
       },
@@ -1538,7 +1528,6 @@ export const disparityAnimations = [
       },
       {
         target: '.eov-points-wrap > .eov-point.above-50',
-        from: { opacity: 0.1 },
         to: { opacity: 1, clearProps: 'opacity' },
         duration: 0.2,
         location: 'start'
