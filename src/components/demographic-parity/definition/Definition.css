@@ -1,0 +1,68 @@
+.dp-def-interactive-wrap {
+	width: 100%;
+}
+.dp-def-interactive-inner-wrap {
+	position: relative;
+	width: 100%;
+}
+.dp-def-caucasian,
+.dp-def-african-american {
+	width: 100%;
+	position: relative;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+
+
+/* INTERACTIVE */
+.dp-def-interactive-caption-wrap {
+	width: 100%;
+	border-bottom: solid 1px var(--line);
+}
+.dp-def-interactive-caption {
+	text-align: center;
+	color: var(--light);
+	max-width: 38em;
+	margin-left: auto;
+	margin-right: auto;
+}
+.dp-def-interactive-lock-wrap {
+	position: absolute;
+	bottom: 0;
+	right: 6em;
+	transform: translateY(50%);
+	width: 2em;
+	opacity: 0.1;
+}
+.dp-def-interactive-lock-connector {
+	height: 3.2em;
+	border-left: dashed 2px var(--dark);
+	margin: 0.8em 0;
+}
+.dp-def-interactive-result-wrap {
+	flex-shrink: 0;
+	width: 8em;
+	height: 200px;
+	margin: 2em 0;
+	margin-left: 3.2em;
+	justify-content: flex-start;
+	text-align: left;
+}
+.dp-def-interactive-label {
+	width: 6em;
+	margin-bottom: 0;
+	color: var(--light);
+	font-size: 0.9em;
+	line-height: 1.1;
+}
+.dp-def-interactive-acceptance {
+	font-size: 3.2em;
+	line-height: 1;
+	margin-bottom: 0;
+}
+.dp-def-interactive-acceptance-unit {
+	font-size: 0.6em;
+	color: var(--light);
+	margin-left: 0.1em;
+}

@@ -1,0 +1,28 @@
+/* RESULTS */
+#gur-sandbox .gud-result-message {
+  margin-bottom: 1.2em;
+}
+.gud-result-retry {
+  border: solid 2px var(--line);
+}
+
+@media only screen and (max-width: 768px) {
+	#gur-sandbox .gud-model-outer-wrap {
+		background: transparent;
+		border-bottom: solid 1px var(--border);
+	}
+	#gur-sandbox .gud-train-button {
+		display: block;
+		margin: 0 auto;
+	}
+	#gur-sandbox .gud-training-wrap {
+		text-align: center;
+	}
+	#gur-sandbox .gud-progress-label {
+		margin-right: 1.2em;
+	}
+	#gur-sandbox .gud-progress-wrap {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

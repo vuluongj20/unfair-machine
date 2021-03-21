@@ -1,0 +1,21 @@
+.dp-hero .article-hero-illustration {
+	width: calc((85vw - 4em)/3.6);
+}
+.dp-hero .article-title {
+	font-size: calc((85vw - 4em)/6.8);
+}
+@media only screen and (min-width: 1400px) {
+	.dp-hero .article-title {
+		font-size: 8.5em;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.dp-hero .article-hero-illustration {
+		width: calc(85vw/3.2);
+	}
+	.dp-hero .article-title {
+		font-size: calc(85vw/6.8);
+	}
+	
+}

@@ -1,0 +1,152 @@
+.dpd-viz-inner-wrap {
+	height: 100%;
+	width: 100%;
+}
+
+
+// VIZ
+.dpd-viz {
+	position: relative;
+	flex-direction: column;
+}
+
+.dpd-viz-label {
+	text-align: center;
+	margin-top: 0.8em;
+}
+
+.dpd-viz {
+	font-size: 16px;
+	height: 100%;
+
+	svg {
+		overflow: visible;
+		width: 100%;
+	}
+	.x-axis {
+		stroke-linecap: round;
+
+		> .domain {
+			stroke: var(--dark);
+			stroke-width: 3;
+			transform-origin: center;
+			transform: translate(8px, -2px) scaleX(1.17);
+		}
+
+		> .tick > line {
+			display: none;
+		}
+
+		> .tick > text {
+			fill: var(--dark);
+			transform: translate(0, 8px);
+			font-size: 16px;
+		}
+	}
+
+	.y-axis {
+		stroke-linecap: round;
+
+		> .domain {
+			display: none;
+		}
+
+		> .tick > line {
+			stroke: var(--border);
+			transform-origin: bottom;
+		}
+
+		> .tick > text {
+			fill: var(--line);
+			transform: translate(-32px, 16px);
+			font-size: 14px;
+			text-align: right;
+		}
+
+		> .domain + .tick > text {
+			display: none;
+		}
+	}
+
+	.bars {
+		> .bar {
+			fill: var(--dark);
+		}
+	}
+
+	.fit-curve {
+		fill: none;
+		stroke-width: 3px;
+		stroke-linecap: round;
+		stroke: var(--dark);
+	}
+
+	.threshold-shape {
+		fill: var(--line);
+	}
+
+	.mean-g {
+		> .mean-path {
+			stroke-width: 2px;
+			stroke-linecap: round;
+			stroke-dasharray: 10px 8px;
+			stroke: var(--line);
+		}
+
+		> .mean-text {
+			fill: var(--light);
+			font-size: 14px;
+			transform: translate(8px, 14px);
+		}
+	}
+
+	.threshold-g {
+		> .threshold-line-g {
+			cursor: pointer; 
+
+			> .threshold-line {
+				stroke-width: 2px;
+				stroke-linecap: round;
+				stroke: var(--dark);
+			}
+
+			> .threshold-label-rect {
+				fill: var(--surface);
+				stroke: var(--border);
+				transform: translate(12px, 32px)
+			}
+
+			> .threshold-label-text {
+				fill: var(--light);
+				font-size: 14px;
+				transform: translate(20px, 48px)
+			}
+
+			> .threshold-handle-rect {
+				fill: var(--surface);
+				stroke: var(--line);
+				transition: 100ms;
+			}
+
+			> .threshold-handle-arrow {
+				stroke-width: 2px;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+				stroke: var(--dark);
+			}
+		}
+		> .threshold-line-g.active {
+			> .threshold-handle-rect {
+				fill: var(--line);
+				stroke: var(--line);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.dpd-viz-caucasian,
+	.dpd-viz-african-american {
+		height: 60vw;
+	}
+}

@@ -1,0 +1,72 @@
+.menu-wrap:not(.on) {
+  pointer-events: none;
+}
+
+.menu-item {
+  position: relative;
+  align-items: flex-end;
+  opacity: 0;
+}
+
+.menu-item:not(:last-child) {
+  border-bottom: solid 1px var(--line);
+}
+
+.mi-label.col-2 {
+  margin-bottom: 1em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.mi-hover-image-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(60%);
+  width: 10em;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+html[data-whatintent='touch'] .mi-hover-image-wrap {
+  display: none;
+}
+
+.mi-hover-image {
+  width: 100%;
+}
+
+.menu-background {
+  background-color: var(--background);
+  opacity: 0;
+}
+
+@media only screen and (max-width: $breakpoint-large) {
+  .nav-menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu-item-title {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-menu-item-label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .menu-item {
+    padding: 1.6em 0;
+  }
+  .mi-label.col-2 {
+    margin-bottom: 0.4em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
