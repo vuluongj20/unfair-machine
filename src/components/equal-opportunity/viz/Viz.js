@@ -19,6 +19,7 @@ class Viz extends Component {
       hello: ''
     }
     this.bindAnimations = this.bindAnimations.bind(this)
+    this.stInstances = []
   }
 
   bindAnimations(animations, target, getTriggers, overrides = {}) {
@@ -50,7 +51,7 @@ class Viz extends Component {
 
       const trigger = getTriggers(section)
 
-      ScrollTrigger.create({
+      const stInstance = ScrollTrigger.create({
         trigger,
         start: overrides.start || 'top bottom',
         end: overrides.end || 'bottom top',
@@ -59,6 +60,8 @@ class Viz extends Component {
         onUpdate: (self) => {section.onUpdate && section.onUpdate({self, vizRef: this, target})},
         onLeaveBack: (self) => {section.onLeaveBack && section.onLeaveBack({self, vizRef: this, target})}
       })
+
+      this.stInstances.push(stInstance)
     })
   }
 
@@ -112,6 +115,10 @@ class Viz extends Component {
     if (threshold && threshold !== prevProps.threshold) {
       this.updateRates(threshold)
     }
+  }
+
+  componentWillUnmount() {
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

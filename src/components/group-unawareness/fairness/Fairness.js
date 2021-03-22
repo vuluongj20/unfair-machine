@@ -15,19 +15,22 @@ const star = {
 }
 
 class Fairness extends Component {
+  stInstances = []
+
   componentDidMount() {
-    ScrollTrigger.create({
-      id: 'gu-fairness-asterisk',
-      trigger: '.gu-fairness.article-wrap',
-      start: 'top bottom',
-      end: 'bottom top',
-      animation: gsap.to('.guf-star', { rotate: 60, duration: 1 }),
-      scrub: 0.5
-    })
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: '.gu-fairness.article-wrap',
+        start: 'top bottom',
+        end: 'bottom top',
+        animation: gsap.to('.guf-star', { rotate: 60, duration: 1 }),
+        scrub: 0.5
+      })
+    )
   }
 
   componentWillUnmount() {
-    ScrollTrigger.getById('gu-fairness-asterisk').kill()
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

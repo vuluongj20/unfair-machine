@@ -43,6 +43,7 @@ class Definition extends Component {
         africanAmerican: 1
       }
     }
+    this.stInstances = []
   }
 
   getAcceptanceRate(data, threshold) {
@@ -96,25 +97,33 @@ class Definition extends Component {
   componentDidMount() {
     this.setThreshold('caucasian', 5)
 
-    ScrollTrigger.create({
-      trigger: '.dp-definition .quote',
-      start: 'top bottom',
-      end: 'top top',
-      scrub: 0.4,
-      animation: gsap.timeline()
-        .add(gsap.fromTo('.dp-definition .quote', 
-          { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    })
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: '.dp-definition .quote',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: 0.4,
+        animation: gsap.timeline()
+          .add(gsap.fromTo('.dp-definition .quote', 
+            { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
+      })
+    )
 
-    ScrollTrigger.create({
-      trigger: '.dp-def-interactive-wrap',
-      start: 'top bottom',
-      end: 'top top',
-      scrub: 0.4,
-      animation: gsap.timeline()
-        .add(gsap.fromTo('.dp-def-interactive-wrap', 
-          { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    })
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: '.dp-def-interactive-wrap',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: 0.4,
+        animation: gsap.timeline()
+          .add(gsap.fromTo('.dp-def-interactive-wrap', 
+            { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
+      })
+    )
+  }
+
+  componentWillUnmount() {
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

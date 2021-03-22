@@ -47,7 +47,7 @@ class Demo extends Component {
   }
 
   componentDidMount() {
-    ScrollTrigger.create({
+    this.stInstance = ScrollTrigger.create({
       trigger: '.eod-scroll-area',
       start: 'top top',
       end: 'bottom bottom',
@@ -74,6 +74,10 @@ class Demo extends Component {
         }
       }
     })
+  }
+
+  componentWillUnmount() {
+    this.stInstance.kill()
   }
 
   render() {

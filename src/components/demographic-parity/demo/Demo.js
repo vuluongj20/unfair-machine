@@ -45,6 +45,7 @@ class Demo extends Component {
         africanAmerican: 1
       }
     }
+    this.stInstances = []
   }
 
   getAcceptanceRate(data, threshold) {
@@ -75,29 +76,33 @@ class Demo extends Component {
   }
 
   componentDidMount() {
-    ScrollTrigger.create({
-      trigger: '.dpd-scroll-area',
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 0.2,
-      pin: '.dpd-viz-wrap',
-      onLeave: () => gsap.to([`.dpd-scroll-arrow`, `.dpd-scroll-arrow-label`], { opacity: 0, ease: 'expo.out', duration: 0.6 })
-    })
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: '.dpd-scroll-area',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.2,
+        pin: '.dpd-viz-wrap',
+        onLeave: () => gsap.to([`.dpd-scroll-arrow`, `.dpd-scroll-arrow-label`], { opacity: 0, ease: 'expo.out', duration: 0.6 })
+      })
+    )
 
     scrollContent.forEach(section => {
-      ScrollTrigger.create({
-        trigger: `#dpd-scroll-section-${section.id}  > .dpd-scroll-text-wrap`,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 0.2,
-        animation: gsap.timeline()
-          .add(gsap.to(
-            `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
-            { opacity: 1, scale: 1, duration: 0.5, ease: 'power4.out' }), 0)
-          .add(gsap.to(
-            `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
-            { opacity: 0, scale: 0.8, duration: 0.5, ease: 'power4.in' }), 0.5)
-      })
+      this.stInstances.push(
+        ScrollTrigger.create({
+          trigger: `#dpd-scroll-section-${section.id}  > .dpd-scroll-text-wrap`,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.2,
+          animation: gsap.timeline()
+            .add(gsap.to(
+              `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
+              { opacity: 1, scale: 1, duration: 0.5, ease: 'power4.out' }), 0)
+            .add(gsap.to(
+              `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
+              { opacity: 0, scale: 0.8, duration: 0.5, ease: 'power4.in' }), 0.5)
+        })
+      )
     })
 
     this.setThreshold(
@@ -146,15 +151,20 @@ class Demo extends Component {
       })
 
       endTimeline.pause()
-
-      ScrollTrigger.create({
-        trigger: endAnimations[0].trigger,
-        start: 'top bottom',
-        end: 'bottom top',
-        onEnter: () => { endTimeline.duration(1.6).play(0) },
-        onLeaveBack: () => { onLeaveBack(endAnimations.trigger) }
-      })
+      this.stInstances.push(
+        ScrollTrigger.create({
+          trigger: endAnimations[0].trigger,
+          start: 'top bottom',
+          end: 'bottom top',
+          onEnter: () => { endTimeline.duration(1.6).play(0) },
+          onLeaveBack: () => { onLeaveBack(endAnimations.trigger) }
+        })
+      )
     }, 1000)
+  }
+
+  componentWillUnmount() {
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

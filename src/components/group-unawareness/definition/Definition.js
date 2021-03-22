@@ -19,6 +19,8 @@ const tableSVGs = {
 const tableColsToDropInMobile = [1, 2, 6, 7]
 
 class Definition extends Component {
+  stInstances = []
+
   toggleColumn(index, to) {
     gsap.to([`#gud-column-${index} .gud-head`, `#gud-column-${index} .gud-body-svg`],
       { opacity: to ? 1 : 0, easE: 'expo.out', duration: 0.4 })
@@ -26,36 +28,39 @@ class Definition extends Component {
   }
 
   componentDidMount() {
-    ScrollTrigger.create({
-      id: 'gu-definition-column-1',
-      trigger: '.gud-table',
-      start: 'top bottom',
-      end: 'top 70%',
-      onLeave: () => this.toggleColumn(4, false),
-      onEnterBack: () => this.toggleColumn(4, true)
-    })
-    ScrollTrigger.create({
-      id: 'gu-definition-column-2',
-      trigger: '.gud-table',
-      start: 'top 70%',
-      end: 'top 55%',
-      onLeave: () => this.toggleColumn(7, false),
-      onEnterBack: () => this.toggleColumn(7, true)
-    })
-    ScrollTrigger.create({
-      id: 'gu-definition-column-3',
-      trigger: '.gud-table',
-      start: 'top 55%',
-      end: 'top 40%',
-      onLeave: () => this.toggleColumn(3, false),
-      onEnterBack: () => this.toggleColumn(3, true)
-    })
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: '.gud-table',
+        start: 'top bottom',
+        end: 'top 70%',
+        onLeave: () => this.toggleColumn(4, false),
+        onEnterBack: () => this.toggleColumn(4, true)
+      })
+    )
+
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: '.gud-table',
+        start: 'top 70%',
+        end: 'top 55%',
+        onLeave: () => this.toggleColumn(7, false),
+        onEnterBack: () => this.toggleColumn(7, true)
+      })
+    )
+
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: '.gud-table',
+        start: 'top 55%',
+        end: 'top 40%',
+        onLeave: () => this.toggleColumn(3, false),
+        onEnterBack: () => this.toggleColumn(3, true)
+      })
+    )
   }
 
   componentWillUnmount() {
-    ScrollTrigger.getById('gu-definition-column-1').kill()
-    ScrollTrigger.getById('gu-definition-column-2').kill()
-    ScrollTrigger.getById('gu-definition-column-3').kill()
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

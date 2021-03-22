@@ -15,17 +15,25 @@ const quotes = [
 ]
 
 class Quote extends Component {
+  stInstances = []
+
   componentDidMount() {
     quotes.forEach((_, index) => {
-      ScrollTrigger.create({
-        trigger: `#home-quote-${index}`,
-        start: 'top bottom',
-        end: 'top center',
-        scrub: 0.4,
-        animation: gsap.fromTo(`#home-quote-${index}`, { opacity: 0 }, 
-          { opacity: 1, ease: 'expo.out', duration: 1 })
-      })
+      this.stInstances.push(
+        ScrollTrigger.create({
+          trigger: `#home-quote-${index}`,
+          start: 'top bottom',
+          end: 'top center',
+          scrub: 0.4,
+          animation: gsap.fromTo(`#home-quote-${index}`, { opacity: 0 }, 
+            { opacity: 1, ease: 'expo.out', duration: 1 })
+        })
+      )
     })
+  }
+
+  componentWillUnmount() {
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

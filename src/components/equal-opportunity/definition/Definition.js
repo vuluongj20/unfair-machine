@@ -39,6 +39,7 @@ class Definition extends Component {
     this.setThreshold = this.setThreshold.bind(this)
     this.caucasianVizRef = React.createRef()
     this.africanAmericanVizRef = React.createRef()
+    this.stInstances = []
   }
 
   getTruePositiveRate(id, threshold) {
@@ -104,7 +105,7 @@ class Definition extends Component {
       this.setThreshold('caucasian', 50)
     })
 
-    ScrollTrigger.create({
+    this.stInstances.push(ScrollTrigger.create({
       trigger: '.eo-definition .eo-def-quote',
       start: 'top bottom',
       end: 'top top',
@@ -112,9 +113,9 @@ class Definition extends Component {
       animation: gsap.timeline()
         .add(gsap.fromTo('.eo-definition .eo-def-quote', 
           { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    })
+    }))
 
-    ScrollTrigger.create({
+    this.stInstances.push(ScrollTrigger.create({
       trigger: '.eo-definition .eo-def-description',
       start: 'top bottom',
       end: 'top top',
@@ -122,9 +123,9 @@ class Definition extends Component {
       animation: gsap.timeline()
         .add(gsap.fromTo('.eo-definition .eo-def-description', 
           { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    })
+    }))
 
-    ScrollTrigger.create({
+    this.stInstances.push(ScrollTrigger.create({
       trigger: '.eo-def-interactive-wrap',
       start: 'top bottom',
       end: 'top top',
@@ -132,7 +133,11 @@ class Definition extends Component {
       animation: gsap.timeline()
         .add(gsap.fromTo('.eo-def-interactive-wrap', 
           { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    })
+    }))
+  }
+
+  componentWillUnmount() {
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

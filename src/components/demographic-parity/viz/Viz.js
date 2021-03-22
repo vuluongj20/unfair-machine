@@ -10,6 +10,7 @@ class Viz extends Component {
     super(props)
     this.createViz = this.createViz.bind(this)
     this.bindAnimations = this.bindAnimations.bind(this)
+    this.stInstances = []
   }
 
   createViz(data, config, target) {
@@ -236,13 +237,15 @@ class Viz extends Component {
 
       const trigger = getTriggers(section)
 
-      ScrollTrigger.create({
+      const stInstance = ScrollTrigger.create({
         trigger,
         start: overrides.start || 'top bottom',
         end: overrides.end || 'bottom top',
         scrub: overrides.scrub || 0.2,
         animation: timeline
       })
+
+      this.stInstances.push(stInstance)
     })
   }
 
@@ -264,6 +267,10 @@ class Viz extends Component {
       gsap.to(`.${className} .threshold-line-g`, { x: newX, duration: 0.1 })
       gsap.to(`.${className} .threshold-mask-rect`, { scaleX: 1 - (threshold - 1) / 9, duration: 0.1 })
     }
+  }
+
+  componentWillUnmount() {
+    this.stInstances.forEach(instance => instance.kill())
   }
 
   render() {

@@ -45,7 +45,7 @@ class Layout extends Component {
         setTimeout(() => {
           const event = new Event('media-loaded')
           document.dispatchEvent(event)
-        }, 200)
+        }, 400)
       }
     })
 

@@ -5,6 +5,8 @@ import Hero from './hero/Hero'
 import Demo from './demo/Demo'
 import Definition from './definition/Definition'
 
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
 import gsap from 'gsap'
 
 class EqualOpportunity extends Component {
