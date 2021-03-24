@@ -3,7 +3,6 @@
 }
 .eo-def-interactive-inner-wrap {
 	position: relative;
-	width: 100%;
 }
 .eo-def-caucasian,
 .eo-def-african-american {
@@ -13,21 +12,20 @@
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
-.eo-def-descriptions {
-
-}
 
 
 
 /* INTERACTIVE */
 .eo-def-interactive-caption-wrap {
-	width: 100%;
 	border-bottom: solid 1px var(--line);
+	margin-right: 0px !important;
 }
 .eo-def-interactive-caption {
 	color: var(--light);
+	font-size: 0.8em;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 0.4em;
 }
 .eo-def-interactive-lock-wrap {
 	position: absolute;

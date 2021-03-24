@@ -36,12 +36,15 @@ class Fairness extends Component {
   render() {
     return (
       <div className="gu-fairness article-wrap py-4 py-2-sm row">
+        <div className="col-1"></div>
         <div className="col-8">
-          <p className="quote">{fairnessQuote}</p>
-          <div className="guf-text-wrap mt-2 text-col-2">
-            {fairnessContent.map((content, index) => {
-              return <p className="guf-text" key={index}>{content}</p>
-            })}
+          <div className="text-wrap">
+            <p className="quote">{fairnessQuote}</p>
+            <div className="guf-text-wrap mt-2">
+              {fairnessContent.map((content, index) => {
+                return <p className="guf-text" key={index}>{content}</p>
+              })}
+            </div>
           </div>
         </div>
         <div className="guf-star-wrap padding col-4 flex-center">

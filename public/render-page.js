@@ -44427,7 +44427,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         setTimeout(() => {
           const event = new Event('media-loaded');
           document.dispatchEvent(event);
-        }, 200);
+        }, 400);
       }
     });
 
@@ -44788,6 +44788,7 @@ class Nav extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       className: "nav-ham-wrap"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "block nav-ham flex-center",
+      "aria-label": "Menu",
       onClick: () => this.toggleHam()
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "nav-ham-icon"

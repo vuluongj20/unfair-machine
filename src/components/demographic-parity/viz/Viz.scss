@@ -128,6 +128,12 @@
 				transition: 100ms;
 			}
 
+			> .threshold-handle-rect:focus {
+				outline: none;
+				stroke-width: 3px;
+				stroke: var(--light);
+			}
+
 			> .threshold-handle-arrow {
 				stroke-width: 2px;
 				stroke-linecap: round;

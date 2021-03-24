@@ -1,6 +1,6 @@
 export const caucasianConfig = { 
   id: 'caucasian',
-  width: 600, height: 300, 
+  width: 600, height: 200, 
   target: '.dp-def-viz-caucasian', className: 'dp-def-svg-caucasian',
   drawBars: false,
   drawFitCurve: true,
@@ -18,7 +18,7 @@ export const caucasianData = {
 
 export const africanAmericanConfig = { 
   id: 'africanAmerican',
-  width: 600, height: 300, 
+  width: 600, height: 200, 
   target: '.dp-def-viz-african-american', className: 'dp-def-svg-african-american',
   drawBars: false,
   drawFitCurve: true,

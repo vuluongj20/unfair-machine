@@ -13,14 +13,12 @@ class Fairness extends Component {
     return (
       <div className="dp-fairness article-wrap py-4 py-2-sm">
         <div className="row dp-fairness-row">
-          <div className="padding col-2 flex-center"></div>
-          <div className="col-6">
+          <div className="text-wrap center">
             <p className="quote">{fairnessProQuote}</p>
           </div>
         </div>
         <div className="row dp-fairness-row pb-4">
-          <div className="padding col-3 flex-center"></div>
-          <div className="col-6">
+          <div className="text-wrap center">
             <div className="guf-text-wrap">
               {fairnessProContent.map((para, index) => {
                 return <p className="guf-text" key={index}>{para}</p>

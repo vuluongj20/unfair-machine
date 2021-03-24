@@ -130,9 +130,11 @@ class Definition extends Component {
     const { threshold, acceptance } = this.state
     return (
       <div className="dp-definition article-wrap py-4 py-2-sm row">
-        <div className="padding col-2"></div>
+        <div className="padding col-1"></div>
         <div className="col-10">
-          <p className="quote">{definition}</p>
+          <div className="text-wrap center">
+            <p className="quote">{definition}</p>
+          </div>
           <div className="dp-def-interactive-wrap flex-center flex-col mt-2">
             <div className="dp-def-interactive-caption-wrap mt-2 mb-2">
               <p className="dp-def-interactive-caption">{caption}</p>

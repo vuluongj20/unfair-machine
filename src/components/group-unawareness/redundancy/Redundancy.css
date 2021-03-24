@@ -1,0 +1,7 @@
+.gur-inner-wrap {
+	flex-direction: column;
+}
+.gur-text-wrap {
+	max-width: 32em;
+	margin: 0 auto;
+}

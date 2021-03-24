@@ -159,6 +159,8 @@ class Viz extends Component {
         .attr('width', 40)
         .attr('height', 24)
         .attr('rx', 12)
+        .attr('tabindex', 0)
+        .attr('aria-label', 'Handle')
         .attr('transform-origin', '20 12')
         .attr('transform', `translate(-20 ${innerHeight / 2})`)
 

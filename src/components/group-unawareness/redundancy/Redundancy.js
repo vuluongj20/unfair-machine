@@ -21,32 +21,36 @@ class Redundancy extends Component {
 
     return (
       <div className="gu-fairness article-wrap py-4 py-2-sm row">
-        <div className="padding col-2"></div>
-        <div className="col-8">
-          <p className="quote">{redundancyQuote}</p>
-          <div className="guf-text-wrap mt-2 mb-2">
-            {redundancyContentAbove.map((para, index) => {
-              return (
-                <p className="guf-text" key={index}>
-                  {para}
-                </p>
-              )
-            })}
+        <div className="padding col-1"></div>
+        <div className="gur-inner-wrap col-10">
+          <div className="text-wrap center">
+            <p className="quote">{redundancyQuote}</p>
+            <div className="mt-2 mb-2">
+              {redundancyContentAbove.map((para, index) => {
+                return (
+                  <p className="guf-text" key={index}>
+                    {para}
+                  </p>
+                )
+              })}
+            </div>
           </div>
           <hr />
           <Sandbox data={data} />
           <hr />
-          <div className="guf-text-wrap mt-2 mb-4">
-            {redundancyContentBelow.map((para, index) => {
-              return (
-                <p className="guf-text" key={index}>
-                  {para}
-                </p>
-              )
-            })}
+          <div className="text-wrap center">
+            <div className="mt-2 mb-4">
+              {redundancyContentBelow.map((para, index) => {
+                return (
+                  <p className="guf-text" key={index}>
+                    {para}
+                  </p>
+                )
+              })}
+            </div>
           </div>
         </div>
-        <div className="padding col-2"></div>
+        <div className="padding col-1"></div>
       </div>
     )
   }

@@ -145,14 +145,16 @@ class Definition extends Component {
 
     return (
       <div className="eo-definition article-wrap py-4 py-2-sm row">
-        <div className="col-10">
-          <p className="quote eo-def-quote">{quote}</p>
-          <p className="eo-def-description">{description}</p>
-          <div className="eo-def-interactive-wrap flex-center flex-col mt-2">
-            <div className="eo-def-interactive-caption-wrap mt-2 mb-2">
-              <p className="eo-def-interactive-caption">{caption}</p>
+        <div className="col-12">
+          <div className="text-wrap center">
+            <p className="quote eo-def-quote">{quote}</p>
+            <p className="eo-def-description">{description}</p>
+          </div>
+          <div className="eo-def-interactive-wrap flex-center flex-col mt-2 row">
+            <div className="eo-def-interactive-caption-wrap mt-2 mb-2 col-8">
+              <p className="eo-def-interactive-caption text-wrap">{caption}</p>
             </div>
-            <div className="eo-def-interactive-inner-wrap flex-center">
+            <div className="eo-def-interactive-inner-wrap flex-center col-8">
               {data.caucasian && (
                 <Viz
                   className="eo-def-caucasian"
@@ -165,7 +167,7 @@ class Definition extends Component {
                 />
               )}
             </div>
-            <div className="eo-def-interactive-inner-wrap flex-center">
+            <div className="eo-def-interactive-inner-wrap flex-center col-8">
               {data.africanAmerican && (
                 <Viz
                   className="eo-def-african-american"

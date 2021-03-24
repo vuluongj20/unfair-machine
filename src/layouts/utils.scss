@@ -86,6 +86,12 @@ button.flex-center {
 .no-tap-highlight {
   -webkit-tap-highlight-color: transparent;
 }
+.text-wrap {
+  max-width: 36rem;
+}
+.text-wrap.center {
+  margin: 0 auto;
+}
 
 
 

@@ -142,6 +142,10 @@ class Nav extends Component {
 
   componentDidMount() {
     this.focusTrap = focusTrap.createFocusTrap('.nav');
+
+    document.addEventListener('media-loaded', () => {
+      gsap.to('.nav', { opacity: 1, ease: 'power2.out', duration: 1.4, delay: 0.1 })
+    })
   }
 
   render() {
@@ -181,6 +185,7 @@ class Nav extends Component {
         <div className="nav-ham-wrap">
           <button
             className="block nav-ham flex-center"
+            aria-label="Menu"
             onClick={() => this.toggleHam()}
           >
             <div className="nav-ham-icon">
