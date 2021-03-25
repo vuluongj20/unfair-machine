@@ -199,6 +199,7 @@ class Nav extends Component {
           <Menu 
             location={location}
             className="nav-menu"
+            showChapterLabel
             showMenu={showMenu} 
             pageEntry={this.pageEntry} 
             pageExit={this.pageExit} 

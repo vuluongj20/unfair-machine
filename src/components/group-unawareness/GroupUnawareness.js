@@ -8,6 +8,7 @@ import Definition from './definition/Definition'
 import Fairness from './fairness/Fairness'
 import Redundancy from './redundancy/Redundancy'
 import Footer from '../../layouts/footer/Footer'
+import InternalMenu from '../../layouts/nav/internal-menu/InternalMenu'
 
 const datasets = {
   prod: {
@@ -70,6 +71,7 @@ class GroupUnawareness extends Component {
   }
 
   render() {
+    const { location } = this.props
     const { data } = this.state
 
     return (
@@ -83,6 +85,13 @@ class GroupUnawareness extends Component {
         <Fairness />
         <hr />
         <Redundancy data={data} />
+        <hr />
+        <div className="article-next-chapter-wrap py-4">
+          <p className="artcile-next-chapter-prompt mi-label fw-medium fc-dark mb-2">Read Chapter 2</p>
+          <div className="article-next-chapter-inner-wrap">
+            <InternalMenu location={location} showOnly={['chap-2']} />
+          </div>
+        </div>
         <Footer />
       </div>
     )

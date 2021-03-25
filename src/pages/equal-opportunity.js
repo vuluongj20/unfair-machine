@@ -10,10 +10,11 @@ const seo = {
 
 class Opportunity extends Component {
   render() {
+    const { location } = this.props
     return (
       <div className="equal-opportunity-page-wrap">
         <SEO {...seo} />
-        <EqualOpportunity />
+        <EqualOpportunity location={location} />
       </div>
     )
   }

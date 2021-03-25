@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import './Menu.css'
+import './InternalMenu.css'
 
-import Menu from '../../../layouts/nav/menu/Menu'
+import Menu from '../menu/Menu'
 
 import gsap from 'gsap'
 
-class HomeMenu extends Component {
+class InternalMenu extends Component {
   constructor(props) {
     super(props)
     this.pageExit = this.pageExit.bind(this)
@@ -104,21 +104,19 @@ class HomeMenu extends Component {
   }
 
   render() {
-    const { location } = this.props
+    const { location, showOnly, showChapterLabel } = this.props
     return (
-      <div className="home-menu-wrap py-4">
-        <div className="home-menu-inner-wrap">
-          <Menu 
-            location={location}
-            className="home-menu"
-            showMenu={true}
-            pageEntry={this.pageEntry} 
-            pageExit={this.pageExit} 
-          />
-        </div>
-      </div>
+      <Menu 
+        location={location}
+        className="home-menu"
+        showMenu={true}
+        showOnly={showOnly}
+        showChapterLabel={showChapterLabel}
+        pageEntry={this.pageEntry} 
+        pageExit={this.pageExit} 
+      />
     )
   }
 }
 
-export default HomeMenu
+export default InternalMenu

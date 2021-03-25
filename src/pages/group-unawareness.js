@@ -10,10 +10,11 @@ const seo = {
 
 class Unawareness extends Component {
   render() {
+    const { location } = this.props
     return (
       <div className="group-unawareness-page-wrap">
         <SEO {...seo} />
-        <GroupUnawareness />
+        <GroupUnawareness location={location} />
       </div>
     )
   }

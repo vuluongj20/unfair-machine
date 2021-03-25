@@ -7,7 +7,7 @@ import windowResize from 'window-resize'
 
 import Hero from './hero/Hero'
 import Quote from './quote/Quote'
-import Menu from './menu/Menu'
+import InternalMenu from '../../layouts/nav/internal-menu/InternalMenu'
 import Footer from '../../layouts/footer/Footer'
 
 class Home extends Component {
@@ -103,7 +103,12 @@ class Home extends Component {
 				<hr />
 				<Quote />
 				<hr />
-				<Menu location={location} />
+				<div className="home-menu-wrap py-4">
+					<p className="home-menu-label mi-label ta-center fw-medium fc-dark mb-2">Start reading</p>
+					<div className="home-menu-inner-wrap">
+						<InternalMenu location={location} showChapterLabel />
+					</div>
+				</div>
 				<Footer />
 			</div>
     )

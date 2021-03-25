@@ -11,10 +11,11 @@ const seo = {
 
 class DemographicParityPage extends Component {
   render() {
+    const { location } = this.props
     return (
       <div className="demographic-parity-page-wrap">
         <SEO {...seo} />
-        <DemographicParity />
+        <DemographicParity location={location} />
       </div>
     )
   }

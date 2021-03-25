@@ -16,6 +16,7 @@ const pages = [
   //   // }
   // },
   {
+    id: 'chap-1',
     label: 'Chapter 1',
     title: 'Group Unawareness',
     href: '/group-unawareness',
@@ -27,6 +28,7 @@ const pages = [
     }
   },
   {
+    id: 'chap-2',
     label: 'Chapter 2',
     title: 'Demographic Parity',
     href: '/demographic-parity',
@@ -38,6 +40,7 @@ const pages = [
     }
   },
   {
+    id: 'chap-3',
     label: 'Chapter 3',
     title: 'Equal Opportunity',
     href: '/equal-opportunity',
@@ -128,7 +131,7 @@ class Menu extends Component {
   }
 
   render() {
-    const { location, className } = this.props
+    const { location, className, showOnly, showChapterLabel } = this.props
     const { showMenu, pageEntry, pageExit, toggleHam } = this.props
     const currentPage = location && location.pathname.split('/')[1]
 
@@ -137,6 +140,10 @@ class Menu extends Component {
         <div className="menu-background spread"></div>
         <div className="container">
         {pages.map((page, index) => {
+          if (showOnly && !showOnly.includes(page.id)) {
+            return null
+          }
+
           return (
               <TransitionLink
                 key={page.href}
@@ -162,8 +169,12 @@ class Menu extends Component {
                   trigger: () => pageEntry()
                 }}
               >
-                <p className="mi-label fw-medium fc-dark col-2">{page.label}</p>
-                <h2 className="mi-title col-10">{page.title}</h2>
+                {showChapterLabel && (
+                  <p className="mi-label fw-medium fc-dark col-2">
+                    {page.label}
+                  </p>
+                )}
+                <h2 className={`mi-title ${showChapterLabel ? 'col-10' : 'col-12 ta-center'}`}>{page.title}</h2>
                 {page.hoverImg && (<div className="mi-hover-image-wrap">
                   <img 
                     className="mi-hover-image" 
