@@ -4,6 +4,7 @@ import './EqualOpportunity.css'
 import Hero from './hero/Hero'
 import Demo from './demo/Demo'
 import Definition from './definition/Definition'
+import Footer from '../../layouts/footer/Footer'
 
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
@@ -18,6 +19,7 @@ class EqualOpportunity extends Component {
         <Demo />
         <hr />
         <Definition />
+        <Footer />
       </div>
     )
   }

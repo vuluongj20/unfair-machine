@@ -2,7 +2,12 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  height:  2em;
+  height: 1.8em;
   border-top: solid 1px var(--line);
   padding-top: 0.6em;
+}
+.footer p {
+	font-size: 0.8em;
+	color: var(--light);
+	margin-bottom: 0;
 }

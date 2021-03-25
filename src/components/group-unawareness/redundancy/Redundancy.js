@@ -25,7 +25,7 @@ class Redundancy extends Component {
         <div className="gur-inner-wrap col-10">
           <div className="text-wrap center">
             <p className="quote">{redundancyQuote}</p>
-            <div className="mt-2 mb-2">
+            <div className="mt-2 mb-3">
               {redundancyContentAbove.map((para, index) => {
                 return (
                   <p className="guf-text" key={index}>
@@ -39,7 +39,7 @@ class Redundancy extends Component {
           <Sandbox data={data} />
           <hr />
           <div className="text-wrap center">
-            <div className="mt-2 mb-4">
+            <div className="mt-3 mb-4">
               {redundancyContentBelow.map((para, index) => {
                 return (
                   <p className="guf-text" key={index}>

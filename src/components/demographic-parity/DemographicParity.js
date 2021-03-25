@@ -5,6 +5,7 @@ import Hero from './hero/Hero'
 import Demo from './demo/Demo'
 import Definition from './definition/Definition'
 import Fairness from './fairness/Fairness'
+import Footer from '../../layouts/footer/Footer'
 
 import gsap from 'gsap'
 
@@ -19,6 +20,7 @@ class DemographicParity extends Component {
         <Definition />
         <hr />
         <Fairness />
+        <Footer />
       </div>
     )
   }

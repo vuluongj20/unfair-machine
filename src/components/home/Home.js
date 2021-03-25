@@ -8,6 +8,7 @@ import windowResize from 'window-resize'
 import Hero from './hero/Hero'
 import Quote from './quote/Quote'
 import Menu from './menu/Menu'
+import Footer from '../../layouts/footer/Footer'
 
 class Home extends Component {
 	constructor(props) {
@@ -103,9 +104,7 @@ class Home extends Component {
 				<Quote />
 				<hr />
 				<Menu location={location} />
-				{/*<div className="home-three-wrap spread">
-					<div className="home-three-inner-wrap absolute-center"></div>
-				</div>*/}
+				<Footer />
 			</div>
     )
   }

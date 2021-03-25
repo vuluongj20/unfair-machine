@@ -17,7 +17,7 @@ class Fairness extends Component {
             <p className="quote">{fairnessProQuote}</p>
           </div>
         </div>
-        <div className="row dp-fairness-row pb-4">
+        <div className="row dp-fairness-row">
           <div className="text-wrap center">
             <div className="guf-text-wrap">
               {fairnessProContent.map((para, index) => {
