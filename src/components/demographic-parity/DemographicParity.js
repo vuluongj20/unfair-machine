@@ -12,6 +12,8 @@ import gsap from 'gsap'
 
 class DemographicParity extends Component {
   render() {
+    const { location } = this.props
+    
     return (
       <div>
         <Hero />
