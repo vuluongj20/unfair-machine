@@ -76,3 +76,5 @@ typings/
 .fusebox/
 
 .DS_Store
+
+public/

@@ -23,7 +23,7 @@ class Definition extends Component {
 
   toggleColumn(index, to) {
     gsap.to([`#gud-column-${index} .gud-head`, `#gud-column-${index} .gud-body-svg`],
-      { opacity: to ? 1 : 0, easE: 'expo.out', duration: 0.4 })
+      { opacity: to ? 1 : 0, ease: 'expo.out', duration: 0.4 })
     document.querySelector(`#gud-column-${index}`).style.pointerEvents = to ? 'initial' : 'none'
   }
 

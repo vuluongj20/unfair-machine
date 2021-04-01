@@ -1387,12 +1387,6 @@ export const generalAnimations = [
   		  location: 'start'
   		},
   		{
-  		  target: '.eov-threshold-hover-label',
-  		  from: { opacity: 0 },
-  		  to: { opacity: 1 },
-  		  location: 'start'
-  		},
-  		{
   		  target: '.eov-points-wrap > .eov-point:not(.above-50)',
   		  from: { opacity: 1 },
   		  to: { opacity: 0.1 },
@@ -1572,12 +1566,6 @@ export const disparityAnimations = [
       },
       {
         target: '.eov-threshold-label',
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-        location: 'start'
-      },
-      {
-        target: '.eov-threshold-hover-label',
         from: { opacity: 0 },
         to: { opacity: 1 },
         location: 'start'

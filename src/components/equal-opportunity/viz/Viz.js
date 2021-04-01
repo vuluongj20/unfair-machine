@@ -191,13 +191,19 @@ class Viz extends Component {
               )
             })}
           </div>
-          {options.showThreshold && thresholdHover && (
-            <div className="eov-threshold-hover" style={{ left: `${thresholdHover}%` }}>
+          {options.showThreshold && (
+            <div className="eov-threshold-hover" style={{ 
+              opacity: thresholdHover ? 1 : 0,
+              left: `${thresholdHover}%` 
+            }}>
               <div className="eov-threshold-hover-line"></div>
             </div>
           )}
-          {options.showThreshold && threshold && (
-            <div className="eov-threshold" style={{ left: `${threshold}%` }}>
+          {options.showThreshold && (
+            <div className="eov-threshold" style={{ 
+              opacity: threshold ? 1 : 0,
+              left: `${threshold}%` 
+            }}>
               <div className="eov-threshold-line"></div>
               <div className="eov-threshold-label">
                 <p className="eov-threshold-label-text">{`Threshold: ${threshold.toFixed(1)}`}</p>
