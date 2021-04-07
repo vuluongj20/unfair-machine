@@ -59,6 +59,7 @@
 	background: var(--dark);
 	box-shadow: 0 0 0 1px var(--background);
 	transform: translate(-5px, -5px);
+	will-change: opacity;
 }
 .eov-cross-wrap {
 	position: absolute;
@@ -66,6 +67,7 @@
 	height: 15px;
 	z-index: 1;
 	transform: translate(-7px, -7px);
+	will-change: opacity;
 }
 .eov-point:not(.active),
 .eov-cross-wrap:not(.active) {

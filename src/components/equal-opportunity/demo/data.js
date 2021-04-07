@@ -1336,14 +1336,14 @@ export const generalAnimations = [
 	  	},
   		{
   		  target: '.eov-points-wrap > .eov-cross-wrap > .eov-cross-line',
-  		  from: { opacity: 0, scale: 0.6 },
-  		  to: { opacity: 1, scale: 1 },
+  		  from: { opacity: 0 },
+  		  to: { opacity: 1 },
   		  location: 'start'
   		},
   		{
   		  target: '.eov-points-wrap > .eov-cross-wrap > .eov-point.dummy',
-  		  from: { opacity: 1, scale: 1 },
-  		  to: { opacity: 0, scale: 0.6 },
+  		  from: { opacity: 1 },
+  		  to: { opacity: 0 },
   		  location: 'start'
   		}
   	]
