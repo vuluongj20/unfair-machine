@@ -18,7 +18,7 @@ import {
 
 const quote = 'What if we equalized the true positive rate? If we did so, then the algorithm would satisfy \'equal opportunity\' - another important conception of fairness for decision-making algorithms.'
 
-const description = 'As the name suggests, equal opportunity derives from the egalitarian idea of equality of opportunity. Instead of demanding that the outcomes are equal, here we only require that everyone is given the same opportunity to thrive. It is up to each individual to put in the effort in order to recieve favorable outcomes. In decision-making algorithms, e.g. the one that Wichita State University uses, equal opportunity translates to equal true positive rates. If a student will enroll, then the algorithm will not discriminate against them based on their demographic identity.'
+const description = 'As the name suggests, equal opportunity derives from the egalitarian idea of equality of opportunity. Instead of demanding that the outcomes are equal, here we only require that everyone is given the same opportunity to thrive. If a student will enroll, then the algorithm will not discriminate against them based on their demographic identity.'
 
 const caption = 'Move any of the thresholds and see how the other one also moves in order to maintain roughly the same true positive rates.'
 
