@@ -4,6 +4,7 @@
 	flex-direction: column;
 	justify-content: center;
 	height: 100vh;
+	min-height: 48em;
 	padding: 5vw 0;
 	box-sizing: border-box;
 }
