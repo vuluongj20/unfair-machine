@@ -145,6 +145,10 @@
   color: var(--background);
   margin-bottom: 0.4em;
 }
+.gud-train-button[disabled] {
+  background-color: var(--light);
+  pointer-events: none;
+}
 .gud-logs {
   font-size: 0.8em;
   color: var(--light);

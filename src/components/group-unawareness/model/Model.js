@@ -59,6 +59,7 @@ class Model extends Component {
     super(props)
     this.state = {
       attributeSelection: attributes.reduce((acc, cur) => Object.assign(acc, { [cur.id]: true }), {}),
+      attributeSelected: true,
       training: true,
       trainingLogs: null,
       oneHotIndices: {},
@@ -365,6 +366,12 @@ class Model extends Component {
         ...attributeSelection,
         [attribute]: !attributeSelection[attribute]
       }
+    }, () => {
+      const { attributeSelection } = this.state
+      const attributeSelected = Object.keys(attributeSelection).findIndex(key => attributeSelection[key]) !== -1
+      this.setState({
+        attributeSelected
+      })
     })
   }
 
@@ -395,6 +402,7 @@ class Model extends Component {
     const { id, introContent } = this.props
     const {
       attributeSelection,
+      attributeSelected,
       training,
       trainingLogs,
       screenHeight,
@@ -480,6 +488,7 @@ class Model extends Component {
             <button
               className="gud-train-button"
               onClick={() => this.runModel()}
+              disabled={!attributeSelected}
             >
               {content.trainButton}
             </button>
