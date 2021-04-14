@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Redundancy.css'
 
-import Sandbox from './sandbox/Sandbox';
+import Model from '../model/Model'
 
 const redundancyQuote = 'However, group-unaware algorithms are not more fair outcome-wise.'
 const redundancyContentAbove = [
@@ -39,7 +39,7 @@ class Redundancy extends Component {
             </div>
           </div>
           <hr />
-          <Sandbox data={data} />
+          <Model id="gur" data={data} />
           <hr />
           <div className="text-wrap center">
             <div className="mt-3">

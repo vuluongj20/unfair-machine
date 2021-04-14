@@ -62,8 +62,8 @@
   transform: translate(-50%, -50%);
   width: 0.7em;
   height: 0.7em;
-  margin-top: 0.12em;
-  margin-left: 0.06em;
+  margin-top: 0.14em;
+  margin-left: 0.08em;
   opacity: 0;
   transition: opacity 120ms;
 }
@@ -130,6 +130,7 @@
 }
 .gud-intro-wrap {
   width: 100%;
+  z-index: 1;
 }
 .gud-explanation-label {
   margin-top: 0.8em;
@@ -177,6 +178,15 @@
 .gud-progress-label {
   font-size: 0.8em;
   color: var(--light);
+  margin-bottom: 0;
+}
+.gud-training-logs-wrap {
+  opacity: 0;
+  animation: fade-in 600ms forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* RESULTS */
@@ -207,7 +217,7 @@
   position: relative;
   height: 100%;
   width: 1px;
-  background: var(--border);
+  background: var(--line);
 }
 .gud-result-viz-tick:first-child {
   width: 2px;
@@ -241,6 +251,7 @@
   height: 100%;
   background-color: var(--blue);
   border-radius: 0.2em;
+  transform: translateX(-1px);
 }
 .gud-result-viz-bar-percentage-label {
   position: absolute;
@@ -268,6 +279,12 @@
 }
 .gud-arrow-fill {
   stroke: var(--medium);
+}
+.gud-result-retry {
+  background-color: var(--blue);
+  color: var(--background);
+  margin-bottom: 0.4em;
+  margin-top: 0.2em;
 }
 
 
@@ -325,5 +342,32 @@
   }
   .gud-result-wrap {
     width: 100%;
+  }
+}
+
+
+/* SPECIAL STYLES */
+#gur .gud-result-message {
+  margin-bottom: 1.2em;
+}
+
+@media only screen and (max-width: 768px) {
+  #gur .gud-model-outer-wrap {
+    background: transparent;
+    border-bottom: solid 1px var(--line);
+  }
+  #gur .gud-train-button {
+    display: block;
+    margin: 0 auto;
+  }
+  #gur .gud-training-wrap {
+    text-align: center;
+  }
+  #gur .gud-progress-label {
+    margin-right: 1.2em;
+  }
+  #gur .gud-progress-wrap {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -69,4 +69,7 @@ html[data-whatintent='touch'] .mi-hover-image-wrap {
     text-align: left;
     text-transform: uppercase;
   }
+  .mi-hover-image-wrap > img {
+    transform: scale(0.68);
+  }
 }
