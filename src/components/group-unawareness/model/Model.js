@@ -3,7 +3,6 @@ import * as tf from '@tensorflow/tfjs'
 import './Model.css'
 
 import gsap from 'gsap'
-import whatInput from 'what-input'
 import windowResize from 'window-resize'
 
 const content = {
@@ -470,12 +469,12 @@ class Model extends Component {
           <div className="gud-intro-wrap absolute-center">
             {introContent && introContent.intro && (
               <p className="gud-explanation">
-                {introContent.intro(screenWidth > 768 ? 'on the left' : 'on top')}
+                {introContent.intro}
               </p>
             )}
             {introContent && introContent.introLabel && (
               <p className="gud-explanation-label">
-                {introContent.introLabel(whatInput.ask() === 'mouse' ? 'click' : 'tap')}
+                {introContent.introLabel}
               </p>
             )}
             <button
