@@ -18,7 +18,7 @@ const content = {
     return `Your model gave positive predictions (income >50K) for ${maleFormatted} of male applicants and ${femaleFormatted} of female applicants.`
   },
   failureMessages: {
-    'low-acc': 'Your model\'s accuracy score is too low. This may be because it was not given enough attributes to work with. Adding more attributes, or choosing a different set of attributes, may help fix the problem.'
+    'low-acc': 'Your model\'s accuracy score is too low. Adding more attributes, or choosing a different set of attributes, may help fix the problem.'
   },
   tagLine: 'Given the disparate set of predictions, do you think we have a responsibility to remove sex from the training process? Would doing so make the final predictions more equitable?'
 }
