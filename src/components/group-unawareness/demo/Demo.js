@@ -9,17 +9,25 @@ const introContentFunctions = {
   introLabel: cta => `${cta.charAt(0).toUpperCase() + cta.slice(1)} on attributes to select/deselect them. When you're done, ${cta} \'Run model\' to start.`
 }
 
+const isBrowser = typeof window !== "undefined"
+
 class Demo extends Component {
+  getIntroContent() {
+    if (isBrowser) {
+      return {
+        intro: introContentFunctions.intro(window.screenWidth > 768 ? 'on the left' : 'on top'),
+        introLabel: introContentFunctions.introLabel(whatInput.ask() === 'mouse' ? 'click' : 'tap')
+      }
+    } else {
+      return null
+    }
+  }
   render() {
     const { data } = this.props
-    const introContent = {
-      intro: introContentFunctions.intro(window.screenWidth > 768 ? 'on the left' : 'on top'),
-      introLabel: introContentFunctions.introLabel(whatInput.ask() === 'mouse' ? 'click' : 'tap')
-    }
 
     return (
         <div className="article-section no-padding row">
-          <Model id="gud" data={data} introContent={introContent} />
+          <Model id="gud" data={data} introContent={this.getIntroContent()} />
         </div>
     )
   }
