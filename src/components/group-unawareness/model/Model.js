@@ -19,8 +19,7 @@ const content = {
   },
   failureMessages: {
     'low-acc': 'Your model\'s accuracy score is too low. Adding more attributes, or choosing a different set of attributes, may help fix the problem.'
-  },
-  tagLine: 'Given the disparate set of predictions, do you think we have a responsibility to remove sex from the training process? Would doing so make the final predictions more equitable?'
+  }
 }
 
 const attributes = [
@@ -399,7 +398,7 @@ class Model extends Component {
   }
 
   render() {
-    const { id, introContent } = this.props
+    const { id, intro, outro } = this.props
     const {
       attributeSelection,
       attributeSelected,
@@ -475,14 +474,14 @@ class Model extends Component {
         </div>
         <div className="gud-content-wrap">
           <div className="gud-intro-wrap absolute-center">
-            {introContent && introContent.intro && (
+            {intro && intro.intro && (
               <p className="gud-explanation">
-                {introContent.intro}
+                {intro.intro}
               </p>
             )}
-            {introContent && introContent.introLabel && (
+            {intro && intro.introLabel && (
               <p className="gud-explanation-label">
-                {introContent.introLabel}
+                {intro.introLabel}
               </p>
             )}
             <button
@@ -565,9 +564,11 @@ class Model extends Component {
                   <p className="gud-result-message">
                     {content.acceptanceRates(acceptanceRates.sex.male, acceptanceRates.sex.female)}
                   </p>
-                  <p className="gud-result-message">
-                    {content.tagLine}
-                  </p>
+                  {outro && (
+                    <p className="gud-result-message">
+                      {outro}
+                    </p>
+                  )}
                   <button 
                     className="gud-result-retry" 
                     onClick={() => this.retry()}
