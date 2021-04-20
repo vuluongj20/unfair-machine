@@ -16,11 +16,12 @@ import {
   dataPoints
 } from '../demo/data'
 
-const quote = 'What if we equalized the true positive rate? If we did so, then the algorithm would satisfy \'equal opportunity\' - another important conception of fairness for decision-making algorithms.'
+const quote = 'If we qualized the true positive rate, then the algorithm would satisfy equal opportunity - another important conception of fairness for decision-making algorithms.'
 
-const description = 'As the name suggests, equal opportunity derives from the egalitarian idea of equality of opportunity. Instead of demanding that the outcomes are equal, here we only require that everyone is given the same opportunity to thrive. If a student will enroll, then the algorithm will not discriminate against them based on their demographic identity.'
-
-const caption = 'Move any of the thresholds and see how the other one also moves in order to maintain roughly the same true positive rates.'
+const body = [
+  'As the name suggests, equal opportunity derives from the egalitarian idea of equality of opportunity. Instead of demanding that the outcomes are equal, here we only require that everyone is given the same opportunity to thrive. If a student will enroll, then the algorithm will not discriminate against them based on their demographic identity.',
+  'The following algorithm has been modified to satisfy equal opportunity. Move any of the thresholds and see how the other one also moves in order to maintain roughly the same true positive rates.'
+]
 
 class Definition extends Component {
   constructor(props) {
@@ -144,42 +145,40 @@ class Definition extends Component {
     const { data, thresholds } = this.state
 
     return (
-      <div className="eo-definition article-wrap py-4 py-2-sm row">
-        <div className="col-12">
-          <div className="text-wrap center">
-            <p className="quote eo-def-quote">{quote}</p>
-            <p className="eo-def-description">{description}</p>
+      <div className="eo-definition article-wrap mt-4">
+        <div className="quote-wrap center no-bt">
+          <p className="quote eo-def-quote">{quote}</p>
+        </div>
+        <div className="text-wrap center my-3">
+          <p className="eo-def-description">{body[0]}</p>
+          <p className="eo-def-description">{body[1]}</p>
+        </div>
+        <div className="eo-def-interactive-wrap flex-center flex-col py-2 surface by">
+          <div className="eo-def-interactive-inner-wrap flex-center col-8">
+            {data.caucasian && (
+              <Viz
+                className="eo-def-caucasian"
+                ref={this.caucasianVizRef}
+                data={data.caucasian}
+                options={caucasianOptions}
+                threshold={thresholds.caucasian}
+                setThreshold={(threshold) => this.setThreshold('caucasian', threshold)}
+                label="Caucasian" 
+              />
+            )}
           </div>
-          <div className="eo-def-interactive-wrap flex-center flex-col mt-2 row">
-            <div className="eo-def-interactive-caption-wrap mt-2 mb-2 col-8">
-              <p className="eo-def-interactive-caption text-wrap">{caption}</p>
-            </div>
-            <div className="eo-def-interactive-inner-wrap flex-center col-8">
-              {data.caucasian && (
-                <Viz
-                  className="eo-def-caucasian"
-                  ref={this.caucasianVizRef}
-                  data={data.caucasian}
-                  options={caucasianOptions}
-                  threshold={thresholds.caucasian}
-                  setThreshold={(threshold) => this.setThreshold('caucasian', threshold)}
-                  label="Caucasian" 
-                />
-              )}
-            </div>
-            <div className="eo-def-interactive-inner-wrap flex-center col-8">
-              {data.africanAmerican && (
-                <Viz
-                  className="eo-def-african-american"
-                  ref={this.africanAmericanVizRef}
-                  data={data.africanAmerican}
-                  options={africanAmericanOptions}
-                  threshold={thresholds.africanAmerican}
-                  setThreshold={(threshold) => this.setThreshold('africanAmerican', threshold)}
-                  label="African-American" 
-                />
-              )}
-            </div>
+          <div className="eo-def-interactive-inner-wrap flex-center col-8">
+            {data.africanAmerican && (
+              <Viz
+                className="eo-def-african-american"
+                ref={this.africanAmericanVizRef}
+                data={data.africanAmerican}
+                options={africanAmericanOptions}
+                threshold={thresholds.africanAmerican}
+                setThreshold={(threshold) => this.setThreshold('africanAmerican', threshold)}
+                label="African-American" 
+              />
+            )}
           </div>
         </div>
       </div>

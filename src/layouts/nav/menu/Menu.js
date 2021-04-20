@@ -5,16 +5,6 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import gsap from 'gsap'
 
 const pages = [
-  // {
-  //   label: 'Introduction',
-  //   title: 'Introduction',
-  //   href: '/introduction',
-  //   background: '#1A1A1A',
-  //   // hoverImg: {
-  //   //   src: '/images/global/introduction.svg',
-  //   //   alt: 'Introduction'
-  //   // }
-  // },
   {
     id: 'chap-1',
     label: 'Chapter 1',
@@ -131,14 +121,14 @@ class Menu extends Component {
   }
 
   render() {
-    const { location, className, showOnly, showChapterLabel } = this.props
+    const { location, className, showOnly, showChapterLabel, centerText } = this.props
     const { showMenu, pageEntry, pageExit, toggleHam } = this.props
     const currentPage = location && location.pathname.split('/')[1]
 
     return (
-      <div className={`${className}${showMenu ? ' on' : ''} menu-wrap spread flex-center`}>
+      <div className={`${className}${showMenu ? ' on' : ''} menu-wrap flex-center`}>
         <div className="menu-background spread"></div>
-        <div className="container">
+        <div>
         {pages.map((page, index) => {
           if (showOnly && !showOnly.includes(page.id)) {
             return null
@@ -147,7 +137,7 @@ class Menu extends Component {
           return (
               <TransitionLink
                 key={page.href}
-                className="menu-item row py-2 no-tap-highlight"
+                className={`menu-item row py-2 py-1-sm no-tap-highlight flex-col ${centerText ? 'flex-center' : ''}`}
                 tabIndex={(showMenu && currentPage !== page.href) ? 0 : -1}
                 to={page.href}
                 onMouseEnter={e => this.itemMouseEnter(e)}
@@ -170,11 +160,11 @@ class Menu extends Component {
                 }}
               >
                 {showChapterLabel && (
-                  <p className="mi-label fw-medium fc-dark col-2">
+                  <p className="mi-label fc-dark fw-medium">
                     {page.label}
                   </p>
                 )}
-                <h2 className={`mi-title ${showChapterLabel ? 'col-10' : 'col-12 ta-center'}`}>{page.title}</h2>
+                <h2 className="mi-title">{page.title}</h2>
                 {page.hoverImg && (<div className="mi-hover-image-wrap">
                   <img 
                     className="mi-hover-image" 

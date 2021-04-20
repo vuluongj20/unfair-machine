@@ -77,19 +77,15 @@ class GroupUnawareness extends Component {
     return (
       <div>
         <Hero />
-        <hr />
         <Demo data={data} />
-        <hr />
         <Definition />
-        <hr />
         <Fairness />
-        <hr />
         <Redundancy data={data} />
         <hr />
-        <div className="article-next-chapter-wrap py-4">
-          <p className="artcile-next-chapter-prompt mi-label fw-medium fc-dark mb-2">Read Chapter 2</p>
+        <div className="article-next-chapter-wrap container pt-4 pb-3">
+          <p className="artcile-next-chapter-prompt fc-dark fw-medium">Read Chapter 2</p>
           <div className="article-next-chapter-inner-wrap">
-            <InternalMenu location={location} showOnly={['chap-2']} />
+            <InternalMenu location={location} showOnly={['chap-2']} centerText />
           </div>
         </div>
         <Footer />

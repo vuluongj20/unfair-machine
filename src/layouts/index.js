@@ -13,11 +13,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 const styles = {
   '--background': '#1A1A1A',
-  '--surface': '#212121',
+  '--surface': '#1F1F1F',
   '--dark': '#fff6e0',
   '--medium': '#f5ecd6',
   '--light': 'rgba(241, 229, 198, 0.5)',
-  '--line': 'rgba(241, 229, 198, 0.15)',
+  '--line': 'rgba(241, 229, 198, 0.08)',
   '--border': 'rgba(241, 229, 198, 0.05)',
   '--red': '#FF0048',
   '--red-light': 'rgba(255, 0, 72, 0.4)',
@@ -112,20 +112,18 @@ class Layout extends Component {
       >
         <Nav location={location} />
         <main className="app-content-wrapper">
-          <div className="container">
-            {children}
-            {showGrid && (
-              <div className="app-grid-wrap">
-                <div className="app-grid-inner-wrap container">
-                  <div className="row">
-                    {[...Array(12)].map((_, index) => {
-                      return <div className="app-grid-line col-1" key={index}></div>
-                    })}
-                  </div>
+          {children}
+          {showGrid && (
+            <div className="app-grid-wrap">
+              <div className="app-grid-inner-wrap container">
+                <div className="row">
+                  {[...Array(12)].map((_, index) => {
+                    return <div className="app-grid-line col-1" key={index}></div>
+                  })}
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </main>
       </div>
     )

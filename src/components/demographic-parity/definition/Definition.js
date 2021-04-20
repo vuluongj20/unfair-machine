@@ -20,14 +20,14 @@ const combinedData = {
   africanAmerican: africanAmericanData
 }
 
-const definition = 'One strategy for setting the thresholds above is to make the percentage of people classified as \'high-risk\' roughly equal among all demographic groups. Doing so would satisfy demographic parity.'
+const quote = 'If we set the thresholds in such a way that the percentage of \"high-risk\" classifications is roughly equal among all groups, then the algorithm would satisfy demographic parity.'
+
+const body = 'Here, \"parity\" means equality. We want the positive prediction rate (i.e. the rate at which defendants receive a \"high-risk\" classification) to be equal among demographic groups. That means that the rate for Caucasian defendants should be roughly the same as that for African American defendants. The following algorithm has been modified to satisfy demographic parity. Move any of the thresholds and see how the other one also moves in order to maintain the rate equality.'
 
 const lockIcon = {
   src: '/icons/lock-24px.svg',
   alt: 'Lock'
 }
-
-const caption = 'Move any of the thresholds and see how the other one also moves in order to maintain roughly the same percentage of defendants classified as \'high-risk\'.'
 
 class Definition extends Component {
   constructor(props) {
@@ -129,57 +129,54 @@ class Definition extends Component {
   render() {
     const { threshold, acceptance } = this.state
     return (
-      <div className="dp-definition article-wrap py-4 py-2-sm row">
-        <div className="padding col-1"></div>
-        <div className="col-10">
-          <div className="text-wrap center">
-            <p className="quote">{definition}</p>
+      <div className="dp-definition article-wrap mt-4">
+        <div className="quote-wrap center no-bt">
+          <p className="quote">{quote}</p>
+        </div>
+        <div className="text-wrap center my-3">
+          <p>{body}</p>
+        </div>
+        <div className="dp-def-interactive-wrap surface by flex-center flex-col py-2">
+          <div className="dp-def-interactive-inner-wrap flex-center">
+            <Viz
+              className="dp-def-caucasian"
+              data={caucasianData}
+              config={caucasianConfig}
+              threshold={threshold.caucasian}
+              setThreshold={this.setThreshold}
+              label="Caucasian" 
+            />
+            <div className="dp-def-interactive-result-wrap flex-center">
+              <div className="dp-def-interactive-result-acceptance-wrap">
+                <p className="dp-def-interactive-label">% classified as high-risk</p>
+                <p className="dp-def-interactive-acceptance quote">
+                  {`${acceptance.caucasian}`}
+                  <span className="dp-def-interactive-acceptance-unit">%</span>
+                </p>
+              </div>
+            </div>
+            <div className="dp-def-interactive-lock-wrap flex-center flex-col">
+              <div className="dp-def-interactive-lock-connector"></div>
+              <img src={lockIcon.src} alt={lockIcon.alt} />
+              <div className="dp-def-interactive-lock-connector"></div>
+            </div>
           </div>
-          <div className="dp-def-interactive-wrap flex-center flex-col mt-2">
-            <div className="dp-def-interactive-caption-wrap mt-2 mb-2">
-              <p className="dp-def-interactive-caption">{caption}</p>
-            </div>
-            <div className="dp-def-interactive-inner-wrap flex-center">
-              <Viz
-                className="dp-def-caucasian"
-                data={caucasianData}
-                config={caucasianConfig}
-                threshold={threshold.caucasian}
-                setThreshold={this.setThreshold}
-                label="Caucasian" 
-              />
-              <div className="dp-def-interactive-result-wrap flex-center">
-                <div className="dp-def-interactive-result-acceptance-wrap">
-                  <p className="dp-def-interactive-label">% classified as high-risk</p>
-                  <p className="dp-def-interactive-acceptance quote">
-                    {`${acceptance.caucasian}`}
-                    <span className="dp-def-interactive-acceptance-unit">%</span>
-                  </p>
-                </div>
-              </div>
-              <div className="dp-def-interactive-lock-wrap flex-center flex-col">
-                <div className="dp-def-interactive-lock-connector"></div>
-                <img src={lockIcon.src} alt={lockIcon.alt} />
-                <div className="dp-def-interactive-lock-connector"></div>
-              </div>
-            </div>
-            <div className="dp-def-interactive-inner-wrap flex-center">
-              <Viz
-                className="dp-def-african-american"
-                data={africanAmericanData}
-                config={africanAmericanConfig}
-                threshold={threshold.africanAmerican}
-                setThreshold={this.setThreshold}
-                label="African-American" 
-              />
-              <div className="dp-def-interactive-result-wrap flex-center">
-                <div className="dp-def-interactive-result-acceptance-wrap">
-                  <p className="dp-def-interactive-label">% classified as high-risk</p>
-                  <p className="dp-def-interactive-acceptance quote">
-                    {`${acceptance.africanAmerican}`}
-                    <span className="dp-def-interactive-acceptance-unit">%</span>
-                  </p>
-                </div>
+          <div className="dp-def-interactive-inner-wrap flex-center">
+            <Viz
+              className="dp-def-african-american"
+              data={africanAmericanData}
+              config={africanAmericanConfig}
+              threshold={threshold.africanAmerican}
+              setThreshold={this.setThreshold}
+              label="African-American" 
+            />
+            <div className="dp-def-interactive-result-wrap flex-center">
+              <div className="dp-def-interactive-result-acceptance-wrap">
+                <p className="dp-def-interactive-label">% classified as high-risk</p>
+                <p className="dp-def-interactive-acceptance quote">
+                  {`${acceptance.africanAmerican}`}
+                  <span className="dp-def-interactive-acceptance-unit">%</span>
+                </p>
               </div>
             </div>
           </div>

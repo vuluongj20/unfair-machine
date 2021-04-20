@@ -84,7 +84,7 @@ class Demo extends Component {
     const { thresholds, data } = this.state
 
     return (
-      <div className="eo-demo-canvas row">
+      <div className="eo-demo-canvas by">
         <div className="eod-viz-wrap flex-center">
           <div className="eod-interactive-wrap flex-center col-4">
             <div className="eod-interactive-prompt-wrap">

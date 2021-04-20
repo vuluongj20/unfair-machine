@@ -1,6 +1,5 @@
 .article-next-chapter-inner-wrap {
 	position: relative;
-	height: 4em;
 }
 .artcile-next-chapter-prompt {
 	width: 12em;
@@ -10,10 +9,13 @@
 	margin-right: auto;
 	border-bottom: solid 1px var(--line);
 	padding-bottom: 0.2em;
+	margin-bottom: 0;
 }
 
-@media only screen and (max-width: 580px) {
-	.article-next-chapter-inner-wrap {
-		height: 4.8em;
+@media only screen and (max-width: 768px) {
+	.artcile-next-chapter-prompt {
+		width: 8.8em;
+		text-align: left;
+		margin: 0;
 	}
 }

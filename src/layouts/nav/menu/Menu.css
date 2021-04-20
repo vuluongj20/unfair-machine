@@ -4,7 +4,6 @@
 
 .menu-item {
   position: relative;
-  align-items: flex-end;
   opacity: 0;
 }
 
@@ -12,9 +11,10 @@
   border-bottom: solid 1px var(--line);
 }
 
-.mi-label.col-2 {
-  margin-bottom: 1em;
-  text-align: right;
+.mi-label {
+  margin-bottom: 0.2em;
+  font-size: 0.8em;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -34,6 +34,7 @@ html[data-whatintent='touch'] .mi-hover-image-wrap {
 
 .mi-hover-image {
   width: 100%;
+  transform: scale(0.76);
 }
 
 .menu-background {
@@ -41,7 +42,7 @@ html[data-whatintent='touch'] .mi-hover-image-wrap {
   opacity: 0;
 }
 
-@media only screen and (max-width: $breakpoint-large) {
+@media only screen and (max-width: 1024px) {
   .nav-menu-item {
     flex-direction: column;
     align-items: flex-start;
@@ -61,11 +62,8 @@ html[data-whatintent='touch'] .mi-hover-image-wrap {
 
 
 @media only screen and (max-width: 768px) {
-  .menu-item {
-    padding: 1.6em 0;
-  }
-  .mi-label.col-2 {
-    margin-bottom: 0.4em;
+  .mi-label {
+    margin-bottom: 0.2em;
     text-align: left;
     text-transform: uppercase;
   }

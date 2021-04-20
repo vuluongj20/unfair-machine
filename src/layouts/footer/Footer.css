@@ -5,6 +5,8 @@
   height: 1.8em;
   border-top: solid 1px var(--line);
   padding-top: 0.6em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
 }
 .footer p {
 	font-size: 0.8em;

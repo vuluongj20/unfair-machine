@@ -195,16 +195,18 @@ class Nav extends Component {
             </div>
           </button>
         </div>
-        <div className="nav-menu-container">
-          <Menu 
-            location={location}
-            className="nav-menu"
-            showChapterLabel
-            showMenu={showMenu} 
-            pageEntry={this.pageEntry} 
-            pageExit={this.pageExit} 
-            toggleHam={this.toggleHam} 
-          />
+        <div className="nav-menu-container flex-center">
+          <div className="container">
+            <Menu 
+              location={location}
+              className="nav-menu"
+              showChapterLabel
+              showMenu={showMenu} 
+              pageEntry={this.pageEntry} 
+              pageExit={this.pageExit} 
+              toggleHam={this.toggleHam} 
+            />
+          </div>
         </div>
         <div className="ns-background-wrap spread">
           <div className="ns-background spread"></div>

@@ -17,17 +17,14 @@ class DemographicParity extends Component {
     return (
       <div>
         <Hero />
-        <hr />
         <Demo />
-        <hr />
         <Definition />
-        <hr />
         <Fairness />
         <hr />
-        <div className="article-next-chapter-wrap py-4">
-          <p className="artcile-next-chapter-prompt mi-label fw-medium fc-dark mb-2">Read Chapter 3</p>
+        <div className="article-next-chapter-wrap container pt-4 pb-3">
+          <p className="artcile-next-chapter-prompt fc-dark fw-medium">Read Chapter 3</p>
           <div className="article-next-chapter-inner-wrap">
-            <InternalMenu location={location} showOnly={['chap-3']} />
+            <InternalMenu location={location} showOnly={['chap-3']} centerText />
           </div>
         </div>
         <Footer />

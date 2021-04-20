@@ -18,7 +18,6 @@
 .home-menu-inner-wrap {
 	position: relative;
 	width: 100%;
-	height: 24em;
 }
 .home-menu-label {
 	text-transform: uppercase;
@@ -29,8 +28,10 @@
 	padding-bottom: 0.2em;
 }
 
-@media only screen and (max-width: 520px) {
-	.home-menu-inner-wrap {
-		height: 28em;
+@media only screen and (max-width: 768px) {
+	.home-menu-label {
+		width: 8.4em;
+		margin: 0;
+		text-align: left;
 	}
 }

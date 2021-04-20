@@ -1,10 +1,13 @@
+.home-hero-wrap {
+	overflow: hidden;
+}
 .home-hero {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height: 100vh;
-	min-height: 48em;
+	min-height: 44em;
 	padding: 5vw 0;
 	box-sizing: border-box;
 }
@@ -28,10 +31,16 @@
 .home-hero-pattern.end {
 	align-self: flex-end;
 }
-.home-hero-illustration {
-	opacity: 0;
+
+/* ILLUSTRATION */
+.home-hero-illustration-wrap {
+	position: relative;
 	align-self: center;
-	width: calc((85vw - 4em)/6.4);
+	width: calc((85vw - 4em)/6.6);
+}
+.home-hero-illustration {
+	width: 100%;
+	opacity: 0;
 }
 .home-hero-title {
 	font-size: calc((85vw - 4em)/6.6);
@@ -39,7 +48,7 @@
 
 @media only screen and (min-width: 1400px) {
 	.home-hero-title {
-		font-size: 9.6em;
+		font-size: 8em;
 	}
 }
 @media only screen and (max-width: 768px) {

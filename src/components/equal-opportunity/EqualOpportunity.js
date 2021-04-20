@@ -16,11 +16,8 @@ class EqualOpportunity extends Component {
     return (
       <div>
         <Hero />
-        <hr />
         <Demo />
-        <hr />
         <Definition />
-        <hr />
         <Fairness />
         <Footer />
       </div>

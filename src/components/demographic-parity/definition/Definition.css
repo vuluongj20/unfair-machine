@@ -3,11 +3,11 @@
 }
 .dp-def-interactive-inner-wrap {
 	position: relative;
-	width: 100%;
+	max-width: 85%;
 }
 .dp-def-caucasian,
 .dp-def-african-american {
-	width: 100%;
+	width: auto;
 	position: relative;
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -30,7 +30,7 @@
 .dp-def-interactive-lock-wrap {
 	position: absolute;
 	bottom: 0;
-	right: 6em;
+	right: 4.8em;
 	transform: translateY(50%);
 	width: 2em;
 	opacity: 0.1;
@@ -65,4 +65,39 @@
 	font-size: 0.6em;
 	color: var(--light);
 	margin-left: 0.1em;
+}
+
+@media only screen and (max-width: 768px) {
+	.dp-def-interactive-lock-wrap {
+		display: none;
+	}
+	.dp-def-interactive-inner-wrap {
+		flex-direction: column;
+	}
+	.dp-def-interactive-result-wrap {
+		justify-content: center;
+		position: absolute;
+		top: 2.4em;
+		left: 0.8em;
+		height: 3.2em;
+		width: auto;
+		background: var(--surface);
+		border: solid 1px var(--border);
+		border-radius: 0.4em;
+		padding: 0.6em;
+		margin: 0;
+		text-align: center;
+	}
+	.dp-def-interactive-result-acceptance-wrap {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		width: 4.8em;
+	}
+	.dp-def-interactive-acceptance {
+		font-size: 2em;
+	}
+	.dp-def-interactive-label {
+		font-size: 0.8em;
+	}
 }

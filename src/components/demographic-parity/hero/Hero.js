@@ -14,28 +14,35 @@ class Hero extends Component {
       gsap.fromTo('.article-title-span', 
         { y: '1.5em' },
         { y: 0, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
-      gsap.fromTo('.article-hero-illustration', 
-        { scale: 0.5, opacity: 0, rotate: -50 },
-        { scale: 1, opacity: 1, rotate: 20, ease: 'expo.out', duration: 1.6 })
+      gsap.fromTo('.article-title-underline.horizontal', 
+        { scaleX: 0 },
+        { scaleX: 1, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
+      gsap.fromTo('.article-title-underline.vertical', 
+        { scaleY: 0 },
+        { scaleY: 1, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
     }, { once: true })
   }
 
   render() {
     return (
-      <div className="dp-hero article-hero-wrap row">
-        <img 
-          className="article-hero-illustration" 
-          src={illustration.src} 
-          alt={illustration.alt} 
-        />
-        <h1 className="article-title">
-          <span className="article-title-span-wrap">
-            <span className="article-title-span">DEMOGRAPHIC</span>
-          </span>
-          <span className="article-title-span-wrap">
-            <span className="article-title-span">PARITY</span>
-          </span>
-        </h1>
+      <div className="article-hero-wrap">
+        <div className="dp-hero container">
+          <h1 className="article-title">
+            <span className="article-title-span-outer-wrap">
+              <span className="article-title-span-wrap">
+                <span className="article-title-span">DEMOGRAPHIC</span>
+              </span>
+              <div className="article-title-underline horizontal"></div>
+              <div className="article-title-underline vertical"></div>
+            </span>
+            <span className="article-title-span-outer-wrap">
+              <span className="article-title-span-wrap">
+                <span className="article-title-span">PARITY</span>
+              </span>
+              <div className="article-title-underline horizontal"></div>
+            </span>
+          </h1>
+        </div>
       </div>
     )
   }

@@ -1,10 +1,10 @@
-$font-size-factor-medium: 0.8;
+$font-size-factor-medium: 0.7;
 $font-size-factor-small: 0.6;
 $h1: 8rem;
 $h2: 4.8rem;
 $h3: 3.2rem;
 $h4: 1.4rem;
-$quote: 2rem;
+$quote: 2.2rem;
 
 * {
   margin: 0;
@@ -19,7 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Founders Grotesk Text', Arial, Helvetica, sans-serif;
-  font-size: 19px;
+  font-size: 21px;
   font-kerning: normal;
   -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
@@ -37,7 +37,7 @@ h1 {
 }
 h2 {
   font-size: $h2;
-  line-height: 0.9;
+  line-height: 1.2;
 }
 h3 {
   font-size: $h3;
@@ -55,6 +55,9 @@ p, input, textarea, button, label {
 }
 p {
   margin-bottom: 1em;
+}
+p:last-child {
+  margin-bottom: 0;
 }
 a {
   border-radius: 0.4em;
@@ -102,10 +105,11 @@ hr.light {
 }
 .quote {
   font-family: 'Founders Grotesk', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--dark);
   line-height: 1.2;
   font-size: $quote;
+  margin-bottom: 0;
 }
 
 #app-content {
@@ -142,13 +146,16 @@ hr.light {
 
 
 @media only screen and (max-width: 1024px) {
+  body { font-size: 19px; }
   h1 { font-size: $h1 * $font-size-factor-medium; }
   h2 { font-size: $h2 * $font-size-factor-medium; }
   h3 { font-size: $h3 * $font-size-factor-medium; }
   h4 { font-size: $h4 * $font-size-factor-medium; }
+  .quote { font-size: $quote * 0.8; }
 }
 
 @media only screen and (max-width: 768px) {
+  body { font-size: 17px; }
   h1 { font-size: $h1 * $font-size-factor-small; }
   h2 { font-size: $h2 * $font-size-factor-small; }
   h3 { font-size: $h3 * $font-size-factor-small; }
@@ -169,9 +176,9 @@ hr.light {
 /* FONTS */
 @font-face {
   font-family: Founders Grotesk;
-  font-weight: 500;
-  src: url('/fonts/FoundersGrotesk-Medium.woff2') format('woff2'),
-    url('/fonts/FoundersGrotesk-Medium.woff') format('woff');
+  font-weight: 400;
+  src: url('/fonts/FoundersGrotesk-Regular.woff2') format('woff2'),
+    url('/fonts/FoundersGrotesk-Regular.woff') format('woff');
 }
 
 @font-face {

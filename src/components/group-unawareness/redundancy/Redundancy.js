@@ -4,19 +4,20 @@ import './Redundancy.css'
 import Model from '../model/Model'
 import whatInput from 'what-input'
 
-const quote = 'However, group-unaware algorithms are not more fair outcome-wise.'
+const quote = 'However, models that satisfy group unawareness are not much more fair when it comes to their outcomes.'
 const contentTop = [
-  'Intuitively, we expect that if an algorithm doesn\'t have access to information on protected groups, then it cannot discriminate with regard to those groups, thus producing predictions are are more fair. This turns out not to be the case. Try it with the sandbox below.'
+  'Intuitively, we expect that if an algorithm has no access to any sensitive attributes, then its predictions will be more equal or equitable among protected groups. This turns out not to be the case. Try it with the sandbox below.'
 ]
 const introFunctions = {
-  intro: 'Train the model with and without the attribute \'Sex\'. Take note of the positive prediction rate for male and female applicants in both cases.',
-  introLabel: cta => `${cta.charAt(0).toUpperCase() + cta.slice(1)} on attributes to select/deselect them. When you're done, ${cta} \'Run model\' to start.`
+  intro: 'Train the model with and without the attribute \"Sex\". Take note of the positive prediction rate for male and female applicants in both cases.',
+  introLabel: cta => `${cta.charAt(0).toUpperCase() + cta.slice(1)} on attributes to select/deselect them. When you're done, ${cta} \"Run model\" to start.`
 }
 const contentBottom = [
-  'So, why does this happen? Well, in drawing the conclusion, we assumed that the sensitive information has been completely removed. However, the truth is group unawareness doesn\'t do a very good job at this. Even after removing all of the sensitive attributes (e.g. race, sex), protected information still exists in the remaining attributes.',
-  'Take \'sex\' as an example. Men have historically had higher income than women. If an applicant has a high income, it is more likely that they are male than female. As such, information on an applicant\'s income contains partial information on their sex. Now, there is not a definite relationship between income and sex - many women have higher income than the male average. Still, given this and many other correlational relationships (e.g. the fact that men have historically had a higher level of education than women, due to unequal access to education), we can indeed build a pretty good model to predict an applican\'t sex based on other non-sensitive attributes like income and education level.',
-  'Now, this phenomenon - often called \"information leakage\" - is very difficult to resolve. First, there is no easy way to find out where the sensitive attribute is hiding among other non-sensitive attributes, especially for large and complex datasets. Second, even if we could do so in a quantitative way and successfully removed the sentitive information, the remaining dataset would not be a good representation of reality. For example, in order to remove the correlation between \'sex\' and \'education\', we would have to modify values in the \'education\' column. Such tampering of the input data risks creating new unintentional biases, which defeats the point of implementing group unawareness in the first place.',
-  'This is a fatal weakness for some algorithm designers. In the next chapter, we will explore demographic parity, a different conception of fairness that sacrifices procedural fairness for much stronger outcome fairness.'
+  'The positive prediction rates among male and female applicants are roughly the same whether we use the attribute \"Sex\" or not. In either case, male applicants receive positive predictions more frequenly than female applicants. The ratio between male and female applicants remain roughly the same.',
+  'So, why does this happen? The answer is that we haven\'t fully removed information on the applicants\' sex from the dataset. It still exists among the remaining attributes, in a puzzling phenomenon called information leakage.',
+  'Here\'s how it works. Men have historically had higher income than women. If an applicant has a high income, then they are more likely to be male than female. As such, information on an applicant\'s sex is partially embedded inside their income. Now, there is not a definite relationship between income and sex - many women have higher income than the male average. Still, given this and many other correlational relationships (e.g. the fact that men have historically had a higher level of education than women, due to unequal access to education), we can indeed build a pretty good model to predict an applican\'t sex based on other non-sensitive attributes like income and education level.',
+  'This information leakage is very difficult to resolve. First, there is no easy way to find out where the sensitive attribute is hiding among other non-sensitive attributes, especially for large and complex datasets. Second, even if we could do so in a quantitative way and successfully removed the sentitive information, the remaining dataset would not be a good representation of reality. For example, in order to remove the correlation between \"Sex\" and \"Education\", we would have to modify values in the \"Education\" column. Such tampering of the input data risks creating new unintentional biases, which defeats the point of implementing group unawareness in the first place.',
+  'In the end, group unawareness is an effective way to make a model more fair in the procedural sense, but it has little effect on the model\'s outcome fairness. For some algorithm designers, this is a fatal weakness. In the next chapter, we will explore demographic parity, a different conception of fairness that sacrifices procedural fairness for much stronger outcome fairness.'
 ]
 const star = {
   src: '/images/group-unawareness/star.svg',
@@ -41,37 +42,33 @@ class Redundancy extends Component {
     const { data } = this.props
 
     return (
-      <div className="gu-fairness article-wrap py-4 py-2-sm row">
-        <div className="padding col-1"></div>
-        <div className="gur-inner-wrap col-10">
-          <div className="text-wrap center">
-            <p className="quote">{quote}</p>
-            <div className="mt-2 mb-3">
-              {contentTop.map((para, index) => {
-                return (
-                  <p className="guf-text" key={index}>
-                    {para}
-                  </p>
-                )
-              })}
-            </div>
-          </div>
-          <div className="surface">
+      <div className="gu-fairness article-wrap pt-3">
+        <div className="quote-wrap center">
+          <p className="quote">{quote}</p>
+        </div>
+        <div className="text-wrap center my-3">
+          {contentTop.map((para, index) => {
+            return (
+              <p className="guf-text" key={index}>
+                {para}
+              </p>
+            )
+          })}
+        </div>
+        <div className="surface by">
+          <div className="container">
             <Model id="gur" data={data} intro={this.getIntro()} />
           </div>
-          <div className="text-wrap center">
-            <div className="mt-3">
-              {contentBottom.map((para, index) => {
-                return (
-                  <p className="guf-text" key={index}>
-                    {para}
-                  </p>
-                )
-              })}
-            </div>
-          </div>
         </div>
-        <div className="padding col-1"></div>
+        <div className="text-wrap center my-3">
+          {contentBottom.map((para, index) => {
+            return (
+              <p className="guf-text" key={index}>
+                {para}
+              </p>
+            )
+          })}
+        </div>
       </div>
     )
   }

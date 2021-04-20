@@ -171,7 +171,7 @@ class Demo extends Component {
     const { threshold, acceptance } = this.state
 
     return (
-      <div className="dp-demo row">
+      <div className="dp-demo by">
         <div className="dpd-viz-wrap">
           <div className="dpd-viz-inner-wrap row">
             <div className="dpd-viz col-8">

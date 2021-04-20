@@ -1,15 +1,15 @@
 .dp-demo {
 	position: relative;
+	padding: 0 7.5vw;
 }
-
-
 
 /* VIZ WRAP */
 .dpd-viz-wrap {
 	position: absolute;
-	width: 100%;
+	width: calc(100% - 15vw);
 	height: 90vh;
 	top: 5vh;
+	left: 7.5vw;
 }
 
 
@@ -41,7 +41,7 @@
 .dpd-scroll-text-wrap {
 	padding: 0.8em 1.2em;
 	box-sizing: border-box;
-	background-color: var(--surface);
+	background: var(--surface);
 	border: solid 1px var(--border);
 	border-radius: 0.4em;
 	opacity: 0;
@@ -56,6 +56,7 @@
 .dpd-interactive-wrap {
 	position: relative;
 	height: 100%;
+	width: 30%;
 	align-items: flex-start;
 	flex-direction: column;
 }
@@ -149,42 +150,14 @@
 
 @media only screen and (max-width: 768px) {
 	.dpd-viz-wrap {
-		width: 100%;
-		height: calc(100vh - 3.2em);
-		top: 3.2em;
+		height: calc(100vh - 2.8em);
+		top: 2.8em;
+	}
+	.dpd-scroll-section.left,
+	.dpd-scroll-section.right {
+		justify-content: center;
 	}
 	.dpd-interactive-wrap {
 		display: none;
-	}
-	.dp-definition .dp-def-interactive-caption {
-		font-size: 0.8em;
-		margin-bottom: 0.8em;
-		text-align: left;
-	}
-	.dp-def-interactive-lock-wrap {
-		display: none;
-	}
-	.dp-def-interactive-inner-wrap {
-		flex-direction: column;
-	}
-	.dp-definition .dp-def-caucasian,
-	.dp-definition .dp-def-african-american {
-		height: 50vw;
-		margin-top: 2.4em;
-		margin-bottom: 0;
-	}
-	.dp-definition .dp-def-interactive-result-wrap {
-		height: 6em;
-		width: auto;
-		margin-top: 0.4em;
-		margin-bottom: 0;
-		margin-left: 0;
-		text-align: center;
-	}
-	.dp-definition .dp-def-interactive-label {
-		font-size: 0.8em;
-	}
-	.dp-definition .dp-def-interactive-acceptance {
-		font-size: 2.4em;
 	}
 }

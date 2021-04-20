@@ -75,10 +75,6 @@ button.flex-center {
 .ff-founders-grotesk {
   font-family: 'Founders Grotesk Text', Arial, Helvetica, sans-serif;
 }
-.text-col-2 {
-  column-count: 2;
-  column-gap: 4%;
-}
 .spread {
   position: absolute;
   top: 0;
@@ -86,14 +82,64 @@ button.flex-center {
   right: 0;
   left: 0;
 }
+.surface {
+  background-color: var(--surface);
+}
+.bx {
+  border-left: solid 1px var(--line);
+  border-right: solid 1px var(--line);
+}
+.by {
+  border-top: solid 1px var(--line);
+  border-bottom: solid 1px var(--line);
+}
 .no-tap-highlight {
   -webkit-tap-highlight-color: transparent;
 }
 .text-wrap {
-  max-width: 36rem;
+  width: 85%;
+  max-width: 40rem;
 }
 .text-wrap.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.quote-wrap {
+  width: 85%;
+  max-width: 56rem;
+  border-top: solid 1px var(--line);
+  border-bottom: solid 1px var(--line);
+  padding: 2rem 0 2.2rem;
+  text-align: center;
+}
+.quote-wrap.no-bt {
+  border-top: none;
+  padding-top: 0;
+}
+.quote-wrap.no-bb {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.quote-wrap.no-border {
+  border: none;
+  padding: 0;
+}
+.quote-wrap.center {
   margin: 0 auto;
+}
+.sm-only {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .quote-wrap {
+    text-align: left;
+  }
+  .lg-only {
+    display: none;
+  }
+  .sm-only {
+    display: initial;
+  }
 }
 
 
@@ -270,11 +316,6 @@ $padding-factor-small: 0.5;
 }
 
 @media only screen and (max-width: 768px) {
-  .text-col-2 {
-    column-count: 1;
-    column-gap: 0;
-  }
-
   .px-1 { padding-left: $padding * $padding-factor-small ; padding-right: $padding * $padding-factor-small; }
   .px-2 { padding-left: $padding * $padding-factor-small * 2; padding-right: $padding * $padding-factor-small * 2; }
   .px-3 { padding-left: $padding * $padding-factor-small * 4; padding-right: $padding * $padding-factor-small * 4; }
@@ -408,7 +449,6 @@ $gutter: 20%;
 
 .container {
   width: 85%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 

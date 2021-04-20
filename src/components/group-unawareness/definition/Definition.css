@@ -1,23 +1,18 @@
 .gud-table {
 	display: flex;
 	justify-content: stretch;
-	height: 16em;
-	border: solid 6px var(--blue);
-	border-radius: 1.2em;
+	height: 12em;
+	border: solid 5px var(--blue);
 }
 .gud-column {
 	position: relative;
 	border-left: solid 4px var(--blue-light);
 	width: 100%;
-	cursor: pointer;
 }
 .gud-column-background {
 	background-color: var(--blue-light);
 	opacity: 0;
 	transition: opacity 60ms;
-}
-.gud-column:hover > .gud-column-background {
-	opacity: 0.2;
 }
 .gud-column:first-child {
 	border-left: none;

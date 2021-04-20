@@ -356,9 +356,21 @@
 }
 
 @media only screen and (max-width: 768px) {
-  #gur .gud-model-outer-wrap {
+  .gud-model-outer-wrap {
+    height: 24.8em;
     background: transparent;
+    border-radius: 0;
     border-bottom: solid 1px var(--line);
+    margin-top: 0;
+  }
+  .gud-model-wrap {
+    padding: 1.2em 0;
+  }
+  #gud .gud-content-wrap {
+    height: 32em;
+  }
+  #gur .gud-content-wrap {
+    height: 24em;
   }
   #gur .gud-train-button {
     display: block;

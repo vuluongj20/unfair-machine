@@ -104,13 +104,14 @@ class InternalMenu extends Component {
   }
 
   render() {
-    const { location, showOnly, showChapterLabel } = this.props
+    const { location, showOnly, showChapterLabel, centerText } = this.props
     return (
       <Menu 
         location={location}
         className="home-menu"
         showMenu={true}
         showOnly={showOnly}
+        centerText={centerText}
         showChapterLabel={showChapterLabel}
         pageEntry={this.pageEntry} 
         pageExit={this.pageExit} 

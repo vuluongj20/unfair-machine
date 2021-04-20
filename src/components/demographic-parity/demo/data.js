@@ -43,7 +43,7 @@ export const scrollContent = [
   },
   {
     id: 'threshold',
-    text: 'Now, to make a simple classification of a defendant\'s risk of reoffending, we use a threshold. If the defendant\'s score is above that threshold, then we label them as \'high-risk\'.',
+    text: 'Now, to make a simple classification of a defendant\'s risk of reoffending, we use a threshold. If the defendant\'s score is above that threshold, then we label them as \"high-risk\".',
     width: 4,
     mobileWidth: 10,
     align: 'right'
