@@ -13,3 +13,8 @@
 	color: var(--light);
 	margin-bottom: 0;
 }
+@supports (padding: max(0px)) {
+  .footer {
+    padding-bottom: max(0, env(safe-area-inset-bottom));
+  }
+}

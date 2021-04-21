@@ -1,6 +1,11 @@
 .home-hero-wrap {
 	overflow: hidden;
 }
+@supports (padding: max(0px)) {
+  .home-hero-wrap {
+    padding-bottom: max(0, env(safe-area-inset-bottom));
+  }
+}
 .home-hero {
 	position: relative;
 	display: flex;

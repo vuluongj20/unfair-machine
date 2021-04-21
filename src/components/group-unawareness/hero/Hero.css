@@ -7,6 +7,11 @@
 	box-sizing: border-box;
 	overflow: hidden;
 }
+@supports (padding: max(0px)) {
+  .article-hero-wrap {
+    padding-bottom: max(1.2em, env(safe-area-inset-bottom));
+  }
+}
 .article-title-span-outer-wrap {
 	display: block;
 	position: relative;
