@@ -418,7 +418,7 @@ class Model extends Component {
         <div className="gud-model-outer-wrap">
           <div className="gud-model-wrap">
             {attributes.map((attribute, index) => {
-              const lineHeightRatio = screenWidth > 768 ? (1 - index * 42 / 710) : (1 - index * 42 / 920)
+              const lineHeightRatio = screenWidth > 768 ? (1 - index * 42 / 740) : (1 - index * 42 / 910)
               if (lineHeightRatio) {
                 return (
                   <button

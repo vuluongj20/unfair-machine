@@ -76,91 +76,95 @@ class Demo extends Component {
   }
 
   componentDidMount() {
-    this.stInstances.push(
-      ScrollTrigger.create({
-        trigger: '.dpd-scroll-area',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 0.2,
-        pin: '.dpd-viz-wrap',
-        onLeave: () => gsap.to([`.dpd-scroll-arrow`, `.dpd-scroll-arrow-label`], { opacity: 0, ease: 'expo.out', duration: 0.6 })
-      })
-    )
-
-    scrollContent.forEach(section => {
+    document.addEventListener('media-loaded', () => {
+      gsap.to('.dp-demo', 
+        { opacity: 1, ease: 'expo.out', duration: 1.6 })
       this.stInstances.push(
         ScrollTrigger.create({
-          trigger: `#dpd-scroll-section-${section.id}  > .dpd-scroll-text-wrap`,
-          start: 'top bottom',
-          end: 'bottom top',
+          trigger: '.dpd-scroll-area',
+          start: 'top top',
+          end: 'bottom bottom',
           scrub: 0.2,
-          animation: gsap.timeline()
-            .add(gsap.to(
-              `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
-              { opacity: 1, scale: 1, duration: 0.5, ease: 'power4.out' }), 0)
-            .add(gsap.to(
-              `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
-              { opacity: 0, scale: 0.8, duration: 0.5, ease: 'power4.in' }), 0.5)
+          pin: '.dpd-viz-wrap',
+          onLeave: () => gsap.to([`.dpd-scroll-arrow`, `.dpd-scroll-arrow-label`], { opacity: 0, ease: 'expo.out', duration: 0.6 })
         })
       )
-    })
 
-    this.setThreshold(
-      'caucasian', 5, 
-      () => this.setThreshold('africanAmerican', 5))
-
-    // Interactive
-
-    setTimeout(() => {
-      const target = '.dpd-viz-discrepancy'
-      const onLeaveBack = () => {
-        gsap.to(`${target} defs .threshold-mask-rect`, 
-          { scaleX: 0.56, ease: 'expo.out', duration: 0.6 })
-        gsap.to(`${target} .threshold-g > .threshold-line-g`, 
-          { x: 204, ease: 'expo.out', duration: 0.6 })
-        d3.select(`${target} .threshold-g > .threshold-line-g > .threshold-label-text`)
-          .text('Threshold: 5.0')
-        gsap.to(
-          [`${target} .threshold-g > .threshold-line-g > .threshold-label-rect`,
-          `${target} .threshold-g > .threshold-line-g > .threshold-label-text`,
-          `${target} .threshold-g > .threshold-line-g > .threshold-handle-rect`,
-          `${target} .threshold-g > .threshold-line-g > .threshold-handle-arrow`,
-          `.dpd-interactive-prompt-wrap`,
-          `.dpd-scroll-arrow`,
-          `.dpd-scroll-arrow-label`], 
-          { opacity: 0, ease: 'expo.out', duration: 0.6 })
-        gsap.to('.dpd-interactive-results-wrap', { opacity: 0, ease: 'expo.out', duration: 0.6 })
-      }
-
-      const endTimeline = gsap.timeline().set({}, {}, 1)
-
-      endAnimations[0].animations.forEach(animation => {
-        const toObject = Object.assign({
-          ease: animation.ease || 'expo.out',
-          duration: animation.duration || 0.5,
-          stagger: animation.stagger ? 0.02 : 0,
-          delay: animation.delay || 0
-        }, animation.to)
-        const insertionTime = animation.location === 'start' ? 0 : 0.5
-
-        if (animation.from) {
-          endTimeline.add(gsap.fromTo(`${animation.externalTarget ? '' : target} ${animation.target}`, animation.from, toObject), insertionTime)
-        } else {
-          endTimeline.add(gsap.to(`${animation.externalTarget ? '' : target} ${animation.target}`, toObject), insertionTime)
-        }
+      scrollContent.forEach(section => {
+        this.stInstances.push(
+          ScrollTrigger.create({
+            trigger: `#dpd-scroll-section-${section.id}  > .dpd-scroll-text-wrap`,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.2,
+            animation: gsap.timeline()
+              .add(gsap.to(
+                `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
+                { opacity: 1, scale: 1, duration: 0.5, ease: 'power4.out' }), 0)
+              .add(gsap.to(
+                `#dpd-scroll-section-${section.id} > .dpd-scroll-text-wrap`, 
+                { opacity: 0, scale: 0.8, duration: 0.5, ease: 'power4.in' }), 0.5)
+          })
+        )
       })
 
-      endTimeline.pause()
-      this.stInstances.push(
-        ScrollTrigger.create({
-          trigger: endAnimations[0].trigger,
-          start: 'top bottom',
-          end: 'bottom top',
-          onEnter: () => { endTimeline.duration(1.6).play(0) },
-          onLeaveBack: () => { onLeaveBack(endAnimations.trigger) }
+      this.setThreshold(
+        'caucasian', 5, 
+        () => this.setThreshold('africanAmerican', 5))
+
+      // Interactive
+
+      setTimeout(() => {
+        const target = '.dpd-viz-discrepancy'
+        const onLeaveBack = () => {
+          gsap.to(`${target} defs .threshold-mask-rect`, 
+            { scaleX: 0.56, ease: 'expo.out', duration: 0.6 })
+          gsap.to(`${target} .threshold-g > .threshold-line-g`, 
+            { x: 204, ease: 'expo.out', duration: 0.6 })
+          d3.select(`${target} .threshold-g > .threshold-line-g > .threshold-label-text`)
+            .text('Threshold: 5.0')
+          gsap.to(
+            [`${target} .threshold-g > .threshold-line-g > .threshold-label-rect`,
+            `${target} .threshold-g > .threshold-line-g > .threshold-label-text`,
+            `${target} .threshold-g > .threshold-line-g > .threshold-handle-rect`,
+            `${target} .threshold-g > .threshold-line-g > .threshold-handle-arrow`,
+            `.dpd-interactive-prompt-wrap`,
+            `.dpd-scroll-arrow`,
+            `.dpd-scroll-arrow-label`], 
+            { opacity: 0, ease: 'expo.out', duration: 0.6 })
+          gsap.to('.dpd-interactive-results-wrap', { opacity: 0, ease: 'expo.out', duration: 0.6 })
+        }
+
+        const endTimeline = gsap.timeline().set({}, {}, 1)
+
+        endAnimations[0].animations.forEach(animation => {
+          const toObject = Object.assign({
+            ease: animation.ease || 'expo.out',
+            duration: animation.duration || 0.5,
+            stagger: animation.stagger ? 0.02 : 0,
+            delay: animation.delay || 0
+          }, animation.to)
+          const insertionTime = animation.location === 'start' ? 0 : 0.5
+
+          if (animation.from) {
+            endTimeline.add(gsap.fromTo(`${animation.externalTarget ? '' : target} ${animation.target}`, animation.from, toObject), insertionTime)
+          } else {
+            endTimeline.add(gsap.to(`${animation.externalTarget ? '' : target} ${animation.target}`, toObject), insertionTime)
+          }
         })
-      )
-    }, 1000)
+
+        endTimeline.pause()
+        this.stInstances.push(
+          ScrollTrigger.create({
+            trigger: endAnimations[0].trigger,
+            start: 'top bottom',
+            end: 'bottom top',
+            onEnter: () => { endTimeline.duration(1.6).play(0) },
+            onLeaveBack: () => { onLeaveBack(endAnimations.trigger) }
+          })
+        )
+      }, 1000)
+    }, { once: true })
   }
 
   componentWillUnmount() {

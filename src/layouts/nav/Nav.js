@@ -144,8 +144,8 @@ class Nav extends Component {
     this.focusTrap = focusTrap.createFocusTrap('.nav');
 
     document.addEventListener('media-loaded', () => {
-      gsap.to('.nav', { opacity: 1, ease: 'power2.out', duration: 1.4, delay: 0.1 })
-    })
+      gsap.to('.nav', { opacity: 1, ease: 'expo.out', duration: 1.6 })
+    }, { once: true })
   }
 
   render() {

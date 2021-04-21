@@ -74,6 +74,11 @@ class Demo extends Component {
         }
       }
     })
+
+    document.addEventListener('media-loaded', () => {
+      gsap.to('.eo-demo-canvas', 
+        { opacity: 1, ease: 'expo.out', duration: 1.6 })
+    }, { once: true })
   }
 
   componentWillUnmount() {

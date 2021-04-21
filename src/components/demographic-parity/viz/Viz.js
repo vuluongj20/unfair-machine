@@ -254,6 +254,11 @@ class Viz extends Component {
   componentDidMount() {
     const { className, data, config, animations, animationTriggers, animationOverrides } = this.props
 
+    if (window) {
+      const DrawSVG = require('../../../resources/DrawSVG')
+      gsap.registerPlugin(DrawSVG)
+    }
+
     this.createViz(data, config, `.${className}`)
     animations && this.bindAnimations(animations, `.${className}`, animationTriggers, animationOverrides)
   }

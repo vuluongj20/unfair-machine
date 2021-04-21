@@ -35,11 +35,6 @@ class Layout extends Component {
   }
 
   componentDidMount() {
-    if (window) {
-      const DrawSVG = require('../resources/DrawSVG')
-      gsap.registerPlugin(DrawSVG)
-    }
-
     globalHistory.listen(({ action }) => {
       if (action === 'POP') {
         setTimeout(() => {

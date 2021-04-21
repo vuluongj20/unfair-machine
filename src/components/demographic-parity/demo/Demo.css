@@ -1,6 +1,7 @@
 .dp-demo {
 	position: relative;
 	padding: 0 7.5vw;
+	opacity: 0;
 }
 
 /* VIZ WRAP */
