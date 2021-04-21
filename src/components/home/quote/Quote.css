@@ -1,4 +1,6 @@
+.home-quote-wrap {
+	opacity: 0;
+}
 .home-quote {
 	max-width: 64rem;
-	opacity: 0;
 }

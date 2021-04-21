@@ -17,13 +17,13 @@ class Quote extends Component {
 
   render() {
     return (
-      <div className="home-quote article-section by py-4">
+      <div className="home-quote-wrap article-section by py-4">
         <div className="container">
           {quotes.map((quote, index) => {
             return (
               <p 
                 id={`home-quote-${index}`} 
-                className="quote" 
+                className="home-quote quote" 
                 key={index}
               >
                 {quote}
