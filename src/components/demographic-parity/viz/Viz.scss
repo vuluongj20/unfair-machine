@@ -17,11 +17,13 @@
 
 .dpd-viz {
 	font-size: 16px;
-	height: auto;
+	height: 100%;
 
 	svg {
 		overflow: visible;
 		width: 100%;
+		max-width: 40rem;
+		height: auto;
 	}
 	.x-axis {
 		stroke-linecap: round;

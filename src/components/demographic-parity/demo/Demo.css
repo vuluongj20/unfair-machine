@@ -121,6 +121,7 @@
 
 .dpd-viz-caucasian,
 .dpd-viz-african-american {
+	width: 100%;
 	flex-direction: column;
 	margin: 1.2em 0;
 }
