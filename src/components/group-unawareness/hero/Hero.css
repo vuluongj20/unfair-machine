@@ -54,7 +54,7 @@
 
 @media only screen and (max-width: 768px) {
 	.article-hero-wrap {
-		height: calc(72vw);
+		height: calc(90vw);
 	}
 	.article-title {
 		font-size: calc(85vw/7.2);

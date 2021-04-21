@@ -3,49 +3,49 @@ export const scrollContent = [
     id: 'topic',
     text: 'In 2012, the Wisconsin Department of Corrections began using COMPAS - software that predicts a defendant\'s likelihood of reoffending - for making sentencing decisions.',
     width: 6,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'center'
   },
   {
     id: 'score-system',
     text: 'Each defendant was assigned a score from 1 to 10, with 1 being the least likely to reoffend and 10 being the most likely.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'right'
   },
   {
     id: 'distribution',
     text: 'Here\'s the overall score distribution. The x-axis is the score and the y-axis is the percentage of defendants who were assigned that score.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'right'
   },
   {
     id: 'distribution-2',
     text: 'Most of the scores are in the low end of the spectrum.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'right'
   },
   {
     id: 'discrepancy',
     text: 'However, there is a significant discrepancy between racial groups. The most noticeable is between Caucasian and African-American defendants.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'right'
   },
   {
     id: 'discrepancy-2',
     text: 'The average scores are 3.1 for Caucasian defendants and 4.3 for African-Americans. The score distribution for African-Americans leans more toward the right compared to that for Caucasian defendants.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'right'
   },
   {
     id: 'threshold',
     text: 'Now, to make a simple classification of a defendant\'s risk of reoffending, we use a threshold. If the defendant\'s score is above that threshold, then we label them as \"high-risk\".',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'right'
   }
 ]

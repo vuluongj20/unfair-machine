@@ -101,4 +101,7 @@
 		width: 100%;
 		margin-left: 0;
 	}
+	.eod-scroll-area-head {
+		height: 20vh;
+	}
 }

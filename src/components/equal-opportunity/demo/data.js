@@ -3,77 +3,77 @@ export const scrollContent = [
 	  id: 'topic',
 	  text: 'Wichita State University assigns each of its potential college applicants a score for how likely they are to enroll if given admission, based on attributes like sex, race, test scores, high school grades, and more. This score informs decisions on targeted advertising, admissions, and financial aid.',
 	  width: 6,
-	  mobileWidth: 10,
+	  mobileWidth: 12,
 	  align: 'center'
 	},
 	{
 	  id: 'range',
 	  text: 'The score ranges from 0 to 100. The higher the score, the more likely it is that the student will enroll. Here is what the score distribution of 200 students would look like.',
 	  width: 4,
-	  mobileWidth: 10,
+	  mobileWidth: 12,
 	  align: 'left'
 	},
 	{
 	  id: 'high-scores',
 	  text: 'The prediction is not perfect. Some students with high scores may still end up dropping out of college.',
 	  width: 4,
-	  mobileWidth: 10,
+	  mobileWidth: 12,
 	  align: 'left'
 	},
 	{
 	  id: 'low-scores',
 	  text: 'And some students with low scores may still finish their degree if given admission.',
 	  width: 4,
-	  mobileWidth: 10,
+	  mobileWidth: 12,
 	  align: 'left'
 	},
 	{
 	  id: 'threshold',
 	  text: 'To identify applicants who are likely to enroll, administrators use a threshold. Students who score above this threshold are classified as \'likely to enroll\'.',
 	  width: 4,
-	  mobileWidth: 10,
+	  mobileWidth: 12,
 	  align: 'left'
 	},
   {
     id: 'true-positive',
     text: 'An important thing to consider when setting the threshold is the true positive rate - the number of students who are classified as \'likely to enroll\' out of all those who would actually enroll.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'left'
   },
   {
     id: 'lower-threshold',
     text: 'Lowering the threshold would result in a higher true positive rate, since we\'re marking more students as \'likely to enroll\'.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'left'
   },
   {
     id: 'tradeoff',
     text: 'However, doing so would also increase the false positive rate, meaning more students who would not actually enroll will be falsely classified as \'likely to enroll\'. This is costly to the college and should be avoided.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'left'
   },
   {
     id: 'disparity',
     text: 'Another major point of concern is the discrepancy between different demographic groups. In general, the software assigns more favorable scores to Caucasian students than African-American students.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'left'
   },
   {
     id: 'justification',
     text: 'Such disparate predictions are potentially justified, as African-American students are historically 60% more likely to drop out of college than Caucasian students.',
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'left'
   },
   {
     id: 'prompt',
     text: null,
     width: 4,
-    mobileWidth: 10,
+    mobileWidth: 12,
     align: 'left'
   }
 ]

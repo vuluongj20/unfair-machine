@@ -161,4 +161,7 @@
 	.dpd-interactive-wrap {
 		display: none;
 	}
+	.dpd-scroll-area-head {
+		height: 20vh;
+	}
 }
