@@ -11,7 +11,7 @@ const quotes = [
 class Quote extends Component {
   componentDidMount() {
     document.addEventListener('media-loaded', () => {
-      gsap.to('.home-quote', { opacity: 1, ease: 'expo.out', duration: 1.6 })
+      gsap.to('.home-quote-wrap', { opacity: 1, ease: 'expo.out', duration: 1.6 })
     }, { once: true })
   }
 
