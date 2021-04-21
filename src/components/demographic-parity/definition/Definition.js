@@ -20,7 +20,7 @@ const combinedData = {
   africanAmerican: africanAmericanData
 }
 
-const quote = 'If we set the thresholds in such a way that the percentage of \"high-risk\" classifications is roughly equal among all groups, then the algorithm would satisfy demographic parity.'
+const quote = 'If we set the thresholds in a way such that the percentage of \"high-risk\" classifications is roughly equal among all groups, then the algorithm would satisfy demographic parity.'
 
 const body = 'Here, \"parity\" means equality. We want the positive prediction rate (i.e. the rate at which defendants receive a \"high-risk\" classification) to be equal among demographic groups. That means that the rate for Caucasian defendants should be roughly the same as that for African American defendants. The following algorithm has been modified to satisfy demographic parity. Move any of the thresholds and see how the other one also moves in order to maintain the rate equality.'
 

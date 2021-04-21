@@ -46,8 +46,7 @@
 
 @media only screen and (max-width: 768px) {
 	.gud-table {
-		border: solid 4px var(--blue);
-		border-radius: 0.8em;
+		border: solid 3px var(--blue);
 	}
 	.gud-column {
 		border-left: solid 3px var(--blue-light);

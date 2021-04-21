@@ -4,3 +4,6 @@
 .home-quote {
 	max-width: 64rem;
 }
+.home-quote:not(:last-child) {
+	margin-bottom: 1em;
+}

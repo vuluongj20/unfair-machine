@@ -27,8 +27,6 @@ class Viz extends Component {
       .insert('svg', ':first-child')
         .attr('preserveAspectRatio', 'xMidYMid meet')
         .attr('viewBox', `0 0 ${width} ${height}`)
-        .attr('width', width)
-        .attr('height', height)
         .attr('class', className)
 
 

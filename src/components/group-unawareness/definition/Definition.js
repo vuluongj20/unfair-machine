@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const quote = 'We say that a model satisfies group unawareness if it has no access to protected attributes like race and sex.'
-const body = 'Here is the core idea: if a model is blind to sensitive attributes, then it will not be able discriminate based on those attributes. The algorithmic blindfolding occurs during the training period, as we feed data into the model to help it learn how to make good predictions. If the input does not include sensitive attributes, and the model subsequently doesn\'t use those attributes for making predictions, then it is group-unaware.'
+const body = 'The core idea is that if a model is blind to sensitive attributes, then it will not be able discriminate based on those attributes. The algorithmic blindfolding occurs during the training period, as we feed data into the model to help it learn how to make good predictions. If the input does not include sensitive attributes, and the model subsequently doesn\'t use those attributes for making predictions, then it is group-unaware.'
 
 const tableColumns = [ 'C. GAIN', 'AGE', 'SEX', 'RACE', 'EDU.', 'OCC.' ]
 const tableSVGs = {
@@ -36,7 +36,7 @@ class Definition extends Component {
         start: 'top bottom',
         end: 'top 70%',
         animation: gsap.timeline().add(
-          gsap.to(['#gud-column-3 .gud-head', '#gud-column-3 .gud-body-svg'],
+          gsap.to(['#gud-column-2 .gud-head', '#gud-column-2 .gud-body-svg'],
             { opacity: 0, ease: 'expo.out', duration: 1 }), 0
         ),
         scrub: 0.4 
@@ -47,9 +47,9 @@ class Definition extends Component {
       ScrollTrigger.create({
         trigger: '.gud-table',
         start: 'top 70%',
-        end: 'top 55%',
+        end: 'top 50%',
         animation: gsap.timeline().add(
-          gsap.to(['#gud-column-5 .gud-head', '#gud-column-5 .gud-body-svg'],
+          gsap.to(['#gud-column-3 .gud-head', '#gud-column-3 .gud-body-svg'],
             { opacity: 0, ease: 'expo.out', duration: 1 }), 0
         ),
         scrub: 0.4 
@@ -59,10 +59,10 @@ class Definition extends Component {
     this.stInstances.push(
       ScrollTrigger.create({
         trigger: '.gud-table',
-        start: 'top 55%',
-        end: 'top 40%',
+        start: 'top 50%',
+        end: 'top 30%',
         animation: gsap.timeline().add(
-          gsap.to(['#gud-column-2 .gud-head', '#gud-column-2 .gud-body-svg'],
+          gsap.to(['#gud-column-5 .gud-head', '#gud-column-5 .gud-body-svg'],
             { opacity: 0, ease: 'expo.out', duration: 1 }), 0
         ),
         scrub: 0.4 
