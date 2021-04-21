@@ -3,7 +3,7 @@
 }
 @supports (padding: max(0px)) {
   .home-hero-wrap {
-    padding-bottom: max(0px, env(safe-area-inset-bottom));
+    padding-bottom: max(1px, env(safe-area-inset-bottom));
   }
 }
 .home-hero {
