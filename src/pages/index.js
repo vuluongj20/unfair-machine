@@ -6,7 +6,7 @@ import Home from '../components/home/Home'
 
 const seo = {
   title: null,
-  description: 'An interactive web series about the competing conceptions of fairness in machine learning'
+  description: 'An interactive web series about competing conceptions of fairness in machine learning, including Group Unawareness, Demographic Parity, and Equal Opportunities.'
 }
 
 class HomePage extends Component {

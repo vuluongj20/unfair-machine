@@ -5,7 +5,7 @@ import EqualOpportunity from '../components/equal-opportunity/EqualOpportunity'
 
 const seo = {
   title: 'Equal Opportunity',
-  description: 'An explanation of Equal Opportunity, a proposed conception of fairness in machine learning'
+  description: 'An explanation of Equal Opportunity - a proposed conception of fairness in machine learning, as part of a larger series about Machine Learning Fairness'
 }
 
 class Opportunity extends Component {

@@ -5,7 +5,7 @@ import DemographicParity from '../components/demographic-parity/DemographicParit
 
 const seo = {
   title: 'Demographic Parity',
-  description: 'An explanation of Demographic Parity, a proposed conception of fairness in machine learning'
+  description: 'An explanation of Demographic Parity - a proposed conception of fairness in machine learning, as part of a larger series about Machine Learning Fairness'
 }
 
 class DemographicParityPage extends Component {
