@@ -5,8 +5,7 @@ import DemographicParity from '../components/demographic-parity/DemographicParit
 
 const seo = {
   title: 'Demographic Parity',
-  // todo
-  description: 'Group unawareness means that the algorithm does not have access to sensitive attributes like gender, race when it is trained.'
+  description: 'An explanation of Demographic Parity, a proposed conception of fairness in machine learning'
 }
 
 class DemographicParityPage extends Component {

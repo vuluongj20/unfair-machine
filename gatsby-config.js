@@ -4,7 +4,7 @@ module.exports = {
     description: `Machine Learning Fairness, explained`,
     author: `Vu Luong`,
     siteUrl: `https://unfair-machine.vuluong.me`,
-    image: `/og.png`,
+    image: `/images/og.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -5,7 +5,7 @@ import GroupUnawareness from '../components/group-unawareness/GroupUnawareness'
 
 const seo = {
   title: 'Group Unawareness',
-  description: 'Group unawareness means that the algorithm does not have access to sensitive attributes like gender, race when it is trained.'
+  description: 'An explanation of Group Unawareness, a proposed conception of fairness in machine learning'
 }
 
 class Unawareness extends Component {

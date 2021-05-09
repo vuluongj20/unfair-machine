@@ -6,7 +6,7 @@ import Home from '../components/home/Home'
 
 const seo = {
   title: null,
-  description: '(Un)Fair Machine is a '
+  description: 'An interactive web series about the competing conceptions of fairness in machine learning'
 }
 
 class HomePage extends Component {
