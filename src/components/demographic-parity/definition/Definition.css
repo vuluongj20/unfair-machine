@@ -3,11 +3,12 @@
 }
 .dp-def-interactive-inner-wrap {
 	position: relative;
-	max-width: 85%;
+	width: 85%;
+	max-width: 50em;
 }
 .dp-def-caucasian,
 .dp-def-african-american {
-	width: auto;
+	width: calc(100% - 10em);
 	position: relative;
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -73,6 +74,10 @@
 	}
 	.dp-def-interactive-inner-wrap {
 		flex-direction: column;
+	}
+	.dp-def-caucasian,
+	.dp-def-african-american {
+		width: 100%;
 	}
 	.dp-def-interactive-result-wrap {
 		justify-content: center;
