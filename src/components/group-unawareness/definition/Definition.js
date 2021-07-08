@@ -4,8 +4,8 @@ import './Definition.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const quote = 'We say that a model satisfies group unawareness if it has no access to protected attributes like race and sex.'
-const body = 'The core idea is that if a model is blind to sensitive attributes, then it will not be able discriminate based on those attributes. The algorithmic blindfolding occurs during the training period, as we feed data into the model to help it learn how to make good predictions. If the input does not include sensitive attributes, and the model subsequently doesn\'t use those attributes for making predictions, then it is group-unaware.'
+const bodyTop = ['We may be inclined to remove one or more of the attribuites above, especially the more sensitive demographic information like race and sex, for the sake of fairness. We can call such an omission \'blinding\'. The main idea is that if a model is blind to sensitive attributes, then it will not be able discriminate against anyone based on those attributes. This is applicable only before the training process - when we feed data into the model to help it learn how to make good predictions.']
+const bodyBottom = ['']
 
 const tableColumns = [ 'C. GAIN', 'AGE', 'SEX', 'RACE', 'EDU.', 'OCC.' ]
 const tableSVGs = {
@@ -77,9 +77,13 @@ class Definition extends Component {
   render() {
     return (
       <div className="gu-definition article-wrap mt-4">
-        <div className="quote-wrap center no-bt">
-          <p className="quote">{quote}</p>
-        </div>
+        {bodyTop.map((para, ind) => {
+          return (
+            <div className="text-wrap center mt-3">
+              <p>{para}</p>
+            </div>
+          )
+        })}
         <div className="quote-wrap center no-border">
           <div className="gud-table mt-3">
             {[...Array(6)].map((_, index) => {
@@ -110,9 +114,13 @@ class Definition extends Component {
             })}
           </div>
         </div>
-        <div className="text-wrap center mt-3">
-          <p>{body}</p>
-        </div>
+        {bodyBottom.map((para, ind) => {
+          return (
+            <div className="text-wrap center mt-3">
+              <p>{para}</p>
+            </div>
+          )
+        })}
       </div>
     )
   }

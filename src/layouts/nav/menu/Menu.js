@@ -8,8 +8,8 @@ const pages = [
   {
     id: 'chap-1',
     label: 'Chapter 1',
-    title: 'Group Unawareness',
-    href: '/group-unawareness',
+    title: 'Blinding',
+    href: '/blinding',
     background: '#212121',
     hoverImg: {
       src: '/images/global/group-unawareness.svg',
@@ -20,8 +20,8 @@ const pages = [
   {
     id: 'chap-2',
     label: 'Chapter 2',
-    title: 'Demographic Parity',
-    href: '/demographic-parity',
+    title: 'Strict Equality',
+    href: '/strict-equality',
     background: '#212121',
     hoverImg: {
       src: '/images/global/demographic-parity.svg',

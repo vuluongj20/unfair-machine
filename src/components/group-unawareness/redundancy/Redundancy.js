@@ -4,9 +4,8 @@ import './Redundancy.css'
 import Model from '../model/Model'
 import whatInput from 'what-input'
 
-const quote = 'However, models that satisfy group unawareness are not much more fair when it comes to their outcomes.'
 const contentTop = [
-  'Intuitively, we expect that if an algorithm has no access to any sensitive attributes, then its predictions will be more equal or equitable among protected groups. This turns out not to be the case. Try it with the sandbox below.'
+  'Intuitively, we expect that if an algorithm has no access to any sensitive attributes, then its predictions will be more equal or at least more equitable among protected groups. This turns out not to be the case. Try it with the sandbox below.'
 ]
 const introFunctions = {
   intro: 'Train the model with and without the attribute \"Sex\". Take note of the positive prediction rate for male and female applicants in both cases.',
@@ -42,11 +41,8 @@ class Redundancy extends Component {
     const { data } = this.props
 
     return (
-      <div className="gu-fairness article-wrap pt-3">
-        <div className="quote-wrap center">
-          <p className="quote">{quote}</p>
-        </div>
-        <div className="text-wrap center my-3">
+      <div className="gu-fairness article-wrap mt-1">
+        <div className="text-wrap center mb-3">
           {contentTop.map((para, index) => {
             return (
               <p className="guf-text" key={index}>
