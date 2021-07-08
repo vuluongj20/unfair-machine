@@ -1,7 +1,6 @@
 // 
 // READY-MADE CLASSES
 // 
-
 .svg-stroke.background {
   stroke: var(--background);
 }
@@ -126,6 +125,34 @@ button.flex-center {
 }
 .quote-wrap.center {
   margin: 0 auto;
+}
+.heading-wrap {
+  width: 85%;
+  max-width: 56rem;
+}
+.heading-wrap.center {
+  margin: 0 auto;
+}
+.heading-inner-wrap {
+  width: 100%;
+  max-width: 48rem;
+}
+.heading-number {
+  font-size: 20rem;
+  opacity: 0.2;
+}
+.heading {
+}
+.heading-quote-wrap {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+}
+.heading-quote {
+}
+.heading-quote-line {
+  width: 8rem;
+  border-bottom: 2px dashed var(--line);
 }
 .sm-only {
   display: none;

@@ -79,7 +79,9 @@ class GroupUnawareness extends Component {
         <Hero />
         <Demo data={data} />
         <Definition />
+        <hr />
         <Fairness />
+        <hr />
         <Redundancy data={data} />
         <hr />
         <div className="article-next-chapter-wrap container pt-4 pb-3">

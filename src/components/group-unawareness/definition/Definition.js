@@ -4,8 +4,7 @@ import './Definition.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const bodyTop = ['We may be inclined to remove one or more of the attribuites above, especially the more sensitive demographic information like race and sex, for the sake of fairness. We can call such an omission \'blinding\'. The main idea is that if a model is blind to sensitive attributes, then it will not be able discriminate against anyone based on those attributes. This is applicable only before the training process - when we feed data into the model to help it learn how to make good predictions.']
-const bodyBottom = ['']
+const bodyTop = ['The removal of one or more of the attributes above, especially the sensitive demographic information like race and gender, is a common and intuitive way to make algorithmic models more fair. This technique is called blinding (or group unawareness in academic writings). The idea is that if a model M is blind, i.e. has no access, to certain sensitive attributes, then M cannot discriminate against anyone based on those attributes.']
 
 const tableColumns = [ 'C. GAIN', 'AGE', 'SEX', 'RACE', 'EDU.', 'OCC.' ]
 const tableSVGs = {
@@ -76,10 +75,19 @@ class Definition extends Component {
 
   render() {
     return (
-      <div className="gu-definition article-wrap mt-4">
+      <div className="gu-definition article-wrap my-4">
+        <div className="heading-wrap center mt-3">
+          <div className="heading-inner-wrap">
+            <h1 className="heading-number">1.</h1>
+            <h2 className="heading">Intentional Unawareness</h2>
+            <div className="heading-quote-wrap mt-2">
+              <div className="heading-quote-line" />
+            </div>
+          </div>
+        </div>
         {bodyTop.map((para, ind) => {
           return (
-            <div className="text-wrap center mt-3">
+            <div key={ind} className="text-wrap center mt-2">
               <p>{para}</p>
             </div>
           )
@@ -114,13 +122,6 @@ class Definition extends Component {
             })}
           </div>
         </div>
-        {bodyBottom.map((para, ind) => {
-          return (
-            <div className="text-wrap center mt-3">
-              <p>{para}</p>
-            </div>
-          )
-        })}
       </div>
     )
   }

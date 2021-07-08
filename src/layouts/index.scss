@@ -5,6 +5,7 @@ $h2: 4.8rem;
 $h3: 3.2rem;
 $h4: 1.4rem;
 $quote: 2.2rem;
+$quote-small: 2rem;
 
 * {
   margin: 0;
@@ -98,7 +99,11 @@ hr {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid 1px var(--line);
+  border-bottom: dashed 2px var(--line);
+  width: 100%;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 hr.light {
   border-bottom: solid 1px var(--border);
@@ -109,6 +114,14 @@ hr.light {
   color: var(--dark);
   line-height: 1.2;
   font-size: $quote;
+  margin-bottom: 0;
+}
+.quote-small {
+  font-family: 'Founders Grotesk', Arial, sans-serif;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  font-size: $quote-small;
   margin-bottom: 0;
 }
 
