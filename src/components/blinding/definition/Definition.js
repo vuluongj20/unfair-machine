@@ -9,11 +9,11 @@ const bodyTop = ['The removal of one or more of the attributes above, especially
 const tableColumns = [ 'C. GAIN', 'AGE', 'SEX', 'RACE', 'EDU.', 'OCC.' ]
 const tableSVGs = {
   head: {
-    src: '/images/group-unawareness/table-head.svg',
+    src: '/images/blinding/table-head.svg',
     alt: 'Blue squiggly line'
   },
   body: {
-    src: '/images/group-unawareness/table-body.svg',
+    src: '/images/blinding/table-body.svg',
     alt: 'Gray squiggly line'
   }
 }

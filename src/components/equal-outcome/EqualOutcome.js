@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './DemographicParity.css'
+import './EqualOutcome.css'
 
 import Hero from './hero/Hero'
 import Demo from './demo/Demo'
@@ -10,7 +10,7 @@ import Footer from '../../layouts/footer/Footer'
 
 import gsap from 'gsap'
 
-class DemographicParity extends Component {
+class EqualOutcome extends Component {
   render() {
     const { location } = this.props
     
@@ -33,4 +33,4 @@ class DemographicParity extends Component {
   }
 }
 
-export default DemographicParity
+export default EqualOutcome

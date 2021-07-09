@@ -5,10 +5,10 @@ import EqualOpportunity from '../components/equal-opportunity/EqualOpportunity'
 
 const seo = {
   title: 'Equal Opportunity',
-  description: 'An explanation of Equal Opportunity - a proposed conception of fairness in machine learning, as part of a larger series about Machine Learning Fairness'
+  description: 'An account of Equal Opportunity - a proposed conception of fairness in machine learning'
 }
 
-class Opportunity extends Component {
+class EqualOpportunityPage extends Component {
   render() {
     const { location } = this.props
     return (
@@ -20,4 +20,4 @@ class Opportunity extends Component {
   }
 }
 
-export default Opportunity
+export default EqualOpportunityPage

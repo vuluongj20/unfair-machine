@@ -30,7 +30,14 @@ class Hero extends Component {
           <h1 className="article-title">
             <span className="article-title-span-outer-wrap">
               <span className="article-title-span-wrap">
-                <span className="article-title-span">EQUAL</span>
+                <span className="article-title-span">EQUALITY</span>
+              </span>
+              <div className="article-title-underline horizontal"></div>
+              <div className="article-title-underline vertical"></div>
+            </span>
+            <span className="article-title-span-outer-wrap">
+              <span className="article-title-span-wrap">
+                <span className="article-title-span">OF</span>
               </span>
               <div className="article-title-underline horizontal"></div>
               <div className="article-title-underline vertical"></div>

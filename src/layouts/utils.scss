@@ -141,14 +141,10 @@ button.flex-center {
   font-size: 20rem;
   opacity: 0.2;
 }
-.heading {
-}
 .heading-quote-wrap {
   width: 100%;
   max-width: 40rem;
   margin-left: auto;
-}
-.heading-quote {
 }
 .heading-quote-line {
   width: 8rem;
@@ -157,9 +153,17 @@ button.flex-center {
 .sm-only {
   display: none;
 }
+@media only screen and (max-width: 1024px) {
+  .heading-number {
+    font-size: 14rem;
+  }
+}
 @media only screen and (max-width: 768px) {
   .quote-wrap {
     text-align: left;
+  }
+  .heading-number {
+    font-size: 12rem;
   }
   .lg-only {
     display: none;

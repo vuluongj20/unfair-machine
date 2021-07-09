@@ -100,7 +100,7 @@ hr {
   border-left: none;
   border-right: none;
   border-bottom: dashed 2px var(--line);
-  width: 100%;
+  width: 85%;
   max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
@@ -165,6 +165,7 @@ hr.light {
   h3 { font-size: $h3 * $font-size-factor-medium; }
   h4 { font-size: $h4 * $font-size-factor-medium; }
   .quote { font-size: $quote * 0.8; }
+  .quote-small { font-size: $quote-small * 0.8; }
 }
 
 @media only screen and (max-width: 768px) {
@@ -174,6 +175,7 @@ hr.light {
   h3 { font-size: $h3 * $font-size-factor-small; }
   h4 { font-size: $h4 * $font-size-factor-small; }
   .quote { font-size: $quote * $font-size-factor-medium; }
+  .quote-small { font-size: $quote-small * $font-size-factor-medium; }
 
   .app-content-wrapper {
     width: 100%;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import * as tf from '@tensorflow/tfjs'
-import './GroupUnawareness.css'
+import './Blinding.css'
 
 import Demo from './demo/Demo'
 import Hero from './hero/Hero'
@@ -45,7 +45,7 @@ const columnConfigs = {
   }
 }
 
-class GroupUnawareness extends Component {
+class Blinding extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -96,4 +96,4 @@ class GroupUnawareness extends Component {
   }
 }
 
-export default GroupUnawareness
+export default Blinding

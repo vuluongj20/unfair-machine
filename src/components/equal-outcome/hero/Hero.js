@@ -4,8 +4,8 @@ import './Hero.css'
 import gsap from 'gsap'
 
 const illustration = {
-  src: '/images/group-unawareness/illustration.svg',
-  alt: 'Blue eyes with a slash'
+  src: '/images/global/demographic-parity.svg',
+  alt: 'Equality sign'
 }
 
 class Hero extends Component {
@@ -26,14 +26,27 @@ class Hero extends Component {
   render() {
     return (
       <div className="article-hero-wrap">
-        <div className="gu-hero container">
+        <div className="dp-hero container">
           <h1 className="article-title">
             <span className="article-title-span-outer-wrap">
               <span className="article-title-span-wrap">
-                <span className="article-title-span">BLINDING</span>
+                <span className="article-title-span">EQUALITY</span>
               </span>
               <div className="article-title-underline horizontal"></div>
               <div className="article-title-underline vertical"></div>
+            </span>
+            <span className="article-title-span-outer-wrap">
+              <span className="article-title-span-wrap">
+                <span className="article-title-span">OF</span>
+              </span>
+              <div className="article-title-underline horizontal"></div>
+              <div className="article-title-underline vertical"></div>
+            </span>
+            <span className="article-title-span-outer-wrap">
+              <span className="article-title-span-wrap">
+                <span className="article-title-span">OUTCOME</span>
+              </span>
+              <div className="article-title-underline horizontal"></div>
             </span>
           </h1>
         </div>

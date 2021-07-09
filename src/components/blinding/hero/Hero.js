@@ -3,11 +3,6 @@ import './Hero.css'
 
 import gsap from 'gsap'
 
-const illustration = {
-  src: '/images/global/demographic-parity.svg',
-  alt: 'Equality sign'
-}
-
 class Hero extends Component {
   componentDidMount() {
     document.addEventListener('media-loaded', () => {
@@ -26,20 +21,14 @@ class Hero extends Component {
   render() {
     return (
       <div className="article-hero-wrap">
-        <div className="dp-hero container">
+        <div className="gu-hero container">
           <h1 className="article-title">
             <span className="article-title-span-outer-wrap">
               <span className="article-title-span-wrap">
-                <span className="article-title-span">STRICT</span>
+                <span className="article-title-span">BLINDING</span>
               </span>
               <div className="article-title-underline horizontal"></div>
               <div className="article-title-underline vertical"></div>
-            </span>
-            <span className="article-title-span-outer-wrap">
-              <span className="article-title-span-wrap">
-                <span className="article-title-span">EQUALITY</span>
-              </span>
-              <div className="article-title-underline horizontal"></div>
             </span>
           </h1>
         </div>

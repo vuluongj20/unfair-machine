@@ -12,7 +12,7 @@ const pages = [
     href: '/blinding',
     background: '#212121',
     hoverImg: {
-      src: '/images/global/group-unawareness.svg',
+      src: '/images/global/blinding.svg',
       alt: 'Eye',
       size: 12
     }
@@ -20,11 +20,11 @@ const pages = [
   {
     id: 'chap-2',
     label: 'Chapter 2',
-    title: 'Strict Equality',
-    href: '/strict-equality',
+    title: 'Equality of Outcome',
+    href: '/equal-outcome',
     background: '#212121',
     hoverImg: {
-      src: '/images/global/demographic-parity.svg',
+      src: '/images/global/equal-outcome.svg',
       alt: 'Equality sign',
       size: 10
     }
@@ -32,7 +32,7 @@ const pages = [
   {
     id: 'chap-3',
     label: 'Chapter 3',
-    title: 'Equal Opportunity',
+    title: 'Equality of Opportunity',
     href: '/equal-opportunity',
     background: '#1A1A1A',
     hoverImg: {

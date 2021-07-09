@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 
 import SEO from '../components/seo'
-import GroupUnawareness from '../components/group-unawareness/GroupUnawareness'
+import Blinding from '../components/blinding/Blinding'
 
 const seo = {
-  title: 'Group Unawareness',
-  description: 'An explanation of Group Unawareness - a proposed conception of fairness in machine learning, as part of a larger series about Machine Learning Fairness'
+  title: 'Blinding',
+  description: 'An account of Blinding - a proposed strategy to satisfy procedural fairness in machine learning'
 }
 
-class Unawareness extends Component {
+class BlindingPage extends Component {
   render() {
     const { location } = this.props
     return (
       <div className="group-unawareness-page-wrap">
         <SEO {...seo} />
-        <GroupUnawareness location={location} />
+        <Blinding location={location} />
       </div>
     )
   }
 }
 
-export default Unawareness
+export default BlindingPage
