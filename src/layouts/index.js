@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const styles = {
   '--background': '#1A1A1A',
-  '--surface': '#1F1F1F',
+  '--surface': '#1D1D1D',
   '--dark': '#fff6e0',
   '--medium': '#f5ecd6',
   '--light': 'rgba(241, 229, 198, 0.5)',

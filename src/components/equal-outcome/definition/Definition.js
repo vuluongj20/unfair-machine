@@ -20,9 +20,10 @@ const combinedData = {
   africanAmerican: africanAmericanData
 }
 
-const quote = 'If we set the thresholds in a way such that the percentage of \"high-risk\" classifications is roughly equal among all groups, then the algorithm would satisfy demographic parity.'
-
-const body = 'Here, \"parity\" means equality. We want the positive prediction rate (i.e. the rate at which defendants receive a \"high-risk\" classification) to be equal among demographic groups. That means that the rate for Caucasian defendants should be roughly the same as that for African American defendants. The following algorithm has been modified to satisfy demographic parity. Move any of the thresholds and see how the other one also moves in order to maintain the rate equality.'
+const body = [
+  'The second conception of fairness that we are considering - equality of outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups. For example, if we want to have an HCR of 25% over the entire population, which is the true population average, then we must ensure that all demographic groups, including Caucasian and African-American defendants, have an HCR of around 25%. This means we need to set the threshold at 5.0 for Caucasian defendants and 6.9 for African-American defendants, given their different score distributions.',
+  'It is most likely the case that under equality of outcome, we would need different thresholds for different demographic groups. Try the fixed model below. It has been modified to always equalize the HCRs (numbers on the right-hand side). Move one of the thresholds up or down and see how the model automatically updates the other threshold in order to keep the HCRs equal among the two group.'
+  ]
 
 const lockIcon = {
   src: '/icons/lock-24px.svg',
@@ -130,11 +131,19 @@ class Definition extends Component {
     const { threshold, acceptance } = this.state
     return (
       <div className="dp-definition article-wrap mt-4">
-        <div className="quote-wrap center no-bt">
-          <p className="quote">{quote}</p>
+        <div className="heading-wrap center mt-3">
+          <div className="heading-inner-wrap">
+            <h1 className="heading-number">1.</h1>
+            <h2 className="heading">Equalized Rates</h2>
+            <div className="heading-quote-wrap mt-2">
+              <div className="heading-quote-line" />
+            </div>
+          </div>
         </div>
-        <div className="text-wrap center my-3">
-          <p>{body}</p>
+        <div className="text-wrap center mt-2 mb-3">
+          {body.map((para, ind) => {
+            return <p key={ind}>{para}</p>
+          })}
         </div>
         <div className="dp-def-interactive-wrap surface by flex-center flex-col py-2">
           <div className="dp-def-interactive-inner-wrap flex-center">

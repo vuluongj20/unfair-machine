@@ -72,7 +72,7 @@
 	font-weight: 500;
 	font-size: 1.1em;
 	padding-bottom: 0.6em;
-	border-bottom: solid 1px var(--line);
+	border-bottom: solid 1px var(--border);
 }
 .dpd-interactive-results-wrap {
 	width: 100%;
@@ -89,7 +89,7 @@
 }
 .dpd-interactive-result-connector {
 	width: 2em;
-	border-bottom: 2px dashed var(--line);
+	border-bottom: 2px dashed var(--border);
 	margin-right: 2em;
 }
 .dpd-interactive-label {

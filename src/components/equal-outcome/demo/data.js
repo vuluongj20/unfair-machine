@@ -82,7 +82,7 @@ export const generalAnimations = [
       {
         target: '.x-axis > .tick > text',
         from: { opacity: 0 },
-        to: { opacity: 1 },
+        to: { opacity: 0.3 },
         location: 'start',
         stagger: true
       }
@@ -94,7 +94,7 @@ export const generalAnimations = [
       {
         target: '.y-axis > .tick > text',
         from: { opacity: 0 },
-        to: { opacity: 1 },
+        to: { opacity: 0.3 },
         location: 'start',
         stagger: true
       },
@@ -192,7 +192,7 @@ const discrepancyFadeInAnimations = [
   {
     target: '.x-axis > .tick > text',
     from: { opacity: 0 },
-    to: { opacity: 1 },
+    to: { opacity: 0.3 },
     location: 'start',
     stagger: true
   },
@@ -205,7 +205,7 @@ const discrepancyFadeInAnimations = [
   {
     target: '.y-axis > .tick > text',
     from: { opacity: 0 },
-    to: { opacity: 1 },
+    to: { opacity: 0.3 },
     location: 'start',
     stagger: true
   },
@@ -284,7 +284,7 @@ export const discrepancyThresholdAnimations = [
   },
   {
     target: '.y-axis > .tick > text',
-    from: { opacity: 1 },
+    from: { opacity: 0.3 },
     to: { opacity: 0 },
     location: 'start',
     stagger: true

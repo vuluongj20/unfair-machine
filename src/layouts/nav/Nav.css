@@ -4,7 +4,7 @@
   height: 100%;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
-  border-right: solid 1px var(--line);
+  border-right: solid 1px var(--border);
   background: var(--background);
   z-index: 100;
   opacity: 0;

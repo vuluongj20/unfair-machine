@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
 import './Fairness.css'
 
-const quote = 'Demographic parity results in strong outcome equality. However, it is difficult to justify its stringent requirements.'
 const body = [
-  'As we saw in chapter 1, while group-unaware algorithms are more fair in the procedural sense, they do not result in substantially more equal or equitable outcomes. Demographic parity is a direct response to this weakness. It sacrifices procedural fairness in favor of outcome equality. The latter constitute the core requirement of demographic parity.',
-  'However, there is strong criticism that demographic parity unfairly disadvantages certain groups. The debate is, in principle, similar to that on affirmative action in college admissions. In both, the threshold for admissions is raised or lowered in order to accept fewer or more people from certain groups. If we were to practice demographic parity in the case of criminal risk prediction, then the bar for a \"high-risk\" classification would be lower for Caucasian defendants and higher for African-Americans, thus putting Caucasian defendants at a disadvantage. As a result, Caucasian defendants may protest this disparate treatment. To them, it is a clear case of discrimination based of racial identity: they are now more likely to be classified as \"high-risk\" than they would have been if we didn\'t apply demographic parity. This begs the question: how might we justify demographic parity\'s potentially discriminatory treatment?',
-  'One way to respond is to recontextualize the debate and shift the focus toward corrective justice. We admit that yes, taken out of context, such a strategy is unfair. However, it is permissible, or even ethically required, to employ such a strategy because it corrects past injustices. Corrective justice is the main force behind state-sanctioned punishment when a crime has been committed. In the case of decision-making algorithms, the injustice would be past discrimination and mistreatment based on race, sex, sexual orietation, and other sensitive attributes. For example, African-American defendants have historically been more likely to be apprehended and convicted due to discriminatory policies like the war of drugs. As such, they deserve affirmative and restorative policies, like demographic parity, to correct for the injustices committed.',
-  'Still, many remain unconvinced. In the next chapter, we will explore equal opportunity, another conception of fairness that is in many ways less demanding than demographic parity.'
+  'Equality of outcome, as the name suggests, adopts a specific conception of outcome fairness. It considers an algorithmic model M to be fair if the model makes predictions at similar rates across all demographic groups.',
+  '"Rate" here refers to the prediction rate. For binary models, where the algorithm chooses between two options, the prediction rate is simply the rate at which the algorithm chooses one option instead of the other. In the defendant classification model above, the prediction rate is simply the number of times the model classifies a defendant as "high-risk", as opposed to "not high-risk". We can generalize this to multi-class, non-binary models, where the algorithm chooses between more than two options. Here, for the sake of simplicity, we will stick to the binary model.',
+  'Equality of outcome is a straightforward conception of outcome fairness. When we think of fairness in terms of outcomes, one of the first criteria we think of is equality. Most think of equality as the duty to treat people the same regardless of their age, sex, race, or other arbitrary attributes that are not in their control. Given this basic understanding, we musk ask further: equality in terms of what? What exactly is the quantity that we must equalize among all demographic groups?',
+  'Equality of outcome offers a compelling answer to this question: in terms of the final outcomes themselves, or more specifically in the case of decision-making algorithms, in terms of the prediction rates. It does not require that everyone get the same outcomes. Each person must still put in the effort to reap the rewards. Rather, the equality requirement is aggregative: on average, no demographic group should be more likely to get positive predictions than others.',
+  'Such aggregative criterion of outcome fairness is based on luck-egalitarianism. This view is concerned with equality given the arbitrariness of certain human attributes, like race and sex. No one has control over the attributes with which they are born. As such, no one should be more or less likely to succeed based on their gender or race. In an ideal world, when considering predictive algorithms, we should see no significant difference in prediction rates among demographic groups. This drives the equalization of prediction rates as proposed by equality of outcome.'
 ]
 
 class Fairness extends Component {
   render() {
     return (
-      <div className="dp-fairness article-wrap my-3">
-        <div className="quote-wrap center no-bt">
-          <p className="quote">{quote}</p>
+      <div className="dp-fairness article-wrap my-4">
+        <div className="heading-wrap center mt-3">
+          <div className="heading-inner-wrap">
+            <h1 className="heading-number">2.</h1>
+            <h2 className="heading">Outcome Fairness</h2>
+            <div className="heading-quote-wrap mt-2">
+              <div className="heading-quote-line" />
+            </div>
+          </div>
         </div>
-        <div className="text-wrap center mt-3">
+        <div className="text-wrap center mt-2">
           <div className="guf-text-wrap">
             {body.map((para, index) => {
               return <p className="guf-text" key={index}>{para}</p>

@@ -85,12 +85,12 @@ button.flex-center {
   background-color: var(--surface);
 }
 .bx {
-  border-left: solid 1px var(--line);
-  border-right: solid 1px var(--line);
+  border-left: solid 1px var(--border);
+  border-right: solid 1px var(--border);
 }
 .by {
-  border-top: solid 1px var(--line);
-  border-bottom: solid 1px var(--line);
+  border-top: solid 1px var(--border);
+  border-bottom: solid 1px var(--border);
 }
 .no-tap-highlight {
   -webkit-tap-highlight-color: transparent;
@@ -105,7 +105,7 @@ button.flex-center {
 }
 .quote-wrap {
   width: 85%;
-  max-width: 56rem;
+  max-width: 64rem;
   border-top: solid 1px var(--line);
   border-bottom: solid 1px var(--line);
   padding: 2rem 0 2.2rem;
@@ -128,7 +128,7 @@ button.flex-center {
 }
 .heading-wrap {
   width: 85%;
-  max-width: 56rem;
+  max-width: 64rem;
 }
 .heading-wrap.center {
   margin: 0 auto;

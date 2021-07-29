@@ -2,7 +2,7 @@ $font-size-factor-medium: 0.7;
 $font-size-factor-small: 0.6;
 $h1: 8rem;
 $h2: 4.8rem;
-$h3: 3.2rem;
+$h3: 2.2rem;
 $h4: 1.4rem;
 $quote: 2.2rem;
 $quote-small: 2rem;
@@ -27,7 +27,7 @@ body {
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
-h1, h2, h3, h4, h5 {
+h1, h2 {
   font-family: 'Domaine Display Narrow', Georgia, Garamond, serif;
   font-weight: 700;
   color: var(--dark);
@@ -40,13 +40,20 @@ h2 {
   font-size: $h2;
   line-height: 1.2;
 }
+h3, h4 {
+  font-family: 'Founders Grotesk', Arial, sans-serif;
+  font-weight: 500;
+  color: var(--dark);
+}
 h3 {
   font-size: $h3;
   line-height: 1.2;
+  letter-spacing: -1px;
 }
 h4 {
   font-size: $h4;
   line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 p, input, textarea, button, label {
   font-size: 1em;
@@ -101,7 +108,7 @@ hr {
   border-right: none;
   border-bottom: dashed 2px var(--line);
   width: 85%;
-  max-width: 56rem;
+  max-width: 64rem;
   margin-left: auto;
   margin-right: auto;
 }

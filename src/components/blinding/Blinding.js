@@ -84,7 +84,7 @@ class Blinding extends Component {
         <hr />
         <Redundancy data={data} />
         <hr />
-        <div className="article-next-chapter-wrap container pt-4 pb-3">
+        <div className="article-next-chapter-wrap container pt-4 pb-4">
           <p className="artcile-next-chapter-prompt fc-dark fw-medium">Read Chapter 2</p>
           <div className="article-next-chapter-inner-wrap">
             <InternalMenu location={location} showOnly={['chap-2']} centerText />

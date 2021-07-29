@@ -15,19 +15,19 @@
 .article-title-span-outer-wrap {
 	display: block;
 	position: relative;
-	margin: 0.28em 0;
 	padding-left: 0.14em;
 }
 .article-title-span-wrap {
 	display: block;
 	position: relative;
 	overflow: hidden;
-	height: 0.9em;
+	height: 1.1em;
+	line-height: 1.1;
 }
 .article-title-span {
-	display: block;
-	transform: translateY(1em);
-	height: 0.8em;
+	display: inline-block;
+	transform: translateY(1.1em);
+	height: 1em;
 }
 .article-title-underline.horizontal {
 	position: absolute;
@@ -49,11 +49,11 @@
 	z-index: -1;
 }
 .article-title {
-	font-size: calc((85vw - 4em)/7.2);
+	font-size: calc((85vw - 4em)/5.8);
 }
 @media only screen and (min-width: 1400px) {
 	.article-title {
-		font-size: 8.2em;
+		font-size: 10em;
 	}
 }
 
@@ -62,6 +62,6 @@
 		height: calc(90vw);
 	}
 	.article-title {
-		font-size: calc(85vw/7.2);
+		font-size: calc(85vw/6);
 	}
 }
