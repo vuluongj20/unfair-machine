@@ -16,11 +16,9 @@ import {
   dataPoints
 } from '../demo/data'
 
-const quote = 'If we qualized the true positive rate, then the algorithm would satisfy equal opportunity - another important conception of fairness for decision-making algorithms.'
-
 const body = [
-  'As the name suggests, equal opportunity derives from the egalitarian idea of equality of opportunity. Instead of demanding that the outcomes are equal, here we only require that everyone is given the same opportunity to thrive. If a student will enroll, then the algorithm will not discriminate against them based on their demographic identity.',
-  'The following algorithm has been modified to satisfy equal opportunity. Move any of the thresholds and see how the other one also moves in order to maintain roughly the same true positive rates.'
+  'The third conception of fairness - Equality of Opportunity - would require that we equalize the true positive rates between the two groups. Similar to Equality of Outcome, this involves modifying the thresholds to equalize a specific quantity. Here, instead of the overall prediction rate, that quantity is the true positive rate.',
+  'The model below has been modified to always equalize true positive rates among groups. Move one of the thresholds up or down and see how the other also moves to satisfy the equality requirement.'
 ]
 
 class Definition extends Component {
@@ -146,8 +144,14 @@ class Definition extends Component {
 
     return (
       <div className="eo-definition article-wrap mt-4">
-        <div className="quote-wrap center no-bt">
-          <p className="quote eo-def-quote">{quote}</p>
+        <div className="heading-wrap center">
+          <div className="heading-inner-wrap">
+            <h1 className="heading-number">1.</h1>
+            <h2 className="heading">True Positivity</h2>
+            <div className="heading-quote-wrap mt-2">
+              <div className="heading-quote-line" />
+            </div>
+          </div>
         </div>
         <div className="text-wrap center my-3">
           <p className="eo-def-description">{body[0]}</p>

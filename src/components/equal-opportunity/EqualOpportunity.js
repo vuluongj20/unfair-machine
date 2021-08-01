@@ -5,6 +5,8 @@ import Hero from './hero/Hero'
 import Demo from './demo/Demo'
 import Definition from './definition/Definition'
 import Fairness from './fairness/Fairness'
+import Desert from './desert/Desert'
+import Summary from './summary/Summary'
 import Footer from '../../layouts/footer/Footer'
 
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -19,6 +21,10 @@ class EqualOpportunity extends Component {
         <Demo />
         <Definition />
         <Fairness />
+        <hr />
+        <Desert />
+        <hr />
+        <Summary />
         <Footer />
       </div>
     )
