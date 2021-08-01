@@ -7,6 +7,7 @@ import Hero from './hero/Hero'
 import Definition from './definition/Definition'
 import Fairness from './fairness/Fairness'
 import Redundancy from './redundancy/Redundancy'
+import Summary from './summary/Summary'
 import Footer from '../../layouts/footer/Footer'
 import InternalMenu from '../../layouts/nav/internal-menu/InternalMenu'
 
@@ -83,6 +84,8 @@ class Blinding extends Component {
         <Fairness />
         <hr />
         <Redundancy data={data} />
+        <hr />
+        <Summary />
         <hr />
         <div className="article-next-chapter-wrap container pt-4 pb-4">
           <p className="artcile-next-chapter-prompt fc-dark fw-medium">Read Chapter 2</p>

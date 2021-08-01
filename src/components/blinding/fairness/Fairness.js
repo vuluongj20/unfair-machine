@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import './Fairness.css'
 
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-const headingQuote = 'Blinded algorithms are more procedurally fair as opposed to non-blinded versions.'
+const headingQuote = 'Blinded models are more procedurally fair compared to similar non-blinded ones.'
 const body = [
-  'Fairness as a concept can be largely divided into two types: procedural and outcome fairness. These two exist independently: the satisfaction of one does not guarantee that of the other. An action or event A is procedurally fair if the process leading to or involved in it is fair. For example, a coin toss is considered procedurally fair because the toss itself is impartial, unbiased.',
-  'On the other hand, we judge outcome fairness based on the results and consequences that come from the action A, not A itself. For example, an equitable housing approval process that takes affirmative steps to accommodate low-income families may satisfy some form of outcome fairness, because the resulting housing distribution is more equitable.',
-  'It is important to separate procedural from outcome fairness as they are separate concepts that may come into conflict in some cases. The equitable housing approval process is conceivably fair outcome-wise but not so procedure-wise (it is aware of and treats applicants differently based on their demographic identity). Conversely, blinded algorithmic models are more fair procedure-wise - they have no access to sensitive demographic information - but not much so in terms of the outcomes. That is due to a puzzling phenomenon called information leakage.'
+  'Fairness can be largely divided into two broad types: procedural and outcome fairness. These exist independently: the satisfaction of one does not guarantee that of the other. A decision or event is procedurally fair if the process leading to or involved in it is fair. For example, an unbiased coin toss is considered procedurally fair because the toss itself is impartial, not biased toward any particular side.',
+  'On the other hand, we judge a decision\'s outcome fairness based on its results. For example, a  housing approval process that takes affirmative steps to accommodate low-income families may satisfy some conception of outcome fairness if the resulting housing distribution is more equal or equitable.',
+  'It is necessary to separate procedural from outcome fairness because they are independent concepts that may sometimes be in conflict. The equitable housing approval process is conceivably fair outcome-wise but not much so procedure-wise. It is aware of and treats applicants differently based on their demographic identity. In this way, it sacrifices procedural fairness for more outcome fairness, specifically housing equitability.',
+  'Blinded algorithmic models, on the other hand, suffer from the opposite dichotomy in terms of fairness. They exhibit a higher level of procedural fairness by virtue of not explicitly using any sensitive demographic information. Nonetheless, they still fail to guarantee outcome fairness. This is due to a puzzling phenomenon called information leakage.'
 ]
 
 class Fairness extends Component {

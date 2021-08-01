@@ -17,7 +17,7 @@ const styles = {
   '--dark': '#fff6e0',
   '--medium': '#f5ecd6',
   '--light': 'rgba(241, 229, 198, 0.5)',
-  '--line': 'rgba(241, 229, 198, 0.08)',
+  '--line': 'rgba(241, 229, 198, 0.12)',
   '--border': 'rgba(241, 229, 198, 0.05)',
   '--red': '#FF0048',
   '--red-light': 'rgba(255, 0, 72, 0.4)',

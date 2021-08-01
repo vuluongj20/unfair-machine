@@ -4,7 +4,7 @@ import './Definition.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const bodyTop = ['The removal of one or more of the attributes above, especially the sensitive demographic information like race and gender, is a common and intuitive way to make algorithmic models more fair. This technique is called blinding (or group unawareness in academic writings). The idea is that if a model M is blind, i.e. has no access, to certain sensitive attributes, then M cannot discriminate against anyone based on those attributes.']
+const bodyTop = ['The omission of one or more of the variables above, especially the sensitive demographic information like Race and Sex, can increase the model\'s fairness. The idea is that if a model has no access to sensitive variables, then it cannot discriminate against anyone based on those variables. This strategy is called Blinding.']
 
 const tableColumns = [ 'C. GAIN', 'AGE', 'SEX', 'RACE', 'EDU.', 'OCC.' ]
 const tableSVGs = {

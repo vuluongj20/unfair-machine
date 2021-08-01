@@ -1,4 +1,5 @@
 .home-hero-wrap {
+	position: relative;
 	overflow: hidden;
 }
 @supports (padding: max(0px)) {
@@ -15,6 +16,9 @@
 	min-height: 44em;
 	padding: 5vw 0;
 	box-sizing: border-box;
+}
+#home-hero-3d-canvas {
+	z-index: -1;
 }
 .home-hero-inner-wrap {
 	position: relative;

@@ -21,8 +21,8 @@ const combinedData = {
 }
 
 const body = [
-  'The second conception of fairness that we are considering - equality of outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups. For example, if we want to have an HCR of 25% over the entire population, which is the true population average, then we must ensure that all demographic groups, including Caucasian and African-American defendants, have an HCR of around 25%. This means we need to set the threshold at 5.0 for Caucasian defendants and 6.9 for African-American defendants, given their different score distributions.',
-  'It is most likely the case that under equality of outcome, we would need different thresholds for different demographic groups. Try the fixed model below. It has been modified to always equalize the HCRs (numbers on the right-hand side). Move one of the thresholds up or down and see how the model automatically updates the other threshold in order to keep the HCRs equal among the two group.'
+  'The second conception of fairness that we are considering - Equality of Outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups. For example, if we want to have an HCR of 64% over the entire population, which is the true population average, then we must ensure that all demographic groups, including Caucasian and African-American defendants, have an HCR of around 64%. This means we need to set the threshold at 2.0 for Caucasian defendants and 3.2 for African-American defendants, given their different score distributions.',
+  'It is most likely the case that under Equality of Outcome, we would need different thresholds for different demographic groups. Try the fixed model below. It has been modified to always equalize the HCRs (numbers on the right-hand side). Move one of the thresholds up or down and see how the model automatically updates the other threshold in order to keep the HCRs equal among the two group.'
   ]
 
 const lockIcon = {
@@ -96,7 +96,7 @@ class Definition extends Component {
   }
 
   componentDidMount() {
-    this.setThreshold('caucasian', 5)
+    this.setThreshold('caucasian', 2)
 
     this.stInstances.push(
       ScrollTrigger.create({

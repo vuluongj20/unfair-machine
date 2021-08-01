@@ -6,6 +6,7 @@ import Demo from './demo/Demo'
 import Definition from './definition/Definition'
 import Fairness from './fairness/Fairness'
 import Responses from './responses/Responses'
+import Summary from './summary/Summary'
 import InternalMenu from '../../layouts/nav/internal-menu/InternalMenu'
 import Footer from '../../layouts/footer/Footer'
 
@@ -23,6 +24,8 @@ class EqualOutcome extends Component {
         <Fairness />
         <hr />
         <Responses />
+        <hr />
+        <Summary />
         <hr />
         <div className="article-next-chapter-wrap container pt-4 pb-4">
           <p className="artcile-next-chapter-prompt fc-dark fw-medium">Read Chapter 3</p>

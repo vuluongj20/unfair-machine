@@ -363,5 +363,5 @@ export const endAnimations = [
 
 export const interactiveContent = {
   prompt: 'How would you set the thresholds?',
-  hints: ['Drag the handles on the left to move the thresholds.', 'Records show that on average 24% of defendents reoffend. You can use the same threshold for both groups, or different thresholds for each group.']
+  hints: ['Drag the handles on the left to move the thresholds.', 'Records show that on average 64% of defendents reoffend. You can use the same threshold for both groups, or different thresholds for each group.']
 }
