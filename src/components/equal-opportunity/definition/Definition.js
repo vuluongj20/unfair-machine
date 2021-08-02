@@ -105,16 +105,6 @@ class Definition extends Component {
     })
 
     this.stInstances.push(ScrollTrigger.create({
-      trigger: '.eo-definition .eo-def-quote',
-      start: 'top bottom',
-      end: 'top top',
-      scrub: 0.4,
-      animation: gsap.timeline()
-        .add(gsap.fromTo('.eo-definition .eo-def-quote', 
-          { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    }))
-
-    this.stInstances.push(ScrollTrigger.create({
       trigger: '.eo-definition .eo-def-description',
       start: 'top bottom',
       end: 'top top',
