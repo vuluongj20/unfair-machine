@@ -515,7 +515,7 @@ class Model extends Component {
                     />
                     <path 
                       id="gud-progress-line"
-                      stroke="#fff6e0" 
+                      stroke="#fdf3d8" 
                       strokeWidth="2" 
                       strokeLinecap="round" 
                       strokeDasharray="100 100"
