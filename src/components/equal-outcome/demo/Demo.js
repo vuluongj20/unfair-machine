@@ -188,16 +188,6 @@ class Demo extends Component {
               />
               <div className="dpd-viz-discrepancy spread flex-center">
                 <Viz 
-                  className="dpd-viz-caucasian" 
-                  data={caucasianData} 
-                  config={caucasianConfig}
-                  animations={caucasianAnimations}
-                  animationTriggers={section => `#dpd-scroll-section-${section.id}  > .dpd-scroll-text-wrap`}
-                  threshold={threshold.caucasian}
-                  setThreshold={this.setThreshold}
-                  label="Caucasian" 
-                />
-                <Viz 
                   className="dpd-viz-african-american" 
                   data={africanAmericanData} 
                   config={africanAmericanConfig}
@@ -205,7 +195,17 @@ class Demo extends Component {
                   animationTriggers={section => `#dpd-scroll-section-${section.id}  > .dpd-scroll-text-wrap`}
                   threshold={threshold.africanAmerican}
                   setThreshold={this.setThreshold}
-                  label="African-American" 
+                  label="Black defendants" 
+                />
+                <Viz 
+                  className="dpd-viz-caucasian" 
+                  data={caucasianData} 
+                  config={caucasianConfig}
+                  animations={caucasianAnimations}
+                  animationTriggers={section => `#dpd-scroll-section-${section.id}  > .dpd-scroll-text-wrap`}
+                  threshold={threshold.caucasian}
+                  setThreshold={this.setThreshold}
+                  label="White defendants" 
                 />
               </div>
             </div>

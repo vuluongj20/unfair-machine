@@ -21,7 +21,7 @@ const combinedData = {
 }
 
 const body = [
-  'The second conception of fairness that we are considering - Equality of Outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups. For example, if we want to have an HCR of 64% over the entire population, which is the true population average, then we must ensure that all demographic groups, including Caucasian and African-American defendants, have an HCR of around 64%. This means we need to set the threshold at 2.0 for Caucasian defendants and 3.2 for African-American defendants, given their different score distributions.',
+  'The second conception of fairness that we are considering - Equality of Outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups. For example, if we want to have an HCR of 64% over the entire population, which is the true population average, then we must ensure that all demographic groups have an HCR of around 64%. This means we need to set the threshold at 3.2 for black defendants and 2.0 for white defendants, given their different score distributions.',
   'It is most likely the case that under Equality of Outcome, we would need different thresholds for different demographic groups. Try the fixed model below. It has been modified to always equalize the HCRs (numbers on the right-hand side). Move one of the thresholds up or down and see how the model automatically updates the other threshold in order to keep the HCRs equal among the two group.'
   ]
 
@@ -148,18 +148,18 @@ class Definition extends Component {
         <div className="dp-def-interactive-wrap surface by flex-center flex-col py-2">
           <div className="dp-def-interactive-inner-wrap flex-center">
             <Viz
-              className="dp-def-caucasian"
-              data={caucasianData}
-              config={caucasianConfig}
-              threshold={threshold.caucasian}
+              className="dp-def-african-american"
+              data={africanAmericanData}
+              config={africanAmericanConfig}
+              threshold={threshold.africanAmerican}
               setThreshold={this.setThreshold}
-              label="Caucasian" 
+              label="Black defendants" 
             />
             <div className="dp-def-interactive-result-wrap flex-center">
               <div className="dp-def-interactive-result-acceptance-wrap">
                 <p className="dp-def-interactive-label">% classified as high-risk</p>
                 <p className="dp-def-interactive-acceptance quote">
-                  {`${acceptance.caucasian}`}
+                  {`${acceptance.africanAmerican}`}
                   <span className="dp-def-interactive-acceptance-unit">%</span>
                 </p>
               </div>
@@ -172,18 +172,18 @@ class Definition extends Component {
           </div>
           <div className="dp-def-interactive-inner-wrap flex-center">
             <Viz
-              className="dp-def-african-american"
-              data={africanAmericanData}
-              config={africanAmericanConfig}
-              threshold={threshold.africanAmerican}
+              className="dp-def-caucasian"
+              data={caucasianData}
+              config={caucasianConfig}
+              threshold={threshold.caucasian}
               setThreshold={this.setThreshold}
-              label="African-American" 
+              label="White defendants" 
             />
             <div className="dp-def-interactive-result-wrap flex-center">
               <div className="dp-def-interactive-result-acceptance-wrap">
                 <p className="dp-def-interactive-label">% classified as high-risk</p>
                 <p className="dp-def-interactive-acceptance quote">
-                  {`${acceptance.africanAmerican}`}
+                  {`${acceptance.caucasian}`}
                   <span className="dp-def-interactive-acceptance-unit">%</span>
                 </p>
               </div>

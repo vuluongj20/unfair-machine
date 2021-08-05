@@ -132,7 +132,6 @@ class Viz extends Component {
 
     return (
       <div className={`eo-viz ${className} flex-centers spread`}>
-        {label && <p className="eo-viz-label">{label}</p>}
         <div 
           className="eov-inner-wrap" 
           onClick={e => options.showThreshold && this.setThreshold(e)} 
@@ -237,6 +236,7 @@ class Viz extends Component {
           <p className="eov-rates-text true-positive">{`True positive rate: ${truePositiveRate}`}</p> 
           <p className="eov-rates-text false-negative">{`False positive rate: ${falsePositiveRate}`}</p> 
         </div>
+        {label && <p className="eo-viz-label">{label}</p>}
       </div>
     )
   }

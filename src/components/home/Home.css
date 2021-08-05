@@ -20,11 +20,14 @@
 	width: 100%;
 }
 .home-menu-label {
+	font-family: 'Founders Grotesk', Arial, sans-serif;
+	font-weight: 500;
+	color: var(--dark);
 	text-transform: uppercase;
 	width: 12em;
 	margin-left: auto;
 	margin-right: auto;
-	border-bottom: solid 1px var(--line);
+	border-bottom: solid 1px var(--border);
 	padding-bottom: 0.2em;
 }
 

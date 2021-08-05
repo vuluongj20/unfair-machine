@@ -2,10 +2,10 @@ $font-size-factor-medium: 0.7;
 $font-size-factor-small: 0.6;
 $h1: 8rem;
 $h2: 4.8rem;
-$h3: 2.2rem;
+$h3: 1.8rem;
 $h4: 1.4rem;
-$quote: 2.2rem;
-$quote-small: 2rem;
+$quote: 1.8rem;
+$quote-small: 1.6rem;
 
 * {
   margin: 0;
@@ -20,7 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Founders Grotesk Text', Arial, Helvetica, sans-serif;
-  font-size: 21px;
+  font-size: 19px;
   font-kerning: normal;
   -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';

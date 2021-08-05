@@ -149,19 +149,6 @@ class Definition extends Component {
         </div>
         <div className="eo-def-interactive-wrap flex-center flex-col py-2 surface by">
           <div className="eo-def-interactive-inner-wrap flex-center col-8">
-            {data.caucasian && (
-              <Viz
-                className="eo-def-caucasian"
-                ref={this.caucasianVizRef}
-                data={data.caucasian}
-                options={caucasianOptions}
-                threshold={thresholds.caucasian}
-                setThreshold={(threshold) => this.setThreshold('caucasian', threshold)}
-                label="Caucasian" 
-              />
-            )}
-          </div>
-          <div className="eo-def-interactive-inner-wrap flex-center col-8">
             {data.africanAmerican && (
               <Viz
                 className="eo-def-african-american"
@@ -170,7 +157,20 @@ class Definition extends Component {
                 options={africanAmericanOptions}
                 threshold={thresholds.africanAmerican}
                 setThreshold={(threshold) => this.setThreshold('africanAmerican', threshold)}
-                label="African-American" 
+                label="Black students" 
+              />
+            )}
+          </div>
+          <div className="eo-def-interactive-inner-wrap flex-center col-8">
+            {data.caucasian && (
+              <Viz
+                className="eo-def-caucasian"
+                ref={this.caucasianVizRef}
+                data={data.caucasian}
+                options={caucasianOptions}
+                threshold={thresholds.caucasian}
+                setThreshold={(threshold) => this.setThreshold('caucasian', threshold)}
+                label="White students" 
               />
             )}
           </div>

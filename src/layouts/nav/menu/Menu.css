@@ -8,7 +8,7 @@
 }
 
 .menu-item:not(:last-child) {
-  border-bottom: solid 1px var(--line);
+  border-bottom: solid 1px var(--border);
 }
 
 .mi-label {

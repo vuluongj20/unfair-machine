@@ -29,21 +29,21 @@ export const scrollContent = [
   },
   {
     id: 'discrepancy',
-    text: 'However, there is a significant discrepancy between racial groups. The most noticeable is between Caucasian and African-American defendants.',
+    text: 'However, there is a significant discrepancy between racial groups. The most noticeable is between black and white defendants.',
     width: 4,
     mobileWidth: 12,
     align: 'right'
   },
   {
     id: 'discrepancy-2',
-    text: 'The average scores are 3.1 for Caucasian defendants and 4.3 for African-Americans. The score distribution for African-Americans leans more toward the right compared to that for Caucasian defendants.',
+    text: 'The average scores are 4.3 for black defendants and 3.1 for white defendants. The score distribution for white defendants leans more toward the left compared to that for black defendants.',
     width: 4,
     mobileWidth: 12,
     align: 'right'
   },
   {
     id: 'threshold',
-    text: 'Now, to make a simple classification of a defendant\'s risk of reoffending, we use a threshold. If the defendant\'s score is above that threshold, then we label them as \"high-risk\".',
+    text: 'Now, to make a simple classification of someone\'s risk of reoffending, we use a threshold. If their score is above that threshold, then we label them as \"high-risk\".',
     width: 4,
     mobileWidth: 12,
     align: 'right'

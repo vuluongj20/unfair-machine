@@ -57,14 +57,14 @@ export const scrollContent = [
   },
   {
     id: 'disparity',
-    text: 'Another major point of concern is the discrepancy between different demographic groups. In general, the software assigns more favorable scores to Caucasian students than African-American students.',
+    text: 'Another major point of concern is the discrepancy between different demographic groups. In general, the software assigns more favorable scores to white students than black students.',
     width: 4,
     mobileWidth: 12,
     align: 'left'
   },
   {
     id: 'justification',
-    text: 'Such disparate predictions are potentially justified, as African-American students are historically 60% more likely to drop out of college than Caucasian students.',
+    text: 'Such disparate predictions represent a potentially true reflection of reality, as black students are historically 60% more likely to drop out of college than white students.',
     width: 4,
     mobileWidth: 12,
     align: 'left'

@@ -35,7 +35,7 @@
 	bottom: 0;
 	transform: translateX(-50%) scaleX(0);
 	width: 200vw;
-	border-top: solid 1px var(--line);
+	border-top: solid 2px var(--border);
 	z-index: -1;
 }
 .article-title-underline.vertical {
@@ -45,7 +45,7 @@
 	transform-origin: bottom;
 	transform: translateY(-50%) scaleY(0);
 	height: 200vh;
-	border-right: solid 1px var(--line);
+	border-right: solid 2px var(--border);
 	z-index: -1;
 }
 .article-title {

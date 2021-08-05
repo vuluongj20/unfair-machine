@@ -114,31 +114,31 @@ class Demo extends Component {
               )}
             </div>
             <div className="eod-viz-specific-wrap absolute-center">
-              <div className="eod-viz-caucasian-wrap">
-                {data.caucasian && (
-                  <Viz 
-                    className="eod-viz-caucasian"
-                    label="Caucasian students"
-                    data={data.caucasian} 
-                    animations={disparityAnimations}
-                    animationTriggers={section => `#eod-scroll-section-${section.id}  > .eod-scroll-text-wrap`}
-                    options={caucasianOptions}
-                    threshold={thresholds.caucasian}
-                    setThreshold={(threshold) => this.setThreshold('caucasian', threshold)}
-                  />
-                )}
-              </div>
               <div className="eod-viz-african-american-wrap">
                 {data.africanAmerican && (
                   <Viz 
                     className="eod-viz-african-american"
-                    label="African-American students"
+                    label="Black students"
                     data={data.africanAmerican} 
                     animations={disparityAnimations}
                     animationTriggers={section => `#eod-scroll-section-${section.id}  > .eod-scroll-text-wrap`}
                     options={africanAmericanOptions}
                     threshold={thresholds.africanAmerican}
                     setThreshold={(threshold) => this.setThreshold('africanAmerican', threshold)}
+                  />
+                )}
+              </div>
+              <div className="eod-viz-caucasian-wrap">
+                {data.caucasian && (
+                  <Viz 
+                    className="eod-viz-caucasian"
+                    label="White students"
+                    data={data.caucasian} 
+                    animations={disparityAnimations}
+                    animationTriggers={section => `#eod-scroll-section-${section.id}  > .eod-scroll-text-wrap`}
+                    options={caucasianOptions}
+                    threshold={thresholds.caucasian}
+                    setThreshold={(threshold) => this.setThreshold('caucasian', threshold)}
                   />
                 )}
               </div>
