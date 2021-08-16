@@ -23,6 +23,19 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-mixpanel`,
+      options: {
+        apiToken: `01ba9aaafc811c22cac104df052ca61f`,
+        enableOnDevMode: false,
+        pageViews: {
+          "/": `------ Home`,
+          "/blinding": `------ Blinding`,
+          "/equal-outcome": `------ Equality of Outcome`,
+          "/equal-opportunity": `------ Equality of Opportunity`,
+        },
+      },
+    },
     `gatsby-plugin-sass`,
   ],
 }
