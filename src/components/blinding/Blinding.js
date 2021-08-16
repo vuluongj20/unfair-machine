@@ -8,8 +8,8 @@ import Definition from './definition/Definition'
 import Fairness from './fairness/Fairness'
 import Redundancy from './redundancy/Redundancy'
 import Summary from './summary/Summary'
-import Footer from '../../layouts/footer/Footer'
 import InternalMenu from '../../layouts/nav/internal-menu/InternalMenu'
+import Footer from '../../layouts/footer/Footer'
 
 const datasets = {
   prod: {
