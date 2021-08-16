@@ -33,13 +33,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-mixpanel`,
       options: {
-        trackingIds: [
-          "G-R41LY9Z1ML"
-        ],
+        apiToken: `01ba9aaafc811c22cac104df052ca61f`,
+        enableOnDevMode: false,
+        pageViews: {
+          "/": `Page view - Home`,
+          "/blinding": `Page View - Blinding`,
+          "/equal-outcome": `Page View - Equality of Outcome`,
+          "/equal-opportunity": `Page View - Equality of Opportunity`,
+        },
       },
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
   ],
 }
