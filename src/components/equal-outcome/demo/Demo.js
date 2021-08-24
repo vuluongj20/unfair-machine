@@ -222,7 +222,7 @@ class Demo extends Component {
                   <div className="dpd-interactive-result-acceptance-wrap">
                     <p className="dpd-interactive-label">% classified as high-risk</p>
                     <p className="dpd-interactive-acceptance quote">
-                      {`${acceptance.caucasian}`}
+                      {`${acceptance.africanAmerican}`}
                       <span className="dpd-interactive-acceptance-unit">%</span>
                     </p>
                   </div>
@@ -232,7 +232,7 @@ class Demo extends Component {
                   <div className="dpd-interactive-result-acceptance-wrap">
                     <p className="dpd-interactive-label">% classified as high-risk</p>
                     <p className="dpd-interactive-acceptance quote">
-                      {`${acceptance.africanAmerican}`}
+                      {`${acceptance.caucasian}`}
                       <span className="dpd-interactive-acceptance-unit">%</span>
                     </p>
                   </div>
