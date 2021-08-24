@@ -142,7 +142,7 @@ class Redundancy extends Component {
                     >
                       <path 
                         d="M34.0005 8.00021C49.5005 1.50021 67.8005 7.50031 71.0005 17.5003C75.0005 30.0003 45.5002 39.0005 19.0003 34.9998C-6.36862 31.1699 -3.99965 3.49945 26.0005 1.50021C42.5 0.400669 55.1667 7.16663 60.5 12" 
-                        stroke="#FFF6E0" 
+                        stroke="#f0e3c2" 
                         strokeWidth="2" 
                         strokeLinecap="round"
                         className="gur-illustration-circle-path"
@@ -163,7 +163,7 @@ class Redundancy extends Component {
                           viewBox={`0 0 ${arrowWidth} 120`} 
                           fill="none"
                           className="gur-illustration-arrow"
-                          stroke="#FFF6E0" 
+                          stroke="#f0e3c2" 
                           strokeWidth="2" 
                           strokeLinecap="round"
                         >

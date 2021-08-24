@@ -14,14 +14,14 @@ gsap.registerPlugin(ScrollTrigger)
 const styles = {
   '--background': '#1A1A1A',
   '--surface': '#1D1D1D',
-  '--dark': '#e8dfc9',
+  '--dark': '#f0e3c2',
   '--medium': '#d8cfb6',
   '--light': 'rgba(241, 229, 198, 0.5)',
   '--line': 'rgba(241, 229, 198, 0.12)',
   '--border': 'rgba(241, 229, 198, 0.05)',
   '--red': '#FF0048',
   '--red-light': 'rgba(255, 0, 72, 0.4)',
-  '--blue': '#fff6e0',
+  '--blue': '#f0e3c2',
   '--blue-light': 'rgba(255, 246, 224, 0.4)',
   '--surface-blue': '#F0F4FF'
 }
