@@ -1,21 +1,24 @@
 export const scrollContent = [
   {
     id: "topic",
-    text: "In 2012, the Wisconsin Department of Corrections began using COMPAS - software that predicts a defendant's likelihood of reoffending - for making sentencing decisions.",
+    text:
+      "In 2012, the Wisconsin Department of Corrections began using COMPAS - software that predicts a defendant's likelihood of reoffending - for making sentencing decisions.",
     width: 6,
     mobileWidth: 12,
     align: "center",
   },
   {
     id: "score-system",
-    text: "Each defendant was assigned a score from 1 to 10, with 1 being the least likely to reoffend and 10 being the most likely.",
+    text:
+      "Each defendant was assigned a score from 1 to 10, with 1 being the least likely to reoffend and 10 being the most likely.",
     width: 4,
     mobileWidth: 12,
     align: "right",
   },
   {
     id: "distribution",
-    text: "Here's the overall score distribution. The x-axis is the score and the y-axis is the percentage of defendants who were assigned that score.",
+    text:
+      "Here's the overall score distribution. The x-axis is the score and the y-axis is the percentage of defendants who were assigned that score.",
     width: 4,
     mobileWidth: 12,
     align: "right",
@@ -29,21 +32,24 @@ export const scrollContent = [
   },
   {
     id: "discrepancy",
-    text: "However, there is a significant discrepancy between racial groups. The most noticeable is between black and white defendants.",
+    text:
+      "However, there is a significant discrepancy between racial groups. The most noticeable is between black and white defendants.",
     width: 4,
     mobileWidth: 12,
     align: "right",
   },
   {
     id: "discrepancy-2",
-    text: "The average scores are 4.3 for black defendants and 3.1 for white defendants. The score distribution for white defendants leans more toward the left compared to that for black defendants.",
+    text:
+      "The average scores are 4.3 for black defendants and 3.1 for white defendants. The score distribution for white defendants leans more toward the left compared to that for black defendants.",
     width: 4,
     mobileWidth: 12,
     align: "right",
   },
   {
     id: "threshold",
-    text: 'Now, to make a simple classification of someone\'s risk of reoffending, we use a threshold. If their score is above that threshold, then we label them as "high-risk".',
+    text:
+      'Now, to make a simple classification of someone\'s risk of reoffending, we use a threshold. If their score is above that threshold, then we label them as "high-risk".',
     width: 4,
     mobileWidth: 12,
     align: "right",
@@ -94,7 +100,7 @@ export const generalAnimations = [
       {
         target: ".x-axis > .tick > text",
         from: { opacity: 0 },
-        to: { opacity: 0.3 },
+        to: { opacity: 0.6 },
         location: "start",
         stagger: true,
       },
@@ -106,7 +112,7 @@ export const generalAnimations = [
       {
         target: ".y-axis > .tick > text",
         from: { opacity: 0 },
-        to: { opacity: 0.3 },
+        to: { opacity: 0.6 },
         location: "start",
         stagger: true,
       },
@@ -229,7 +235,7 @@ const discrepancyFadeInAnimations = [
   {
     target: ".x-axis > .tick > text",
     from: { opacity: 0 },
-    to: { opacity: 0.3 },
+    to: { opacity: 0.6 },
     location: "start",
     stagger: true,
   },
@@ -242,7 +248,7 @@ const discrepancyFadeInAnimations = [
   {
     target: ".y-axis > .tick > text",
     from: { opacity: 0 },
-    to: { opacity: 0.3 },
+    to: { opacity: 0.6 },
     location: "start",
     stagger: true,
   },
@@ -321,7 +327,7 @@ export const discrepancyThresholdAnimations = [
   },
   {
     target: ".y-axis > .tick > text",
-    from: { opacity: 0.3 },
+    from: { opacity: 0.6 },
     to: { opacity: 0 },
     location: "start",
     stagger: true,

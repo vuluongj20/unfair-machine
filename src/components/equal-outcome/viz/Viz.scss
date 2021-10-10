@@ -61,7 +61,7 @@
 
     > .tick > text {
       fill: var(--light);
-      opacity: 0.3;
+      opacity: 0.6;
       transform: translate(-32px, 16px);
       font-size: 14px;
       text-align: right;
@@ -98,7 +98,7 @@
     }
 
     > .mean-text {
-      fill: var(--light);
+      fill: var(--medium);
       font-size: 14px;
       transform: translate(8px, 14px);
     }
