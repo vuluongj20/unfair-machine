@@ -36,6 +36,7 @@
     "window-resize": "^0.0.5"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "prettier": "2.1.2"
   },
   "keywords": [

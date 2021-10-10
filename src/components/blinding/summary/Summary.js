@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import "./Summary.css"
 
+import { parseReferenceLinks } from "../../../utils/references"
+
 const headingQuote =
   "Blinding is an intuitive strategy that helps improve a model's procedural fairness, but it has little effect on the outcome distribution."
 const body = [
@@ -17,7 +19,7 @@ class Summary extends Component {
             <h2 className="heading">In the End</h2>
             <div className="heading-quote-wrap mt-2">
               <div className="heading-quote quote-small mb-2">
-                {headingQuote}
+                {parseReferenceLinks(headingQuote)}
               </div>
               <div className="heading-quote-line mb-2" />
             </div>
@@ -27,7 +29,7 @@ class Summary extends Component {
           {body.map((content, index) => {
             return (
               <p className="guf-text" key={index}>
-                {content}
+                {parseReferenceLinks(content)}
               </p>
             )
           })}

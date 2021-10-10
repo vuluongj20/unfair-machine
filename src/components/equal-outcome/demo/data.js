@@ -2,7 +2,7 @@ export const scrollContent = [
   {
     id: "topic",
     text:
-      "In 2012, the Wisconsin Department of Corrections began using COMPAS - software that predicts a defendant's likelihood of reoffending - for making sentencing decisions.",
+      "In 2012, the Wisconsin Department of Corrections began using COMPAS - software that predicts a defendant's likelihood of reoffending - for making sentencing decisions [1].",
     width: 6,
     mobileWidth: 12,
     align: "center",

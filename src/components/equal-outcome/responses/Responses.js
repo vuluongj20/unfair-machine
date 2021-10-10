@@ -1,11 +1,13 @@
 import React, { Component } from "react"
 import "./Responses.css"
 
+import { parseReferenceLinks } from "../../../utils/references"
+
 const headingQuote =
   "Some stakeholders may object to the use of Equality of Outcome in decision-making models. There are two main objections that warrant further discussion."
 
 const accuracyBody = [
-  'Algorithm designers are concerned with the effect of rate equalization on model accuracy. Changing the acceptance thresholds on any given model will also change its accuracy. In essence, the thresholds determine who gets classified as what (higher thresholds mean fewer people will get classified as "high-risk"). Changing the thresholds will most likely change the number of misclassifications, resulting in different accuracy scores.',
+  'Algorithm designers are concerned with the effect of rate equalization on model accuracy. Changing the acceptance thresholds on any given model will also change its accuracy. In essence, the thresholds determine who gets classified as what (higher thresholds mean fewer people will get classified as "high-risk"). Changing the thresholds will most likely change the number of misclassifications, resulting in different accuracy scores [5].',
   "This is a valid concern, but not a fatal flaw that precludes the use of outcome-equal models. Since the thresholds are often continuous and movable, there may be an acceptable level that strikes a balance between performance and equity/equality among demographic groups. This is a decision that algorithm designers must make on a case-by-case basis, with careful consideration of the model's architecture, the data it uses, and the history that is reflected in that data.",
 ]
 
@@ -29,7 +31,7 @@ class Responses extends Component {
             <h2 className="heading">Potential Objections</h2>
             <div className="heading-quote-wrap mt-2">
               <div className="heading-quote quote-small mb-2">
-                {headingQuote}
+                {parseReferenceLinks(headingQuote)}
               </div>
               <div className="heading-quote-line mb-2" />
             </div>
@@ -41,7 +43,7 @@ class Responses extends Component {
             {accuracyBody.map((para, index) => {
               return (
                 <p className="guf-text" key={index}>
-                  {para}
+                  {parseReferenceLinks(para)}
                 </p>
               )
             })}
@@ -51,7 +53,7 @@ class Responses extends Component {
             {treatmentBody.map((para, index) => {
               return (
                 <p className="guf-text" key={index}>
-                  {para}
+                  {parseReferenceLinks(para)}
                 </p>
               )
             })}

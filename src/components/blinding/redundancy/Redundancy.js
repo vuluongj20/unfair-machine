@@ -6,6 +6,8 @@ import whatInput from "what-input"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 
+import { parseReferenceLinks } from "../../../utils/references"
+
 const bodyTop = [
   "Normally, we would expect that if an algorithmic model has no access to sensitive information, then its predictions will be more equal or equitable. This turns out not to be the case. Try it with the model below.",
 ]
@@ -32,7 +34,7 @@ const illustration = {
 }
 const bodyBottom = [
   "This leakage happens due to correlational relationships between variables. For example, men have historically had higher incomes than women. A large part of this is due to unequal divisions of labor and existing stigma against women in the workplace. This means that if an applicant has a high income, they are more likely to be male than female. As such, in a dataset, information on an applicant's sex is partially embedded in their income, in this case the Capital Gain variable. The same goes for other variables like Education and Occupation.",
-  "Now, there is not a definite relationship between Sex and these other variables. Many women still have higher levels of income than the male median. Many are accomplished academics with high-paying, respectable jobs. The information leakage that we see here is an aggregative phenomenon. It only arises in large datasets where we often lose sight of individual cases and only consider the overall population's statistics. The leakage is of concern in this case because algorithmic models do learn from these population statistics. If there is some bias in the statistics, then the models will also reflect those biases in their predictions.",
+  "Now, there is not a definite relationship between Sex and these other variables. Many women still have higher levels of income than the male median. Many are accomplished academics with high-paying, respectable jobs. The information leakage that we see here is an aggregative phenomenon. It only arises in large datasets where we often lose sight of individual cases and only consider the overall population's statistics. The leakage is of concern in this case because algorithmic models do learn from these population statistics. If there is some bias in the statistics, then the models will also reflect those biases in their predictions [4].",
   "It is difficult, sometimes impossible, to effectively remove information leakages. First, there is no easy way to find out where sensitive information might be hiding among non-sensitive variables, especially in large and complex datasets. Second, even if we could do so, successfully removing all of the sensitive information, the remaining dataset would not be a good representation of the sample population. For example, to remove the correlation between Sex and Education, we would have to modify values in the Education column. Such tampering of the input data risks creating new, unintentional biases, defeating the point of blinding in the first place.",
 ]
 
@@ -143,7 +145,7 @@ class Redundancy extends Component {
           {bodyTop.map((para, index) => {
             return (
               <p className="guf-text" key={index}>
-                {para}
+                {parseReferenceLinks(para)}
               </p>
             )
           })}
@@ -157,7 +159,7 @@ class Redundancy extends Component {
           {bodyMid.map((para, index) => {
             return (
               <p className="guf-text" key={index}>
-                {para}
+                {parseReferenceLinks(para)}
               </p>
             )
           })}
@@ -243,7 +245,7 @@ class Redundancy extends Component {
           {bodyBottom.map((para, index) => {
             return (
               <p className="guf-text" key={index}>
-                {para}
+                {parseReferenceLinks(para)}
               </p>
             )
           })}

@@ -25,6 +25,8 @@ import {
   interactiveContent,
 } from "./data"
 
+import { parseReferenceLinks } from "../../../utils/references"
+
 const combinedData = {
   general: generalData,
   caucasian: caucasianData,
@@ -353,7 +355,9 @@ class Demo extends Component {
                   <div
                     className={`dpd-scroll-text-wrap col-${section.width} col-${section.mobileWidth}-sm`}
                   >
-                    <p className="dpd-scroll-text">{section.text}</p>
+                    <p className="dpd-scroll-text">
+                      {parseReferenceLinks(section.text)}
+                    </p>
                   </div>
                 </div>
               )

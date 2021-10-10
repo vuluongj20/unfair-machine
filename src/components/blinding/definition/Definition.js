@@ -4,8 +4,7 @@ import "./Definition.css"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-import { unified } from "unified"
-import remarkParse from "remark-parse"
+import { parseReferenceLinks } from "../../../utils/references"
 
 const bodyTop = [
   "The omission of one or more of the variables above, especially the sensitive demographic information like Race and Sex, can increase the model's fairness. The idea is that if a model has no access to sensitive variables, then it cannot discriminate against anyone based on those variables. This strategy is called Blinding.",
@@ -112,7 +111,7 @@ class Definition extends Component {
         {bodyTop.map((para, ind) => {
           return (
             <div key={ind} className="text-wrap center mt-2">
-              <p>{para}</p>
+              <p>{parseReferenceLinks(para)}</p>
             </div>
           )
         })}

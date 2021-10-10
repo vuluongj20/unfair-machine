@@ -11,8 +11,10 @@ import { caucasianOptions, africanAmericanOptions } from "./data"
 
 import { dataPoints } from "../demo/data"
 
+import { parseReferenceLinks } from "../../../utils/references"
+
 const body = [
-  "The third conception of fairness - Equality of Opportunity - would require that we equalize the true positive rates between the two groups. Similar to Equality of Outcome, this involves modifying the thresholds to equalize a specific quantity. Here, instead of the overall prediction rate, that quantity is the true positive rate.",
+  "The third conception of fairness - Equality of Opportunity - would require that we equalize the true positive rates between the two groups [1]. Similar to Equality of Outcome, this involves modifying the thresholds to equalize a specific quantity. Here, instead of the overall prediction rate, that quantity is the true positive rate.",
   "The model below has been modified to always equalize true positive rates among groups. Move one of the thresholds up or down and see how the other also moves to satisfy the equality requirement.",
 ]
 
@@ -173,8 +175,8 @@ class Definition extends Component {
           </div>
         </div>
         <div className="text-wrap center my-3">
-          <p className="eo-def-description">{body[0]}</p>
-          <p className="eo-def-description">{body[1]}</p>
+          <p className="eo-def-description">{parseReferenceLinks(body[0])}</p>
+          <p className="eo-def-description">{parseReferenceLinks(body[1])}</p>
         </div>
         <div className="eo-def-interactive-wrap flex-center flex-col py-2 surface by">
           <div className="eo-def-interactive-inner-wrap flex-center col-8">

@@ -15,13 +15,15 @@ import {
   africanAmericanConfig,
 } from "./data"
 
+import { parseReferenceLinks } from "../../../utils/references"
+
 const combinedData = {
   caucasian: caucasianData,
   africanAmerican: africanAmericanData,
 }
 
 const body = [
-  'The second conception of fairness that we are considering - Equality of Outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups. For example, if we want to have an HCR of 64% over the entire population, which is the true population average, then we must ensure that all demographic groups have an HCR of around 64%. This means we need to set the threshold at 3.2 for black defendants and 2.0 for white defendants, given their different score distributions.',
+  'The second conception of fairness that we are considering - Equality of Outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups [2]. For example, if we want to have an HCR of 64% over the entire population, which is the true population average, then we must ensure that all demographic groups have an HCR of around 64%. This means we need to set the threshold at 3.2 for black defendants and 2.0 for white defendants, given their different score distributions.',
   "It is most likely the case that under Equality of Outcome, we would need different thresholds for different demographic groups. Try the fixed model below. It has been modified to always equalize the HCRs (numbers on the right-hand side). Move one of the thresholds up or down and see how the model automatically updates the other threshold in order to keep the HCRs equal among the two group.",
 ]
 
@@ -171,7 +173,7 @@ class Definition extends Component {
         </div>
         <div className="text-wrap center mt-2 mb-3">
           {body.map((para, ind) => {
-            return <p key={ind}>{para}</p>
+            return <p key={ind}>{parseReferenceLinks(para)}</p>
           })}
         </div>
         <div className="dp-def-interactive-wrap surface by flex-center flex-col py-2">
