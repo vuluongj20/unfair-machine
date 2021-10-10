@@ -9,9 +9,9 @@
   padding-right: 1.2em;
 }
 .footer p {
-	font-size: 0.8em;
-	color: var(--light);
-	margin-bottom: 0;
+  font-size: 0.8em;
+  color: var(--light);
+  margin-bottom: 0;
 }
 @supports (padding: max(0px)) {
   .footer {

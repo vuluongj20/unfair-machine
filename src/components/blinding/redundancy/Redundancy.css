@@ -1,31 +1,31 @@
 .gur-inner-wrap {
-	flex-direction: column;
+  flex-direction: column;
 }
 .gur-illustration-padding {
-	height: 120px;
+  height: 120px;
 }
 .gur-illustration-inner-wrap {
   display: flex;
   justify-content: space-between;
 }
 .gur-variable-wrap {
-	position: relative;
+  position: relative;
 }
 .gur-illustration-circle {
-	position: absolute;
-	width: 200%;
-	height: auto;
+  position: absolute;
+  width: 200%;
+  height: auto;
 }
 .gur-illustration-arrow-wrap {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateY(calc(-100% - 0.4em));
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateY(calc(-100% - 0.4em));
 }
 .gur-illustration-arrow {
-	overflow: visible;
+  overflow: visible;
 }
 .gur-illustration-arrow-wrap.flipped {
-	transform-origin: left;
-	transform: scaleX(-1) translate(-4px, calc(-100% - 0.4em));
+  transform-origin: left;
+  transform: scaleX(-1) translate(-4px, calc(-100% - 0.4em));
 }

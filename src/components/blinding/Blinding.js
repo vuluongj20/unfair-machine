@@ -1,49 +1,50 @@
-import React, { Component } from 'react'
-import * as tf from '@tensorflow/tfjs'
-import './Blinding.css'
+import React, { Component } from "react"
+import * as tf from "@tensorflow/tfjs"
+import "./Blinding.css"
 
-import Demo from './demo/Demo'
-import Hero from './hero/Hero'
-import Definition from './definition/Definition'
-import Fairness from './fairness/Fairness'
-import Redundancy from './redundancy/Redundancy'
-import Summary from './summary/Summary'
-import InternalMenu from '../../layouts/nav/internal-menu/InternalMenu'
-import Footer from '../../layouts/footer/Footer'
+import Demo from "./demo/Demo"
+import Hero from "./hero/Hero"
+import Definition from "./definition/Definition"
+import Fairness from "./fairness/Fairness"
+import Redundancy from "./redundancy/Redundancy"
+import Summary from "./summary/Summary"
+import InternalMenu from "../../layouts/nav/internal-menu/InternalMenu"
+import Footer from "../../layouts/footer/Footer"
 
 const datasets = {
   prod: {
-    train: 'https://res.cloudinary.com/vuluongj20/raw/upload/v1605146921/unfair-machine/datasets/adult-train2.csv',
-    test: 'https://res.cloudinary.com/vuluongj20/raw/upload/v1605146919/unfair-machine/datasets/adult-test.csv'
+    train:
+      "https://res.cloudinary.com/vuluongj20/raw/upload/v1605146921/unfair-machine/datasets/adult-train2.csv",
+    test: "https://res.cloudinary.com/vuluongj20/raw/upload/v1605146919/unfair-machine/datasets/adult-test.csv",
   },
   dev: {
-    train: '/datasets/adult-train.csv',
-    test: '/datasets/adult-test.csv'
-  }
+    train: "/datasets/adult-train.csv",
+    test: "/datasets/adult-test.csv",
+  },
 }
 
-const columnNames =  [
-  'age',
-  'workclass',
-  'fnlwgt',
-  'education',
-  'education-num',
-  'marital-status',
-  'occupation',
-  'relationship',
-  'race',
-  'sex',
-  'capital-gain',
-  'capital-loss',
-  'hours-per-week',
-  'native-country',
-  'income'
+const columnNames = [
+  "age",
+  "workclass",
+  "fnlwgt",
+  "education",
+  "education-num",
+  "marital-status",
+  "occupation",
+  "relationship",
+  "race",
+  "sex",
+  "capital-gain",
+  "capital-loss",
+  "hours-per-week",
+  "native-country",
+  "income",
 ]
 
 const columnConfigs = {
   income: {
-    isLabel: true
-  }
+    isLabel: true,
+  },
 }
 
 class Blinding extends Component {
@@ -52,22 +53,25 @@ class Blinding extends Component {
     this.state = {
       data: {
         train: null,
-        test: null
-      }
+        test: null,
+      },
     }
   }
 
   fetchData(url, columnNames, columnConfigs) {
-    return tf.data.csv(url, {
-      columnNames,
-      columnConfigs
-    }).take(1000)
+    return tf.data
+      .csv(url, {
+        columnNames,
+        columnConfigs,
+      })
+      .take(1000)
   }
 
   componentDidMount() {
-    const dataURL = datasets[process.env.environment === 'development' ? 'dev' : 'prod']
+    const dataURL =
+      datasets[process.env.environment === "development" ? "dev" : "prod"]
     this.setState({
-      data: this.fetchData(dataURL.train, columnNames, columnConfigs)
+      data: this.fetchData(dataURL.train, columnNames, columnConfigs),
     })
   }
 
@@ -88,9 +92,15 @@ class Blinding extends Component {
         <Summary />
         <hr />
         <div className="article-next-chapter-wrap container pt-4 pb-4">
-          <p className="artcile-next-chapter-prompt fc-dark fw-medium">Read Chapter 2</p>
+          <p className="artcile-next-chapter-prompt fc-dark fw-medium">
+            Read Chapter 2
+          </p>
           <div className="article-next-chapter-inner-wrap">
-            <InternalMenu location={location} showOnly={['chap-2']} centerText />
+            <InternalMenu
+              location={location}
+              showOnly={["chap-2"]}
+              centerText
+            />
           </div>
         </div>
         <Footer />

@@ -1,41 +1,41 @@
 .home-three-wrap {
-	position: fixed;
-	top: 0;
-	left: 4em;
-	width: calc(100% - 4em);
-	height: 100%;
-	z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 4em;
+  width: calc(100% - 4em);
+  height: 100%;
+  z-index: 1000;
 }
 .home-three-inner-wrap {
-	width: 20em;
-	height: 20em;
+  width: 20em;
+  height: 20em;
 }
 .home-hero-three-wrap > canvas {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .home-menu-inner-wrap {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 }
 .home-menu-label {
-	font-family: 'Founders Grotesk', Arial, sans-serif;
-	font-weight: 500;
-	color: var(--dark);
-	text-transform: uppercase;
-	width: 12em;
-	margin-left: auto;
-	margin-right: auto;
-	border-bottom: solid 1px var(--border);
-	padding-bottom: 0.2em;
+  font-family: "Founders Grotesk", Arial, sans-serif;
+  font-weight: 500;
+  color: var(--dark);
+  text-transform: uppercase;
+  width: 12em;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: solid 1px var(--border);
+  padding-bottom: 0.2em;
 }
 
 @media only screen and (max-width: 768px) {
-	.home-menu-label {
-		width: 8.4em;
-		margin: 0;
-		margin-bottom: 0.8em;
-		text-align: left;
-	}
+  .home-menu-label {
+    width: 8.4em;
+    margin: 0;
+    margin-bottom: 0.8em;
+    text-align: left;
+  }
 }

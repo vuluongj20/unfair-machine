@@ -1,9 +1,9 @@
 .home-quote-wrap {
-	opacity: 0;
+  opacity: 0;
 }
 .home-quote {
-	max-width: 56rem;
+  max-width: 56rem;
 }
 .home-quote:not(:last-child) {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }

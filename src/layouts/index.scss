@@ -19,16 +19,17 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Founders Grotesk Text', Arial, Helvetica, sans-serif;
+  font-family: "Founders Grotesk Text", Arial, Helvetica, sans-serif;
   font-size: 19px;
   font-kerning: normal;
-  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
 }
-h1, h2 {
-  font-family: 'Domaine Display Narrow', Georgia, Garamond, serif;
+h1,
+h2 {
+  font-family: "Domaine Display Narrow", Georgia, Garamond, serif;
   font-weight: 700;
   color: var(--dark);
 }
@@ -40,8 +41,9 @@ h2 {
   font-size: $h2;
   line-height: 1.2;
 }
-h3, h4 {
-  font-family: 'Founders Grotesk', Arial, sans-serif;
+h3,
+h4 {
+  font-family: "Founders Grotesk", Arial, sans-serif;
   font-weight: 500;
   color: var(--dark);
 }
@@ -55,11 +57,15 @@ h4 {
   line-height: 1.2;
   letter-spacing: -0.5px;
 }
-p, input, textarea, button, label {
+p,
+input,
+textarea,
+button,
+label {
   font-size: 1em;
   line-height: 1.4;
   color: var(--medium);
-  font-family: 'Founders Grotesk Text', Arial, Helvetica, sans-serif;
+  font-family: "Founders Grotesk Text", Arial, Helvetica, sans-serif;
 }
 p {
   margin-bottom: 1em;
@@ -74,7 +80,7 @@ a {
 small {
   color: var(--light);
 }
-html[data-whatintent='keyboard'] a:focus {
+html[data-whatintent="keyboard"] a:focus {
   outline: none;
   box-shadow: 0 0 0 4px var(--theme-light);
 }
@@ -93,12 +99,12 @@ button.block {
   display: block;
   padding: 0;
 }
-[data-whatintent='mouse'] *:focus,
-[data-whatintent='touch'] *:focus {
+[data-whatintent="mouse"] *:focus,
+[data-whatintent="touch"] *:focus {
   outline: none;
 }
-html[data-whatintent='keyboard'] button:focus, 
-html[data-whatintent='keyboard'] *[role=button]:focus {
+html[data-whatintent="keyboard"] button:focus,
+html[data-whatintent="keyboard"] *[role="button"]:focus {
   outline: none;
   box-shadow: 0 0 0 4px var(--theme-light);
 }
@@ -116,7 +122,7 @@ hr.light {
   border-bottom: solid 1px var(--border);
 }
 .quote {
-  font-family: 'Founders Grotesk', Arial, sans-serif;
+  font-family: "Founders Grotesk", Arial, sans-serif;
   font-weight: 400;
   color: var(--dark);
   line-height: 1.2;
@@ -124,7 +130,7 @@ hr.light {
   margin-bottom: 0;
 }
 .quote-small {
-  font-family: 'Founders Grotesk', Arial, sans-serif;
+  font-family: "Founders Grotesk", Arial, sans-serif;
   font-weight: 400;
   color: var(--dark);
   line-height: 1.2;
@@ -164,25 +170,52 @@ hr.light {
   overflow-x: initial;
 }
 
-
 @media only screen and (max-width: 1024px) {
-  body { font-size: 19px; }
-  h1 { font-size: $h1 * $font-size-factor-medium; }
-  h2 { font-size: $h2 * $font-size-factor-medium; }
-  h3 { font-size: $h3 * $font-size-factor-medium; }
-  h4 { font-size: $h4 * $font-size-factor-medium; }
-  .quote { font-size: $quote * 0.8; }
-  .quote-small { font-size: $quote-small * 0.8; }
+  body {
+    font-size: 19px;
+  }
+  h1 {
+    font-size: $h1 * $font-size-factor-medium;
+  }
+  h2 {
+    font-size: $h2 * $font-size-factor-medium;
+  }
+  h3 {
+    font-size: $h3 * $font-size-factor-medium;
+  }
+  h4 {
+    font-size: $h4 * $font-size-factor-medium;
+  }
+  .quote {
+    font-size: $quote * 0.8;
+  }
+  .quote-small {
+    font-size: $quote-small * 0.8;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  body { font-size: 17px; }
-  h1 { font-size: $h1 * $font-size-factor-small; }
-  h2 { font-size: $h2 * $font-size-factor-small; }
-  h3 { font-size: $h3 * $font-size-factor-small; }
-  h4 { font-size: $h4 * $font-size-factor-small; }
-  .quote { font-size: $quote * $font-size-factor-medium; }
-  .quote-small { font-size: $quote-small * $font-size-factor-medium; }
+  body {
+    font-size: 17px;
+  }
+  h1 {
+    font-size: $h1 * $font-size-factor-small;
+  }
+  h2 {
+    font-size: $h2 * $font-size-factor-small;
+  }
+  h3 {
+    font-size: $h3 * $font-size-factor-small;
+  }
+  h4 {
+    font-size: $h4 * $font-size-factor-small;
+  }
+  .quote {
+    font-size: $quote * $font-size-factor-medium;
+  }
+  .quote-small {
+    font-size: $quote-small * $font-size-factor-medium;
+  }
 
   .app-content-wrapper {
     width: 100%;
@@ -194,32 +227,31 @@ hr.light {
   }
 }
 
-
 /* FONTS */
 @font-face {
   font-family: Founders Grotesk;
   font-weight: 400;
-  src: url('/fonts/FoundersGrotesk-Regular.woff2') format('woff2'),
-    url('/fonts/FoundersGrotesk-Regular.woff') format('woff');
+  src: url("/fonts/FoundersGrotesk-Regular.woff2") format("woff2"),
+    url("/fonts/FoundersGrotesk-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: Founders Grotesk Text;
   font-weight: 500;
-  src: url('/fonts/FoundersGroteskText-Medium.woff2') format('woff2'),
-    url('/fonts/FoundersGroteskText-Medium.woff') format('woff');
+  src: url("/fonts/FoundersGroteskText-Medium.woff2") format("woff2"),
+    url("/fonts/FoundersGroteskText-Medium.woff") format("woff");
 }
 
 @font-face {
   font-family: Founders Grotesk Text;
   font-weight: 400;
-  src: url('/fonts/FoundersGroteskText-Regular.woff2') format('woff2'),
-    url('/fonts/FoundersGroteskText-Regular.woff') format('woff');
+  src: url("/fonts/FoundersGroteskText-Regular.woff2") format("woff2"),
+    url("/fonts/FoundersGroteskText-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: Domaine Display Narrow;
   font-weight: 700;
-  src: url('/fonts/DomaineDispNar-Bold.woff2') format('woff2'),
-    url('/fonts/DomaineDispNar-Bold.woff') format('woff');
+  src: url("/fonts/DomaineDispNar-Bold.woff2") format("woff2"),
+    url("/fonts/DomaineDispNar-Bold.woff") format("woff");
 }

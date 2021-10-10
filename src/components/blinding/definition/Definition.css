@@ -1,57 +1,56 @@
 .gud-table {
-	display: flex;
-	justify-content: stretch;
-	height: 12em;
-	border: solid 5px var(--blue);
+  display: flex;
+  justify-content: stretch;
+  height: 12em;
+  border: solid 5px var(--blue);
 }
 .gud-column {
-	position: relative;
-	border-left: solid 4px var(--blue-light);
-	width: 100%;
+  position: relative;
+  border-left: solid 4px var(--blue-light);
+  width: 100%;
 }
 .gud-column-background {
-	background-color: var(--blue-light);
-	opacity: 0;
-	transition: opacity 60ms;
+  background-color: var(--blue-light);
+  opacity: 0;
+  transition: opacity 60ms;
 }
 .gud-column:first-child {
-	border-left: none;
+  border-left: none;
 }
 .gud-head-wrap {
-	border-bottom: solid 4px var(--blue-light);
-	padding: 0.8em 0;
+  border-bottom: solid 4px var(--blue-light);
+  padding: 0.8em 0;
 }
 .gud-head {
-	margin: 0;
-	text-transform: uppercase;
-	font-size: 0.9em;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.9em;
 }
 .gud-body-wrap {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	height: calc(100% - 3.2em);
-	padding: 0.8em 0;
-	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(100% - 3.2em);
+  padding: 0.8em 0;
+  box-sizing: border-box;
 }
 .gud-body-svg {
-	width: 60%;
+  width: 60%;
 }
 .gud-table-des {
-	display: inline-block;
-	float: right;
+  display: inline-block;
+  float: right;
 }
 
-
 @media only screen and (max-width: 768px) {
-	.gud-table {
-		border: solid 3px var(--blue);
-	}
-	.gud-column {
-		border-left: solid 3px var(--blue-light);
-	}
-	.gud-head-wrap {
-		border-bottom: solid 3px var(--blue-light);
-	}
+  .gud-table {
+    border: solid 3px var(--blue);
+  }
+  .gud-column {
+    border-left: solid 3px var(--blue-light);
+  }
+  .gud-head-wrap {
+    border-bottom: solid 3px var(--blue-light);
+  }
 }

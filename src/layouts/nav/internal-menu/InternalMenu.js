@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import './InternalMenu.css'
+import React, { Component } from "react"
+import "./InternalMenu.css"
 
-import Menu from '../menu/Menu'
+import Menu from "../menu/Menu"
 
-import gsap from 'gsap'
+import gsap from "gsap"
 
 class InternalMenu extends Component {
   constructor(props) {
@@ -11,24 +11,48 @@ class InternalMenu extends Component {
     this.pageExit = this.pageExit.bind(this)
     this.pageEntry = this.pageEntry.bind(this)
   }
-  
 
   pageExit(background) {
-    document.querySelector('.ns-background').style.background = background
+    document.querySelector(".ns-background").style.background = background
 
-    gsap.to('.ns-background-decoration-wrap', { opacity: 1, ease: 'expo.out', duration: 0.6, delay: 0.2 })
-    gsap.fromTo('.nsd-cross-s-1', { rotate: 0 }, { rotate: 180, ease: 'none', duration: 0.6, repeat: -1 })
-    gsap.fromTo('.nsd-cross-s-2', { rotate: 90 }, { rotate: 270, ease: 'none', duration: 1.2, repeat: -1 })
+    gsap.to(".ns-background-decoration-wrap", {
+      opacity: 1,
+      ease: "expo.out",
+      duration: 0.6,
+      delay: 0.2,
+    })
+    gsap.fromTo(
+      ".nsd-cross-s-1",
+      { rotate: 0 },
+      { rotate: 180, ease: "none", duration: 0.6, repeat: -1 }
+    )
+    gsap.fromTo(
+      ".nsd-cross-s-2",
+      { rotate: 90 },
+      { rotate: 270, ease: "none", duration: 1.2, repeat: -1 }
+    )
 
     const nsdCrossLOffset = Math.random() * 90
-    gsap.fromTo('.nsd-cross-l-1', { rotate: nsdCrossLOffset }, { rotate: nsdCrossLOffset + 180, ease: 'none', duration: 8, repeat: -1 })
-    gsap.fromTo('.nsd-cross-l-2', { rotate: nsdCrossLOffset + 90 }, { rotate: nsdCrossLOffset + 270, ease: 'none', duration: 16, repeat: -1 })
+    gsap.fromTo(
+      ".nsd-cross-l-1",
+      { rotate: nsdCrossLOffset },
+      { rotate: nsdCrossLOffset + 180, ease: "none", duration: 8, repeat: -1 }
+    )
+    gsap.fromTo(
+      ".nsd-cross-l-2",
+      { rotate: nsdCrossLOffset + 90 },
+      { rotate: nsdCrossLOffset + 270, ease: "none", duration: 16, repeat: -1 }
+    )
 
-    gsap.to('.ns-background', { 
-      scaleX: 1, ease: 'expo.out', duration: 1.2, overwrite: true,
+    gsap.to(".ns-background", {
+      scaleX: 1,
+      ease: "expo.out",
+      duration: 1.2,
+      overwrite: true,
       onComplete: () => {
-        document.querySelector('.ns-background-wrap').style.pointerEvents = 'initial'
-      }
+        document.querySelector(".ns-background-wrap").style.pointerEvents =
+          "initial"
+      },
     })
   }
 
@@ -37,7 +61,7 @@ class InternalMenu extends Component {
     let imageCounter = 0
 
     for (let image of document.images) {
-      if (image.classList.contains('must-load')) {
+      if (image.classList.contains("must-load")) {
         images.push(image)
       }
     }
@@ -48,29 +72,34 @@ class InternalMenu extends Component {
           this.mediaLoaded = true
         }
 
-        document.querySelector('.ns-background').style.transformOrigin = 'right'
+        document.querySelector(".ns-background").style.transformOrigin = "right"
 
         setTimeout(() => {
-          const event = new Event('media-loaded')
+          const event = new Event("media-loaded")
           document.dispatchEvent(event)
         }, 800)
 
-        gsap.to('.ns-background-decoration-wrap', 
-          { 
-            opacity: 0, ease: 'expo.out', duration: 0.6, delay: 0.6,
-            onComplete: () => {
-              gsap.killTweensOf(['.nsd-cross-s-1', '.nsd-cross-s-2'])
-        }})
+        gsap.to(".ns-background-decoration-wrap", {
+          opacity: 0,
+          ease: "expo.out",
+          duration: 0.6,
+          delay: 0.6,
+          onComplete: () => {
+            gsap.killTweensOf([".nsd-cross-s-1", ".nsd-cross-s-2"])
+          },
+        })
 
-        gsap.to('.ns-background', {
+        gsap.to(".ns-background", {
           scaleX: 0,
           duration: 1.6,
-          ease: 'expo.inOut',
+          ease: "expo.inOut",
           overwrite: true,
           onComplete: () => {
-            document.querySelector('.ns-background').style.transformOrigin = 'left'
-            document.querySelector('.ns-background-wrap').style.pointerEvents = 'none'
-          }
+            document.querySelector(".ns-background").style.transformOrigin =
+              "left"
+            document.querySelector(".ns-background-wrap").style.pointerEvents =
+              "none"
+          },
         })
       }, 0)
     }
@@ -98,7 +127,7 @@ class InternalMenu extends Component {
       if (image.complete) {
         incrementImageCounter()
       } else {
-        image.addEventListener('load', incrementImageCounter)
+        image.addEventListener("load", incrementImageCounter)
       }
     }
   }
@@ -106,15 +135,15 @@ class InternalMenu extends Component {
   render() {
     const { location, showOnly, showChapterLabel, centerText } = this.props
     return (
-      <Menu 
+      <Menu
         location={location}
         className="home-menu"
         showMenu={true}
         showOnly={showOnly}
         centerText={centerText}
         showChapterLabel={showChapterLabel}
-        pageEntry={this.pageEntry} 
-        pageExit={this.pageExit} 
+        pageEntry={this.pageEntry}
+        pageExit={this.pageExit}
       />
     )
   }

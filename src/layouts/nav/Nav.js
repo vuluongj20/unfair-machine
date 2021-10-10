@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
-import './Nav.css'
+import React, { Component } from "react"
+import "./Nav.css"
 
-import TransitionLink from 'gatsby-plugin-transition-link'
+import TransitionLink from "gatsby-plugin-transition-link"
 
-import * as focusTrap from 'focus-trap'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import gsap from 'gsap'
+import * as focusTrap from "focus-trap"
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock"
+import gsap from "gsap"
 
-import Menu from './menu/Menu'
+import Menu from "./menu/Menu"
 
 class Nav extends Component {
   constructor(props) {
     super(props)
     this.state = {
       showMenu: false,
-      transitioning: false
+      transitioning: false,
     }
     this.toggleHam = this.toggleHam.bind(this)
     this.pageExit = this.pageExit.bind(this)
@@ -25,44 +25,91 @@ class Nav extends Component {
     const { showMenu, transitioning } = this.state
 
     if (transitioning) {
-      gsap.killTweensOf(['.ns-background', '.ns-link-row', '.ns-contact-head', '.ns-contacts', '.ns-logo'])
+      gsap.killTweensOf([
+        ".ns-background",
+        ".ns-link-row",
+        ".ns-contact-head",
+        ".ns-contacts",
+        ".ns-logo",
+      ])
     }
-    this.setState({
-      showMenu: !showMenu
-    }, () => {
-      if (this.state.showMenu) {
-        this.focusTrap.activate()
-        disableBodyScroll(document.querySelector('.nav'))
-      } else {
-        this.focusTrap.deactivate()
-        enableBodyScroll(document.querySelector('.nav'))
+    this.setState(
+      {
+        showMenu: !showMenu,
+      },
+      () => {
+        if (this.state.showMenu) {
+          this.focusTrap.activate()
+          disableBodyScroll(document.querySelector(".nav"))
+        } else {
+          this.focusTrap.deactivate()
+          enableBodyScroll(document.querySelector(".nav"))
+        }
       }
-    })
+    )
   }
 
   pageExit(background) {
-    this.setState({
-      transitioning: true
-    }, () => {
-      this.focusTrap.deactivate()
+    this.setState(
+      {
+        transitioning: true,
+      },
+      () => {
+        this.focusTrap.deactivate()
 
-      document.querySelector('.ns-background').style.background = background
+        document.querySelector(".ns-background").style.background = background
 
-      gsap.to('.ns-background-decoration-wrap', { opacity: 1, ease: 'expo.out', duration: 0.6, delay: 0.2 })
-      gsap.fromTo('.nsd-cross-s-1', { rotate: 0 }, { rotate: 180, ease: 'none', duration: 0.6, repeat: -1 })
-      gsap.fromTo('.nsd-cross-s-2', { rotate: 90 }, { rotate: 270, ease: 'none', duration: 1.2, repeat: -1 })
+        gsap.to(".ns-background-decoration-wrap", {
+          opacity: 1,
+          ease: "expo.out",
+          duration: 0.6,
+          delay: 0.2,
+        })
+        gsap.fromTo(
+          ".nsd-cross-s-1",
+          { rotate: 0 },
+          { rotate: 180, ease: "none", duration: 0.6, repeat: -1 }
+        )
+        gsap.fromTo(
+          ".nsd-cross-s-2",
+          { rotate: 90 },
+          { rotate: 270, ease: "none", duration: 1.2, repeat: -1 }
+        )
 
-      const nsdCrossLOffset = Math.random() * 90
-      gsap.fromTo('.nsd-cross-l-1', { rotate: nsdCrossLOffset }, { rotate: nsdCrossLOffset + 180, ease: 'none', duration: 8, repeat: -1 })
-      gsap.fromTo('.nsd-cross-l-2', { rotate: nsdCrossLOffset + 90 }, { rotate: nsdCrossLOffset + 270, ease: 'none', duration: 16, repeat: -1 })
+        const nsdCrossLOffset = Math.random() * 90
+        gsap.fromTo(
+          ".nsd-cross-l-1",
+          { rotate: nsdCrossLOffset },
+          {
+            rotate: nsdCrossLOffset + 180,
+            ease: "none",
+            duration: 8,
+            repeat: -1,
+          }
+        )
+        gsap.fromTo(
+          ".nsd-cross-l-2",
+          { rotate: nsdCrossLOffset + 90 },
+          {
+            rotate: nsdCrossLOffset + 270,
+            ease: "none",
+            duration: 16,
+            repeat: -1,
+          }
+        )
 
-      gsap.to('.ns-background', { 
-        scaleX: 1, ease: 'expo.out', duration: 1.2, overwrite: true,
-        onComplete: () => {
-          document.querySelector('.ns-background-wrap').style.pointerEvents = 'initial'
-        }
-      })
-    })
+        gsap.to(".ns-background", {
+          scaleX: 1,
+          ease: "expo.out",
+          duration: 1.2,
+          overwrite: true,
+          onComplete: () => {
+            document.querySelector(".ns-background-wrap").style.pointerEvents =
+              "initial"
+          },
+        })
+      }
+    )
   }
 
   pageEntry() {
@@ -70,7 +117,7 @@ class Nav extends Component {
     let imageCounter = 0
 
     for (let image of document.images) {
-      if (image.classList.contains('must-load')) {
+      if (image.classList.contains("must-load")) {
         images.push(image)
       }
     }
@@ -81,32 +128,38 @@ class Nav extends Component {
           this.mediaLoaded = true
         }
 
-        enableBodyScroll(document.querySelector('.nav'))
+        enableBodyScroll(document.querySelector(".nav"))
 
-        document.querySelector('.ns-background').style.transformOrigin = 'right'
+        document.querySelector(".ns-background").style.transformOrigin = "right"
 
         setTimeout(() => {
-          const event = new Event('media-loaded')
+          const event = new Event("media-loaded")
           document.dispatchEvent(event)
         }, 800)
 
         this.setState({ showMenu: false, transitioning: false }, () => {
-          gsap.to('.ns-background-decoration-wrap', 
-            { 
-              opacity: 0, ease: 'expo.out', duration: 0.6, delay: 0.6,
-              onComplete: () => {
-                gsap.killTweensOf(['.nsd-cross-s-1', '.nsd-cross-s-2'])
-          }})
+          gsap.to(".ns-background-decoration-wrap", {
+            opacity: 0,
+            ease: "expo.out",
+            duration: 0.6,
+            delay: 0.6,
+            onComplete: () => {
+              gsap.killTweensOf([".nsd-cross-s-1", ".nsd-cross-s-2"])
+            },
+          })
 
-          gsap.to('.ns-background', {
+          gsap.to(".ns-background", {
             scaleX: 0,
             duration: 1.6,
-            ease: 'expo.inOut',
+            ease: "expo.inOut",
             overwrite: true,
             onComplete: () => {
-              document.querySelector('.ns-background').style.transformOrigin = 'left'
-              document.querySelector('.ns-background-wrap').style.pointerEvents = 'none'
-            }
+              document.querySelector(".ns-background").style.transformOrigin =
+                "left"
+              document.querySelector(
+                ".ns-background-wrap"
+              ).style.pointerEvents = "none"
+            },
           })
         })
       }, 0)
@@ -135,31 +188,35 @@ class Nav extends Component {
       if (image.complete) {
         incrementImageCounter()
       } else {
-        image.addEventListener('load', incrementImageCounter)
+        image.addEventListener("load", incrementImageCounter)
       }
     }
   }
 
   componentDidMount() {
-    this.focusTrap = focusTrap.createFocusTrap('.nav');
+    this.focusTrap = focusTrap.createFocusTrap(".nav")
 
-    document.addEventListener('media-loaded', () => {
-      gsap.to('.nav', { opacity: 1, ease: 'expo.out', duration: 1.6 })
-    }, { once: true })
+    document.addEventListener(
+      "media-loaded",
+      () => {
+        gsap.to(".nav", { opacity: 1, ease: "expo.out", duration: 1.6 })
+      },
+      { once: true }
+    )
   }
 
   render() {
     const { location } = this.props
     const { showMenu } = this.state
-    const currentPage = location && location.pathname.split('/')[1]
+    const currentPage = location && location.pathname.split("/")[1]
 
     return (
-      <nav className={`nav ${showMenu ? 'on' : ''}`}>
+      <nav className={`nav ${showMenu ? "on" : ""}`}>
         <div className="nav-logo-wrap absolute-center">
           <TransitionLink
             to="/"
             className="nav-logo-link"
-            onClick={(e) => {
+            onClick={e => {
               if (!currentPage) {
                 e.preventDefault()
                 window.scrollTo(0, 0)
@@ -168,15 +225,15 @@ class Nav extends Component {
             exit={{
               length: 1.3,
               trigger: () => {
-                this.pageExit('#212121')
-              }
+                this.pageExit("#212121")
+              },
             }}
             entry={{
               length: 1.7,
               delay: 1.3,
               trigger: () => {
                 this.pageEntry()
-              }
+              },
             }}
           >
             <p className="nav-logo-text fw-medium fc-dark">(Un)Fair Machine</p>
@@ -197,14 +254,14 @@ class Nav extends Component {
         </div>
         <div className="nav-menu-container flex-center">
           <div className="container">
-            <Menu 
+            <Menu
               location={location}
               className="nav-menu"
               showChapterLabel
-              showMenu={showMenu} 
-              pageEntry={this.pageEntry} 
-              pageExit={this.pageExit} 
-              toggleHam={this.toggleHam} 
+              showMenu={showMenu}
+              pageEntry={this.pageEntry}
+              pageExit={this.pageExit}
+              toggleHam={this.toggleHam}
             />
           </div>
         </div>

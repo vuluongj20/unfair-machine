@@ -1,26 +1,36 @@
-import React, { Component } from 'react'
-import './Hero.css'
+import React, { Component } from "react"
+import "./Hero.css"
 
-import gsap from 'gsap'
+import gsap from "gsap"
 
 const illustration = {
-  src: '/images/global/demographic-parity.svg',
-  alt: 'Equality sign'
+  src: "/images/global/demographic-parity.svg",
+  alt: "Equality sign",
 }
 
 class Hero extends Component {
   componentDidMount() {
-    document.addEventListener('media-loaded', () => {
-      gsap.fromTo('.article-title-span', 
-        { y: '1.5em' },
-        { y: 0, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
-      gsap.fromTo('.article-title-underline.horizontal', 
-        { scaleX: 0 },
-        { scaleX: 1, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
-      gsap.fromTo('.article-title-underline.vertical', 
-        { scaleY: 0 },
-        { scaleY: 1, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
-    }, { once: true })
+    document.addEventListener(
+      "media-loaded",
+      () => {
+        gsap.fromTo(
+          ".article-title-span",
+          { y: "1.5em" },
+          { y: 0, ease: "expo.out", duration: 1.6, stagger: 0.08 }
+        )
+        gsap.fromTo(
+          ".article-title-underline.horizontal",
+          { scaleX: 0 },
+          { scaleX: 1, ease: "expo.out", duration: 1.6, stagger: 0.08 }
+        )
+        gsap.fromTo(
+          ".article-title-underline.vertical",
+          { scaleY: 0 },
+          { scaleY: 1, ease: "expo.out", duration: 1.6, stagger: 0.08 }
+        )
+      },
+      { once: true }
+    )
   }
 
   render() {

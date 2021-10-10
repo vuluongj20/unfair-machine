@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import './Definition.css'
+import React, { Component } from "react"
+import "./Definition.css"
 
-import Viz from '../viz/Viz'
+import Viz from "../viz/Viz"
 
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
 import {
   // Caucasian
@@ -12,22 +12,22 @@ import {
   caucasianConfig,
   // African-American
   africanAmericanData,
-  africanAmericanConfig
-} from './data'
+  africanAmericanConfig,
+} from "./data"
 
 const combinedData = {
   caucasian: caucasianData,
-  africanAmerican: africanAmericanData
+  africanAmerican: africanAmericanData,
 }
 
 const body = [
   'The second conception of fairness that we are considering - Equality of Outcome - would require that we equalize the rate at which we classify defendants as "high-risk" (the high-risk classification rate, or HCR) among all demographic groups. For example, if we want to have an HCR of 64% over the entire population, which is the true population average, then we must ensure that all demographic groups have an HCR of around 64%. This means we need to set the threshold at 3.2 for black defendants and 2.0 for white defendants, given their different score distributions.',
-  'It is most likely the case that under Equality of Outcome, we would need different thresholds for different demographic groups. Try the fixed model below. It has been modified to always equalize the HCRs (numbers on the right-hand side). Move one of the thresholds up or down and see how the model automatically updates the other threshold in order to keep the HCRs equal among the two group.'
-  ]
+  "It is most likely the case that under Equality of Outcome, we would need different thresholds for different demographic groups. Try the fixed model below. It has been modified to always equalize the HCRs (numbers on the right-hand side). Move one of the thresholds up or down and see how the model automatically updates the other threshold in order to keep the HCRs equal among the two group.",
+]
 
 const lockIcon = {
-  src: '/icons/lock-24px.svg',
-  alt: 'Lock'
+  src: "/icons/lock-24px.svg",
+  alt: "Lock",
 }
 
 class Definition extends Component {
@@ -37,22 +37,25 @@ class Definition extends Component {
     this.state = {
       threshold: {
         caucasian: 1,
-        africanAmerican: 1
+        africanAmerican: 1,
       },
       acceptance: {
         caucasian: 1,
-        africanAmerican: 1
-      }
+        africanAmerican: 1,
+      },
     }
     this.stInstances = []
   }
 
   getAcceptanceRate(data, threshold) {
-    let acceptance  = 0
+    let acceptance = 0
     const roundedThreshold = Math.floor(threshold - 1)
 
-    data.slice(roundedThreshold + 1).forEach(datum => { acceptance += datum.y })
-    acceptance += data[roundedThreshold].y * ((roundedThreshold + 1) - (threshold - 1))
+    data.slice(roundedThreshold + 1).forEach(datum => {
+      acceptance += datum.y
+    })
+    acceptance +=
+      data[roundedThreshold].y * (roundedThreshold + 1 - (threshold - 1))
 
     return Math.round(Math.min(acceptance, 1) * 1000) / 10
   }
@@ -74,7 +77,10 @@ class Definition extends Component {
   setThreshold(id, thresholdValue, callback) {
     const { threshold, acceptance } = this.state
 
-    const newAcceptance = this.getAcceptanceRate(combinedData[id].content, thresholdValue)
+    const newAcceptance = this.getAcceptanceRate(
+      combinedData[id].content,
+      thresholdValue
+    )
 
     const newThresholds = { [id]: thresholdValue }
     const newAcceptances = { [id]: newAcceptance }
@@ -83,42 +89,65 @@ class Definition extends Component {
 
     otherDataKeys.forEach(key => {
       const otherData = combinedData[key].content
-      const equalizedThreshold = this.getThresholdFromAcceptanceRate(otherData, newAcceptance)
+      const equalizedThreshold = this.getThresholdFromAcceptanceRate(
+        otherData,
+        newAcceptance
+      )
 
       newThresholds[key] = equalizedThreshold
-      newAcceptances[key] = this.getAcceptanceRate(otherData, equalizedThreshold)
+      newAcceptances[key] = this.getAcceptanceRate(
+        otherData,
+        equalizedThreshold
+      )
     })
 
-    this.setState({
-      threshold: newThresholds,
-      acceptance: newAcceptances
-    }, callback)
+    this.setState(
+      {
+        threshold: newThresholds,
+        acceptance: newAcceptances,
+      },
+      callback
+    )
   }
 
   componentDidMount() {
-    this.setThreshold('caucasian', 2)
+    this.setThreshold("caucasian", 2)
 
     this.stInstances.push(
       ScrollTrigger.create({
-        trigger: '.dp-definition .quote',
-        start: 'top bottom',
-        end: 'top top',
+        trigger: ".dp-definition .quote",
+        start: "top bottom",
+        end: "top top",
         scrub: 0.4,
-        animation: gsap.timeline()
-          .add(gsap.fromTo('.dp-definition .quote', 
-            { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
+        animation: gsap
+          .timeline()
+          .add(
+            gsap.fromTo(
+              ".dp-definition .quote",
+              { opacity: 0 },
+              { opacity: 1, ease: "expo.out", duration: 1 }
+            ),
+            0
+          ),
       })
     )
 
     this.stInstances.push(
       ScrollTrigger.create({
-        trigger: '.dp-def-interactive-wrap',
-        start: 'top bottom',
-        end: 'top top',
+        trigger: ".dp-def-interactive-wrap",
+        start: "top bottom",
+        end: "top top",
         scrub: 0.4,
-        animation: gsap.timeline()
-          .add(gsap.fromTo('.dp-def-interactive-wrap', 
-            { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
+        animation: gsap
+          .timeline()
+          .add(
+            gsap.fromTo(
+              ".dp-def-interactive-wrap",
+              { opacity: 0 },
+              { opacity: 1, ease: "expo.out", duration: 1 }
+            ),
+            0
+          ),
       })
     )
   }
@@ -153,11 +182,13 @@ class Definition extends Component {
               config={africanAmericanConfig}
               threshold={threshold.africanAmerican}
               setThreshold={this.setThreshold}
-              label="Black defendants" 
+              label="Black defendants"
             />
             <div className="dp-def-interactive-result-wrap flex-center">
               <div className="dp-def-interactive-result-acceptance-wrap">
-                <p className="dp-def-interactive-label">% classified as high-risk</p>
+                <p className="dp-def-interactive-label">
+                  % classified as high-risk
+                </p>
                 <p className="dp-def-interactive-acceptance quote">
                   {`${acceptance.africanAmerican}`}
                   <span className="dp-def-interactive-acceptance-unit">%</span>
@@ -177,11 +208,13 @@ class Definition extends Component {
               config={caucasianConfig}
               threshold={threshold.caucasian}
               setThreshold={this.setThreshold}
-              label="White defendants" 
+              label="White defendants"
             />
             <div className="dp-def-interactive-result-wrap flex-center">
               <div className="dp-def-interactive-result-acceptance-wrap">
-                <p className="dp-def-interactive-label">% classified as high-risk</p>
+                <p className="dp-def-interactive-label">
+                  % classified as high-risk
+                </p>
                 <p className="dp-def-interactive-acceptance quote">
                   {`${acceptance.caucasian}`}
                   <span className="dp-def-interactive-acceptance-unit">%</span>

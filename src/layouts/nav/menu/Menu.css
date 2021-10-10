@@ -28,7 +28,7 @@
   z-index: 1;
   pointer-events: none;
 }
-html[data-whatintent='touch'] .mi-hover-image-wrap {
+html[data-whatintent="touch"] .mi-hover-image-wrap {
   display: none;
 }
 
@@ -59,7 +59,6 @@ html[data-whatintent='touch'] .mi-hover-image-wrap {
     margin-bottom: 0;
   }
 }
-
 
 @media only screen and (max-width: 768px) {
   .menu-wrap {

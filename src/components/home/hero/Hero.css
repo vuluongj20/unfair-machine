@@ -1,6 +1,6 @@
 .home-hero-wrap {
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 @supports (padding: max(0px)) {
   .home-hero-wrap {
@@ -8,70 +8,70 @@
   }
 }
 .home-hero {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 100vh;
-	min-height: 44em;
-	padding: 5vw 0;
-	box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  min-height: 44em;
+  padding: 5vw 0;
+  box-sizing: border-box;
 }
 #home-hero-3d-canvas {
-	z-index: -1;
+  z-index: -1;
 }
 .home-hero-inner-wrap {
-	position: relative;
+  position: relative;
 }
 .home-hero-inner-wrap.start {
-	align-self: flex-start;
+  align-self: flex-start;
 }
 .home-hero-inner-wrap.end {
-	align-self: flex-end;
+  align-self: flex-end;
 }
 .home-hero-background-pattern-wrap {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .home-hero-pattern.start {
-	align-self: flex-start;
+  align-self: flex-start;
 }
 .home-hero-pattern.end {
-	align-self: flex-end;
+  align-self: flex-end;
 }
 
 /* ILLUSTRATION */
 .home-hero-illustration-wrap {
-	position: relative;
-	align-self: center;
-	width: calc((85vw - 4em)/6.6);
+  position: relative;
+  align-self: center;
+  width: calc((85vw - 4em) / 6.6);
 }
 .home-hero-illustration {
-	width: 100%;
-	opacity: 0;
+  width: 100%;
+  opacity: 0;
 }
 .home-hero-title {
-	font-size: calc((85vw - 4em)/6.6);
+  font-size: calc((85vw - 4em) / 6.6);
 }
 
 @media only screen and (min-width: 1400px) {
-	.home-hero-title {
-		font-size: 8em;
-	}
+  .home-hero-title {
+    font-size: 8em;
+  }
 }
 @media only screen and (max-width: 768px) {
-	.home-hero {
-		justify-content: center;
-		height: calc(85vw*1.4);
-		margin-top: 3.2em;
-		min-height: 24em;
-	}
-	.home-hero-illustration {
-		width: calc(85vw/4);
-		margin: calc(85vw/11.4) 0;
-	}
-	.home-hero-title {
-		font-size: calc((85vw)/4.9);
-	}
+  .home-hero {
+    justify-content: center;
+    height: calc(85vw * 1.4);
+    margin-top: 3.2em;
+    min-height: 24em;
+  }
+  .home-hero-illustration {
+    width: calc(85vw / 4);
+    margin: calc(85vw / 11.4) 0;
+  }
+  .home-hero-title {
+    font-size: calc((85vw) / 4.9);
+  }
 }

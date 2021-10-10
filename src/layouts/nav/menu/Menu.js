@@ -1,65 +1,71 @@
-import React, { Component } from 'react'
-import './Menu.css'
+import React, { Component } from "react"
+import "./Menu.css"
 
-import TransitionLink from 'gatsby-plugin-transition-link'
-import gsap from 'gsap'
+import TransitionLink from "gatsby-plugin-transition-link"
+import gsap from "gsap"
 
 const pages = [
   {
-    id: 'chap-1',
-    label: 'Chapter 1',
-    title: 'Blinding',
-    href: '/blinding',
-    background: '#212121',
+    id: "chap-1",
+    label: "Chapter 1",
+    title: "Blinding",
+    href: "/blinding",
+    background: "#212121",
     hoverImg: {
-      src: '/images/global/blinding.svg',
-      alt: 'Eye',
-      size: 12
-    }
+      src: "/images/global/blinding.svg",
+      alt: "Eye",
+      size: 12,
+    },
   },
   {
-    id: 'chap-2',
-    label: 'Chapter 2',
-    title: 'Equality of Outcome',
-    href: '/equal-outcome',
-    background: '#212121',
+    id: "chap-2",
+    label: "Chapter 2",
+    title: "Equality of Outcome",
+    href: "/equal-outcome",
+    background: "#212121",
     hoverImg: {
-      src: '/images/global/equal-outcome.svg',
-      alt: 'Equality sign',
-      size: 10
-    }
+      src: "/images/global/equal-outcome.svg",
+      alt: "Equality sign",
+      size: 10,
+    },
   },
   {
-    id: 'chap-3',
-    label: 'Chapter 3',
-    title: 'Equality of Opportunity',
-    href: '/equal-opportunity',
-    background: '#1A1A1A',
+    id: "chap-3",
+    label: "Chapter 3",
+    title: "Equality of Opportunity",
+    href: "/equal-opportunity",
+    background: "#1A1A1A",
     hoverImg: {
-      src: '/images/global/equal-opportunity.svg',
-      alt: 'Equity symbol'
-    }
-  }
+      src: "/images/global/equal-opportunity.svg",
+      alt: "Equity symbol",
+    },
+  },
 ]
 
 class Menu extends Component {
   itemMouseEnter(e) {
     const { className } = this.props
-    const hoverImage = e.currentTarget.querySelector(`.${className} .mi-hover-image-wrap`)
+    const hoverImage = e.currentTarget.querySelector(
+      `.${className} .mi-hover-image-wrap`
+    )
 
-    gsap.fromTo(hoverImage, 
+    gsap.fromTo(
+      hoverImage,
       { opacity: 0, scale: 0.6 },
-      { opacity: 1, scale: 1, ease: 'expo.out' })
+      { opacity: 1, scale: 1, ease: "expo.out" }
+    )
 
-    this.xSet = gsap.quickSetter(hoverImage, "x", "px");
-    this.ySet = gsap.quickSetter(hoverImage, "y", "px");
+    this.xSet = gsap.quickSetter(hoverImage, "x", "px")
+    this.ySet = gsap.quickSetter(hoverImage, "y", "px")
   }
 
   itemMouseLeave(e) {
     const { className } = this.props
-    const hoverImage = e.currentTarget.querySelector(`.${className} .mi-hover-image-wrap`)
+    const hoverImage = e.currentTarget.querySelector(
+      `.${className} .mi-hover-image-wrap`
+    )
 
-    gsap.to(hoverImage, { opacity: 0, scale: 0.6, ease: 'expo.out' })
+    gsap.to(hoverImage, { opacity: 0, scale: 0.6, ease: "expo.out" })
   }
 
   itemMouseMove(e) {
@@ -75,107 +81,124 @@ class Menu extends Component {
       const { className } = this.props
       gsap.fromTo(
         `.${className} .menu-item`,
-        { opacity: 0, y: '6em' },
-        { opacity: 1, y: 0, duration: 1.2, stagger: 0.04, ease: 'expo.out', overwrite: true })
-      gsap.to(
-        `.${className} .menu-background`,
-        { opacity: 1, duration: 0.6, ease: 'expo.out', overwrite: true })
+        { opacity: 0, y: "6em" },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.04,
+          ease: "expo.out",
+          overwrite: true,
+        }
+      )
+      gsap.to(`.${className} .menu-background`, {
+        opacity: 1,
+        duration: 0.6,
+        ease: "expo.out",
+        overwrite: true,
+      })
     } else if (prevProps.showMenu && !this.props.showMenu) {
       const { className } = this.props
       gsap.fromTo(
         `.${className} .menu-item`,
         { opacity: 1 },
-        { opacity: 0, duration: 0.8, ease: 'expo.out', overwrite: true })
-      gsap.to(
-        `.${className} .menu-background`,
-        { opacity: 0, duration: 0.8, ease: 'expo.out', overwrite: true })
+        { opacity: 0, duration: 0.8, ease: "expo.out", overwrite: true }
+      )
+      gsap.to(`.${className} .menu-background`, {
+        opacity: 0,
+        duration: 0.8,
+        ease: "expo.out",
+        overwrite: true,
+      })
     }
   }
 
   componentDidMount() {
     const hoverAnimationSpeed = 0.1
-    this.pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    this.mouse = { x: this.pos.x, y: this.pos.y };
+    this.pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+    this.mouse = { x: this.pos.x, y: this.pos.y }
 
     this.hoverFunction = () => {
-      const dt = 1.0 - Math.pow(1 - hoverAnimationSpeed, gsap.ticker.deltaRatio()); 
-      
-      this.pos.x += (this.mouse.x - this.pos.x) * dt;
-      this.pos.y += (this.mouse.y - this.pos.y) * dt;
+      const dt =
+        1.0 - Math.pow(1 - hoverAnimationSpeed, gsap.ticker.deltaRatio())
+
+      this.pos.x += (this.mouse.x - this.pos.x) * dt
+      this.pos.y += (this.mouse.y - this.pos.y) * dt
 
       this.xSet && this.xSet(this.pos.x)
       this.ySet && this.ySet(this.pos.y)
     }
 
-    gsap.ticker.add(this.hoverFunction);
+    gsap.ticker.add(this.hoverFunction)
 
     const { showMenu, className } = this.props
     if (showMenu) {
-      gsap.set(
-        `.${className} .menu-item`,
-        { opacity: 1, y: 0 })
-      gsap.set(
-        `.${className} .menu-background`,
-        { opacity: 1 })
+      gsap.set(`.${className} .menu-item`, { opacity: 1, y: 0 })
+      gsap.set(`.${className} .menu-background`, { opacity: 1 })
     }
   }
 
   render() {
-    const { location, className, showOnly, showChapterLabel, centerText } = this.props
+    const { location, className, showOnly, showChapterLabel, centerText } =
+      this.props
     const { showMenu, pageEntry, pageExit, toggleHam } = this.props
-    const currentPage = location && location.pathname.split('/')[1]
+    const currentPage = location && location.pathname.split("/")[1]
 
     return (
-      <div className={`${className}${showMenu ? ' on' : ''} menu-wrap flex-center`}>
+      <div
+        className={`${className}${showMenu ? " on" : ""} menu-wrap flex-center`}
+      >
         <div className="menu-background spread"></div>
         <div>
-        {pages.map((page, index) => {
-          if (showOnly && !showOnly.includes(page.id)) {
-            return null
-          }
+          {pages.map((page, index) => {
+            if (showOnly && !showOnly.includes(page.id)) {
+              return null
+            }
 
-          return (
+            return (
               <TransitionLink
                 key={page.href}
-                className={`menu-item row py-2 py-1-sm no-tap-highlight flex-col ${centerText ? 'flex-center' : ''}`}
-                tabIndex={(showMenu && currentPage !== page.href) ? 0 : -1}
+                className={`menu-item row py-2 py-1-sm no-tap-highlight flex-col ${
+                  centerText ? "flex-center" : ""
+                }`}
+                tabIndex={showMenu && currentPage !== page.href ? 0 : -1}
                 to={page.href}
                 onMouseEnter={e => this.itemMouseEnter(e)}
                 onMouseLeave={e => this.itemMouseLeave(e)}
                 onMouseMove={e => this.itemMouseMove(e)}
-                onClick={(e) => {
-                  if (currentPage === page.href.split('/')[1]) {
-                    toggleHam();
+                onClick={e => {
+                  if (currentPage === page.href.split("/")[1]) {
+                    toggleHam()
                     e.preventDefault()
                   }
                 }}
                 exit={{
                   length: 1.3,
-                  trigger: () => pageExit(page.background)
+                  trigger: () => pageExit(page.background),
                 }}
                 entry={{
                   length: 1.7,
                   delay: 1.3,
-                  trigger: () => pageEntry()
+                  trigger: () => pageEntry(),
                 }}
               >
                 {showChapterLabel && (
-                  <p className="mi-label fc-dark fw-medium">
-                    {page.label}
-                  </p>
+                  <p className="mi-label fc-dark fw-medium">{page.label}</p>
                 )}
                 <h2 className="mi-title">{page.title}</h2>
-                {page.hoverImg && (<div className="mi-hover-image-wrap">
-                  <img 
-                    className="mi-hover-image" 
-                    src={page.hoverImg.src} 
-                    alt={page.hoverImg.alt} 
-                    style={{ width: `${page.hoverImg.size}em` }}
-                  />
-                </div>)}
+                {page.hoverImg && (
+                  <div className="mi-hover-image-wrap">
+                    <img
+                      className="mi-hover-image"
+                      src={page.hoverImg.src}
+                      alt={page.hoverImg.alt}
+                      style={{ width: `${page.hoverImg.size}em` }}
+                    />
+                  </div>
+                )}
               </TransitionLink>
-          )
-        })}
+            )
+          })}
         </div>
       </div>
     )

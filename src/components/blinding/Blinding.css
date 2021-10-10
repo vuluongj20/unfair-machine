@@ -1,19 +1,19 @@
 .article-next-chapter-inner-wrap {
-	position: relative;
+  position: relative;
 }
 .artcile-next-chapter-prompt {
-	width: 12em;
-	text-transform: uppercase;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 0;
+  width: 12em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 768px) {
-	.artcile-next-chapter-prompt {
-		width: 8.8em;
-		text-align: left;
-		margin: 0;
-	}
+  .artcile-next-chapter-prompt {
+    width: 8.8em;
+    text-align: left;
+    margin: 0;
+  }
 }

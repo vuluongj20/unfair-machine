@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import PropTypes from "prop-types"
+import Helmet from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title, ogImage, background }) {
   const { site } = useStaticQuery(
@@ -27,7 +27,7 @@ function SEO({ description, lang, meta, title, ogImage, background }) {
       htmlAttributes={{
         lang,
       }}
-      style={[{'cssText': `body {background-color: ${background};}`}]}
+      style={[{ cssText: `body {background-color: ${background};}` }]}
       title={title ? `${title} - (Un)Fair Machine` : `(Un)Fair Machine`}
       meta={[
         {
@@ -40,12 +40,12 @@ function SEO({ description, lang, meta, title, ogImage, background }) {
         },
         {
           property: `og:title`,
-          content: title ? `${title} - (Un)Fair Machine` : `(Un)Fair Machine`
+          content: title ? `${title} - (Un)Fair Machine` : `(Un)Fair Machine`,
         },
         {
           property: `og:image`,
-          content: ogImage ?
-            `https://res.cloudinary.com/vuluongj20/image/upload/c_scale,f_auto,q_auto,w_1200/v1/${ogImage}`
+          content: ogImage
+            ? `https://res.cloudinary.com/vuluongj20/image/upload/c_scale,f_auto,q_auto,w_1200/v1/${ogImage}`
             : site.siteMetadata.siteUrl + site.siteMetadata.image,
         },
         {
@@ -74,16 +74,16 @@ function SEO({ description, lang, meta, title, ogImage, background }) {
         },
         {
           name: `twitter:title`,
-          content: title ? `${title} - (Un)Fair Machine` : `(Un)Fair Machine`
+          content: title ? `${title} - (Un)Fair Machine` : `(Un)Fair Machine`,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
         {
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1, viewport-fit=cover'
-        }
+          name: "viewport",
+          content: "width=device-width, initial-scale=1, viewport-fit=cover",
+        },
       ].concat(meta)}
     />
   )
@@ -93,7 +93,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-  background: `#1A1A1A`
+  background: `#1A1A1A`,
 }
 
 SEO.propTypes = {
@@ -102,7 +102,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   ogImage: PropTypes.string,
-  background: PropTypes.string
+  background: PropTypes.string,
 }
 
 export default SEO

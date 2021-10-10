@@ -1,108 +1,106 @@
 .dp-def-interactive-wrap {
-	width: 100%;
+  width: 100%;
 }
 .dp-def-interactive-inner-wrap {
-	position: relative;
-	width: 85%;
-	max-width: 50em;
+  position: relative;
+  width: 85%;
+  max-width: 50em;
 }
 .dp-def-caucasian,
 .dp-def-african-american {
-	width: calc(100% - 10em);
-	position: relative;
-	margin-top: 2em;
-	margin-bottom: 2em;
+  width: calc(100% - 10em);
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
-
-
 
 /* INTERACTIVE */
 .dp-def-interactive-caption-wrap {
-	width: 100%;
-	border-bottom: solid 1px var(--border);
+  width: 100%;
+  border-bottom: solid 1px var(--border);
 }
 .dp-def-interactive-caption {
-	color: var(--light);
-	font-size: 0.8em;
-	max-width: 38em;
-	margin-left: auto;
-	margin-right: auto;
+  color: var(--light);
+  font-size: 0.8em;
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
 }
 .dp-def-interactive-lock-wrap {
-	position: absolute;
-	bottom: 0;
-	right: 4.8em;
-	transform: translateY(50%);
-	width: 2em;
-	opacity: 0.1;
+  position: absolute;
+  bottom: 0;
+  right: 4.8em;
+  transform: translateY(50%);
+  width: 2em;
+  opacity: 0.1;
 }
 .dp-def-interactive-lock-connector {
-	height: 3.2em;
-	border-left: dashed 2px var(--dark);
-	margin: 0.8em 0;
+  height: 3.2em;
+  border-left: dashed 2px var(--dark);
+  margin: 0.8em 0;
 }
 .dp-def-interactive-result-wrap {
-	flex-shrink: 0;
-	width: 8em;
-	height: 200px;
-	margin: 2em 0;
-	margin-left: 3.2em;
-	justify-content: flex-start;
-	text-align: left;
+  flex-shrink: 0;
+  width: 8em;
+  height: 200px;
+  margin: 2em 0;
+  margin-left: 3.2em;
+  justify-content: flex-start;
+  text-align: left;
 }
 .dp-def-interactive-label {
-	width: 6em;
-	margin-bottom: 0;
-	color: var(--light);
-	font-size: 0.8em;
-	line-height: 1.1;
+  width: 6em;
+  margin-bottom: 0;
+  color: var(--light);
+  font-size: 0.8em;
+  line-height: 1.1;
 }
 .dp-def-interactive-acceptance {
-	font-size: 2.4em;
-	line-height: 1;
-	margin-bottom: 0;
+  font-size: 2.4em;
+  line-height: 1;
+  margin-bottom: 0;
 }
 .dp-def-interactive-acceptance-unit {
-	font-size: 0.6em;
-	color: var(--light);
-	margin-left: 0.1em;
+  font-size: 0.6em;
+  color: var(--light);
+  margin-left: 0.1em;
 }
 
 @media only screen and (max-width: 768px) {
-	.dp-def-interactive-lock-wrap {
-		display: none;
-	}
-	.dp-def-interactive-inner-wrap {
-		flex-direction: column;
-	}
-	.dp-def-caucasian,
-	.dp-def-african-american {
-		width: 100%;
-	}
-	.dp-def-interactive-result-wrap {
-		justify-content: center;
-		position: absolute;
-		top: 2.4em;
-		left: 0.8em;
-		height: 3.2em;
-		width: auto;
-		background: var(--surface);
-		border: solid 1px var(--border);
-		border-radius: 0.4em;
-		padding: 0.6em;
-		margin: 0;
-		text-align: center;
-	}
-	.dp-def-interactive-result-acceptance-wrap {
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: center;
-		width: 4.8em;
-	}
-	.dp-def-interactive-acceptance {
-		font-size: 2em;
-	}
-	.dp-def-interactive-label {
-		font-size: 0.8em;
-	}
+  .dp-def-interactive-lock-wrap {
+    display: none;
+  }
+  .dp-def-interactive-inner-wrap {
+    flex-direction: column;
+  }
+  .dp-def-caucasian,
+  .dp-def-african-american {
+    width: 100%;
+  }
+  .dp-def-interactive-result-wrap {
+    justify-content: center;
+    position: absolute;
+    top: 2.4em;
+    left: 0.8em;
+    height: 3.2em;
+    width: auto;
+    background: var(--surface);
+    border: solid 1px var(--border);
+    border-radius: 0.4em;
+    padding: 0.6em;
+    margin: 0;
+    text-align: center;
+  }
+  .dp-def-interactive-result-acceptance-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 4.8em;
+  }
+  .dp-def-interactive-acceptance {
+    font-size: 2em;
+  }
+  .dp-def-interactive-label {
+    font-size: 0.8em;
+  }
 }

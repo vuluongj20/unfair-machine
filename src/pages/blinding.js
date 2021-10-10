@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import SEO from '../components/seo'
-import Blinding from '../components/blinding/Blinding'
+import SEO from "../components/seo"
+import Blinding from "../components/blinding/Blinding"
 
 const seo = {
-  title: 'Blinding',
-  description: 'An account of Blinding - a proposed strategy to satisfy procedural fairness in machine learning'
+  title: "Blinding",
+  description:
+    "An account of Blinding - a proposed strategy to satisfy procedural fairness in machine learning",
 }
 
 class BlindingPage extends Component {

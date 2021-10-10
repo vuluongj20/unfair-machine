@@ -1,24 +1,19 @@
-import React, { Component } from 'react'
-import './Definition.css'
+import React, { Component } from "react"
+import "./Definition.css"
 
-import Viz from '../viz/Viz'
+import Viz from "../viz/Viz"
 
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import binarySearch from 'binary-search'
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+import binarySearch from "binary-search"
 
-import {
-  caucasianOptions,
-  africanAmericanOptions,
-} from './data'
+import { caucasianOptions, africanAmericanOptions } from "./data"
 
-import {
-  dataPoints
-} from '../demo/data'
+import { dataPoints } from "../demo/data"
 
 const body = [
-  'The third conception of fairness - Equality of Opportunity - would require that we equalize the true positive rates between the two groups. Similar to Equality of Outcome, this involves modifying the thresholds to equalize a specific quantity. Here, instead of the overall prediction rate, that quantity is the true positive rate.',
-  'The model below has been modified to always equalize true positive rates among groups. Move one of the thresholds up or down and see how the other also moves to satisfy the equality requirement.'
+  "The third conception of fairness - Equality of Opportunity - would require that we equalize the true positive rates between the two groups. Similar to Equality of Outcome, this involves modifying the thresholds to equalize a specific quantity. Here, instead of the overall prediction rate, that quantity is the true positive rate.",
+  "The model below has been modified to always equalize true positive rates among groups. Move one of the thresholds up or down and see how the other also moves to satisfy the equality requirement.",
 ]
 
 class Definition extends Component {
@@ -28,12 +23,12 @@ class Definition extends Component {
       data: {
         general: null,
         caucasian: null,
-        africanAmerican: null
+        africanAmerican: null,
       },
       thresholds: {
         caucasian: 50,
-        africanAmerican: 50
-      }
+        africanAmerican: 50,
+      },
     }
     this.setThreshold = this.setThreshold.bind(this)
     this.caucasianVizRef = React.createRef()
@@ -44,10 +39,17 @@ class Definition extends Component {
   getTruePositiveRate(id, threshold) {
     const data = this.state.data[id]
     if (data) {
-      const positiveIndex = binarySearch(data.positive, threshold / 100, (element, needle) => element.x - needle)
-      const truePositiveRate = ((data.positive.length + positiveIndex + 1) / data.positive.length).toFixed(2)
+      const positiveIndex = binarySearch(
+        data.positive,
+        threshold / 100,
+        (element, needle) => element.x - needle
+      )
+      const truePositiveRate = (
+        (data.positive.length + positiveIndex + 1) /
+        data.positive.length
+      ).toFixed(2)
       return truePositiveRate
-    } 
+    }
     return null
   }
 
@@ -59,7 +61,11 @@ class Definition extends Component {
       const comparisonFunction = (element, needle) => {
         return needle - this.getTruePositiveRate(id, element / 4)
       }
-      const thresholdIndex = binarySearch(thresholds, truePositiveRate, comparisonFunction)
+      const thresholdIndex = binarySearch(
+        thresholds,
+        truePositiveRate,
+        comparisonFunction
+      )
 
       return Math.max(Math.min((Math.abs(thresholdIndex) - 1) / 4, 100), 0)
     }
@@ -81,48 +87,71 @@ class Definition extends Component {
     })
 
     this.setState({
-      thresholds: newThresholds
+      thresholds: newThresholds,
     })
   }
 
   componentDidMount() {
-    const caucasianData = dataPoints.filter(el => el.group === 'caucasian')
-    const africanAmericanData = dataPoints.filter(el => el.group === 'african-american')
+    const caucasianData = dataPoints.filter(el => el.group === "caucasian")
+    const africanAmericanData = dataPoints.filter(
+      el => el.group === "african-american"
+    )
 
-    this.setState({
-      data: {
-        caucasian: {
-          positive: caucasianData.filter(el => el.positive),
-          negative: caucasianData.filter(el => !el.positive)
+    this.setState(
+      {
+        data: {
+          caucasian: {
+            positive: caucasianData.filter(el => el.positive),
+            negative: caucasianData.filter(el => !el.positive),
+          },
+          africanAmerican: {
+            positive: africanAmericanData.filter(el => el.positive),
+            negative: africanAmericanData.filter(el => !el.positive),
+          },
         },
-        africanAmerican: {
-          positive: africanAmericanData.filter(el => el.positive),
-          negative: africanAmericanData.filter(el => !el.positive)
-        }
+      },
+      () => {
+        this.setThreshold("caucasian", 50)
       }
-    }, () => {
-      this.setThreshold('caucasian', 50)
-    })
+    )
 
-    this.stInstances.push(ScrollTrigger.create({
-      trigger: '.eo-definition .eo-def-description',
-      start: 'top bottom',
-      end: 'top top',
-      scrub: 0.4,
-      animation: gsap.timeline()
-        .add(gsap.fromTo('.eo-definition .eo-def-description', 
-          { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    }))
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: ".eo-definition .eo-def-description",
+        start: "top bottom",
+        end: "top top",
+        scrub: 0.4,
+        animation: gsap
+          .timeline()
+          .add(
+            gsap.fromTo(
+              ".eo-definition .eo-def-description",
+              { opacity: 0 },
+              { opacity: 1, ease: "expo.out", duration: 1 }
+            ),
+            0
+          ),
+      })
+    )
 
-    this.stInstances.push(ScrollTrigger.create({
-      trigger: '.eo-def-interactive-wrap',
-      start: 'top bottom',
-      end: 'top top',
-      scrub: 0.4,
-      animation: gsap.timeline()
-        .add(gsap.fromTo('.eo-def-interactive-wrap', 
-          { opacity: 0 }, { opacity: 1, ease: 'expo.out', duration: 1 }), 0)
-    }))
+    this.stInstances.push(
+      ScrollTrigger.create({
+        trigger: ".eo-def-interactive-wrap",
+        start: "top bottom",
+        end: "top top",
+        scrub: 0.4,
+        animation: gsap
+          .timeline()
+          .add(
+            gsap.fromTo(
+              ".eo-def-interactive-wrap",
+              { opacity: 0 },
+              { opacity: 1, ease: "expo.out", duration: 1 }
+            ),
+            0
+          ),
+      })
+    )
   }
 
   componentWillUnmount() {
@@ -156,8 +185,10 @@ class Definition extends Component {
                 data={data.africanAmerican}
                 options={africanAmericanOptions}
                 threshold={thresholds.africanAmerican}
-                setThreshold={(threshold) => this.setThreshold('africanAmerican', threshold)}
-                label="Black students" 
+                setThreshold={threshold =>
+                  this.setThreshold("africanAmerican", threshold)
+                }
+                label="Black students"
               />
             )}
           </div>
@@ -169,8 +200,10 @@ class Definition extends Component {
                 data={data.caucasian}
                 options={caucasianOptions}
                 threshold={thresholds.caucasian}
-                setThreshold={(threshold) => this.setThreshold('caucasian', threshold)}
-                label="White students" 
+                setThreshold={threshold =>
+                  this.setThreshold("caucasian", threshold)
+                }
+                label="White students"
               />
             )}
           </div>

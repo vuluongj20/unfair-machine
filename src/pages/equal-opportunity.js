@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import SEO from '../components/seo'
-import EqualOpportunity from '../components/equal-opportunity/EqualOpportunity'
+import SEO from "../components/seo"
+import EqualOpportunity from "../components/equal-opportunity/EqualOpportunity"
 
 const seo = {
-  title: 'Equal Opportunity',
-  description: 'An account of Equal Opportunity - a proposed conception of fairness in machine learning'
+  title: "Equal Opportunity",
+  description:
+    "An account of Equal Opportunity - a proposed conception of fairness in machine learning",
 }
 
 class EqualOpportunityPage extends Component {

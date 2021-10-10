@@ -1,29 +1,49 @@
-import React, { Component } from 'react'
-import './Hero.css'
+import React, { Component } from "react"
+import "./Hero.css"
 
-import gsap from 'gsap'
+import gsap from "gsap"
 
 const illustration = {
-  src: '/images/global/times.svg',
-  alt: 'Cross'
+  src: "/images/global/times.svg",
+  alt: "Cross",
 }
 
 class Hero extends Component {
   componentDidMount() {
-    document.addEventListener('media-loaded', () => {
-      gsap.fromTo('.article-title-span', 
-        { y: '1.5em' },
-        { y: 0, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
-      gsap.fromTo('.article-title-underline.horizontal', 
-        { scaleX: 0 },
-        { scaleX: 1, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
-      gsap.fromTo('.article-title-underline.vertical', 
-        { scaleY: 0 },
-        { scaleY: 1, ease: 'expo.out', duration: 1.6, stagger: 0.08 })
-      gsap.fromTo('.home-hero-illustration', 
-        { scale: 0.5, opacity: 0, y: '6em', rotate: -25 },
-        { scale: 1, opacity: 1, y: 0, rotate: 5, ease: 'expo.out', duration: 1.4, delay: 0.2 })
-    }, { once: true })
+    document.addEventListener(
+      "media-loaded",
+      () => {
+        gsap.fromTo(
+          ".article-title-span",
+          { y: "1.5em" },
+          { y: 0, ease: "expo.out", duration: 1.6, stagger: 0.08 }
+        )
+        gsap.fromTo(
+          ".article-title-underline.horizontal",
+          { scaleX: 0 },
+          { scaleX: 1, ease: "expo.out", duration: 1.6, stagger: 0.08 }
+        )
+        gsap.fromTo(
+          ".article-title-underline.vertical",
+          { scaleY: 0 },
+          { scaleY: 1, ease: "expo.out", duration: 1.6, stagger: 0.08 }
+        )
+        gsap.fromTo(
+          ".home-hero-illustration",
+          { scale: 0.5, opacity: 0, y: "6em", rotate: -25 },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            rotate: 5,
+            ease: "expo.out",
+            duration: 1.4,
+            delay: 0.2,
+          }
+        )
+      },
+      { once: true }
+    )
   }
 
   render() {
@@ -48,10 +68,10 @@ class Hero extends Component {
             </h1>
           </div>
           <div className="home-hero-illustration-wrap">
-            <img 
-              className="home-hero-illustration my-2" 
-              src={illustration.src} 
-              alt={illustration.alt} 
+            <img
+              className="home-hero-illustration my-2"
+              src={illustration.src}
+              alt={illustration.alt}
             />
           </div>
           <div className="home-hero-inner-wrap end">

@@ -26,7 +26,6 @@
   text-transform: uppercase;
 }
 
-
 .nav-menu-container {
   position: absolute;
   top: 0;
@@ -38,7 +37,6 @@
 .nav:not(.on) > .nav-menu-container {
   pointer-events: none;
 }
-
 
 /* HAM */
 .nav-ham-wrap {
@@ -69,7 +67,8 @@
   transform: translate(-50%, -50%);
   border-radius: 2px;
   background: var(--dark);
-  transition: background-color 600ms, all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 600ms,
+    all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .nav-ham-line.line-1 {
   transform: translate(-50%, -7px);
@@ -136,7 +135,6 @@
   width: 50%;
   height: 50%;
 }
-
 
 @media only screen and (max-width: 768px) {
   .nav {

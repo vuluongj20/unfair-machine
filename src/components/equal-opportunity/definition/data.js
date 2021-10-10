@@ -1,11 +1,11 @@
-export const caucasianOptions = { 
+export const caucasianOptions = {
   showDummyPoints: false,
   showLegend: false,
-  showThreshold: true
+  showThreshold: true,
 }
 
-export const africanAmericanOptions = { 
+export const africanAmericanOptions = {
   showDummyPoints: false,
   showLegend: false,
-  showThreshold: true
+  showThreshold: true,
 }

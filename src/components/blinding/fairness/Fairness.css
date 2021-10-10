@@ -1,9 +1,9 @@
 .guf-star {
-	width: 4.8em;
+  width: 4.8em;
 }
 
 @media only screen and (max-width: 768px) {
-	.guf-star-wrap {
-		display: none;
-	}
+  .guf-star-wrap {
+    display: none;
+  }
 }

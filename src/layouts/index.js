@@ -1,44 +1,44 @@
-import React, { Component } from 'react'
-import { globalHistory } from '@reach/router'
-import './index.scss'
-import './utils.scss'
-import Nav from './nav/Nav'
+import React, { Component } from "react"
+import { globalHistory } from "@reach/router"
+import "./index.scss"
+import "./utils.scss"
+import Nav from "./nav/Nav"
 
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
-import whatInput from 'what-input'
+import whatInput from "what-input"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const styles = {
-  '--background': '#1A1A1A',
-  '--surface': '#1D1D1D',
-  '--dark': '#f0e3c2',
-  '--medium': '#d8cfb6',
-  '--light': 'rgba(241, 229, 198, 0.5)',
-  '--line': 'rgba(241, 229, 198, 0.12)',
-  '--border': 'rgba(241, 229, 198, 0.05)',
-  '--red': '#FF0048',
-  '--red-light': 'rgba(255, 0, 72, 0.4)',
-  '--blue': '#f0e3c2',
-  '--blue-light': 'rgba(255, 246, 224, 0.4)',
-  '--surface-blue': '#F0F4FF'
+  "--background": "#1A1A1A",
+  "--surface": "#1D1D1D",
+  "--dark": "#f0e3c2",
+  "--medium": "#d8cfb6",
+  "--light": "rgba(241, 229, 198, 0.5)",
+  "--line": "rgba(241, 229, 198, 0.12)",
+  "--border": "rgba(241, 229, 198, 0.05)",
+  "--red": "#FF0048",
+  "--red-light": "rgba(255, 0, 72, 0.4)",
+  "--blue": "#f0e3c2",
+  "--blue-light": "rgba(255, 246, 224, 0.4)",
+  "--surface-blue": "#F0F4FF",
 }
 
 class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showGrid: false
+      showGrid: false,
     }
   }
 
   componentDidMount() {
     globalHistory.listen(({ action }) => {
-      if (action === 'POP') {
+      if (action === "POP") {
         setTimeout(() => {
-          const event = new Event('media-loaded')
+          const event = new Event("media-loaded")
           document.dispatchEvent(event)
         }, 400)
       }
@@ -46,13 +46,12 @@ class Layout extends Component {
 
     const showPage = (timedOut = false) => {
       setTimeout(() => {
-        const event = new Event('media-loaded')
+        const event = new Event("media-loaded")
         document.dispatchEvent(event)
 
         if (!timedOut) {
           this.mediaLoaded = true
         }
-        
       }, 400)
     }
 
@@ -68,7 +67,7 @@ class Layout extends Component {
     let imageCounter = 0
 
     for (let image of document.images) {
-      if (image.classList.contains('must-load')) {
+      if (image.classList.contains("must-load")) {
         images.push(image)
       }
     }
@@ -88,7 +87,7 @@ class Layout extends Component {
       if (image.complete) {
         incrementImageCounter()
       } else {
-        image.addEventListener('load', incrementImageCounter)
+        image.addEventListener("load", incrementImageCounter)
       }
     }
   }
@@ -101,8 +100,8 @@ class Layout extends Component {
         id="app-content"
         style={{
           ...styles,
-          '--theme': `var(--${theme})`,
-          '--theme-light': `var(--${theme}-light)`
+          "--theme": `var(--${theme})`,
+          "--theme-light": `var(--${theme}-light)`,
         }}
       >
         <Nav location={location} />
@@ -113,7 +112,9 @@ class Layout extends Component {
               <div className="app-grid-inner-wrap container">
                 <div className="row">
                   {[...Array(12)].map((_, index) => {
-                    return <div className="app-grid-line col-1" key={index}></div>
+                    return (
+                      <div className="app-grid-line col-1" key={index}></div>
+                    )
                   })}
                 </div>
               </div>
@@ -126,7 +127,7 @@ class Layout extends Component {
 }
 
 Layout.defaultProps = {
-  theme: 'blue'
+  theme: "blue",
 }
 
 export default Layout
