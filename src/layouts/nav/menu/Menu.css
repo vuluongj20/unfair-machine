@@ -11,30 +11,15 @@
   border-bottom: solid 1px var(--border);
 }
 
+.menu-item:hover > .mi-title {
+  color: var(--medium);
+}
+
 .mi-label {
   margin-bottom: 0.2em;
   font-size: 0.8em;
   text-align: left;
   text-transform: uppercase;
-}
-
-.mi-hover-image-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(60%);
-  width: 10em;
-  opacity: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-html[data-whatintent="touch"] .mi-hover-image-wrap {
-  display: none;
-}
-
-.mi-hover-image {
-  width: 100%;
-  transform: scale(0.76);
 }
 
 .menu-background {

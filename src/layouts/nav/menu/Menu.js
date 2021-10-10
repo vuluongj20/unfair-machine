@@ -11,11 +11,6 @@ const pages = [
     title: "Blinding",
     href: "/blinding",
     background: "#212121",
-    hoverImg: {
-      src: "/images/global/blinding.svg",
-      alt: "Eye",
-      size: 12,
-    },
   },
   {
     id: "chap-2",
@@ -23,11 +18,6 @@ const pages = [
     title: "Equality of Outcome",
     href: "/equal-outcome",
     background: "#212121",
-    hoverImg: {
-      src: "/images/global/equal-outcome.svg",
-      alt: "Equality sign",
-      size: 10,
-    },
   },
   {
     id: "chap-3",
@@ -35,47 +25,10 @@ const pages = [
     title: "Equality of Opportunity",
     href: "/equal-opportunity",
     background: "#1A1A1A",
-    hoverImg: {
-      src: "/images/global/equal-opportunity.svg",
-      alt: "Equity symbol",
-    },
   },
 ]
 
 class Menu extends Component {
-  itemMouseEnter(e) {
-    const { className } = this.props
-    const hoverImage = e.currentTarget.querySelector(
-      `.${className} .mi-hover-image-wrap`
-    )
-
-    gsap.fromTo(
-      hoverImage,
-      { opacity: 0, scale: 0.6 },
-      { opacity: 1, scale: 1, ease: "expo.out" }
-    )
-
-    this.xSet = gsap.quickSetter(hoverImage, "x", "px")
-    this.ySet = gsap.quickSetter(hoverImage, "y", "px")
-  }
-
-  itemMouseLeave(e) {
-    const { className } = this.props
-    const hoverImage = e.currentTarget.querySelector(
-      `.${className} .mi-hover-image-wrap`
-    )
-
-    gsap.to(hoverImage, { opacity: 0, scale: 0.6, ease: "expo.out" })
-  }
-
-  itemMouseMove(e) {
-    const posX = e.clientX - e.currentTarget.getBoundingClientRect().left
-    const posY = e.clientY - e.currentTarget.getBoundingClientRect().top
-
-    this.mouse.x = posX
-    this.mouse.y = posY
-  }
-
   componentDidUpdate(prevProps) {
     if (!prevProps.showMenu && this.props.showMenu) {
       const { className } = this.props
@@ -114,23 +67,6 @@ class Menu extends Component {
   }
 
   componentDidMount() {
-    const hoverAnimationSpeed = 0.1
-    this.pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-    this.mouse = { x: this.pos.x, y: this.pos.y }
-
-    this.hoverFunction = () => {
-      const dt =
-        1.0 - Math.pow(1 - hoverAnimationSpeed, gsap.ticker.deltaRatio())
-
-      this.pos.x += (this.mouse.x - this.pos.x) * dt
-      this.pos.y += (this.mouse.y - this.pos.y) * dt
-
-      this.xSet && this.xSet(this.pos.x)
-      this.ySet && this.ySet(this.pos.y)
-    }
-
-    gsap.ticker.add(this.hoverFunction)
-
     const { showMenu, className } = this.props
     if (showMenu) {
       gsap.set(`.${className} .menu-item`, { opacity: 1, y: 0 })
@@ -139,8 +75,13 @@ class Menu extends Component {
   }
 
   render() {
-    const { location, className, showOnly, showChapterLabel, centerText } =
-      this.props
+    const {
+      location,
+      className,
+      showOnly,
+      showChapterLabel,
+      centerText,
+    } = this.props
     const { showMenu, pageEntry, pageExit, toggleHam } = this.props
     const currentPage = location && location.pathname.split("/")[1]
 
@@ -163,9 +104,6 @@ class Menu extends Component {
                 }`}
                 tabIndex={showMenu && currentPage !== page.href ? 0 : -1}
                 to={page.href}
-                onMouseEnter={e => this.itemMouseEnter(e)}
-                onMouseLeave={e => this.itemMouseLeave(e)}
-                onMouseMove={e => this.itemMouseMove(e)}
                 onClick={e => {
                   if (currentPage === page.href.split("/")[1]) {
                     toggleHam()
@@ -186,16 +124,6 @@ class Menu extends Component {
                   <p className="mi-label fc-dark fw-medium">{page.label}</p>
                 )}
                 <h2 className="mi-title">{page.title}</h2>
-                {page.hoverImg && (
-                  <div className="mi-hover-image-wrap">
-                    <img
-                      className="mi-hover-image"
-                      src={page.hoverImg.src}
-                      alt={page.hoverImg.alt}
-                      style={{ width: `${page.hoverImg.size}em` }}
-                    />
-                  </div>
-                )}
               </TransitionLink>
             )
           })}
