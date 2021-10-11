@@ -86,7 +86,7 @@ const references = [
 ]
 
 const dataSource = {
-  title: "Adult Data Set",
+  title: "Adult Income",
   link: "https://archive.ics.uci.edu/ml/datasets/adult",
   info:
     "Dua, D., Graff, C., 2019. UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.",
