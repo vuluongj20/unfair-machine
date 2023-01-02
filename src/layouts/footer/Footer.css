@@ -13,6 +13,15 @@
   color: var(--light);
   margin-bottom: 0;
 }
+.footer a {
+  color: var(--light);
+  text-decoration: underline;
+  text-decoration-color: var(--light);
+}
+.footer a:hover {
+  color: var(--medium);
+  text-decoration-color: var(--medium);
+}
 @supports (padding: max(0px)) {
   .footer {
     padding-bottom: max(1px, env(safe-area-inset-bottom));
