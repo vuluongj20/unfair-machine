@@ -54,31 +54,18 @@ class Hero extends Component {
             <h1 className="home-hero-title article-hero-title">
               <span className="article-title-span-outer-wrap">
                 <span className="article-title-span-wrap">
-                  <span className="article-title-span">MACHINE</span>
+                  <span className="article-title-span">(UN)FAIR</span>
                 </span>
                 <div className="article-title-underline horizontal"></div>
                 <div className="article-title-underline vertical"></div>
               </span>
-              <span className="article-title-span-outer-wrap">
-                <span className="article-title-span-wrap">
-                  <span className="article-title-span">LEARNING</span>
-                </span>
-                <div className="article-title-underline horizontal"></div>
-              </span>
             </h1>
-          </div>
-          <div className="home-hero-illustration-wrap">
-            <img
-              className="home-hero-illustration my-2"
-              src={illustration.src}
-              alt={illustration.alt}
-            />
           </div>
           <div className="home-hero-inner-wrap end">
             <h1 className="home-hero-title article-hero-title">
               <span className="article-title-span-outer-wrap">
                 <span className="article-title-span-wrap">
-                  <span className="article-title-span">FAIRNESS</span>
+                  <span className="article-title-span">MACHINE</span>
                 </span>
                 <div className="article-title-underline horizontal"></div>
                 <div className="article-title-underline vertical"></div>

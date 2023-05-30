@@ -25,7 +25,7 @@ class Quote extends Component {
 
   render() {
     return (
-      <div className="home-quote-wrap article-section by py-4">
+      <div className="home-quote-wrap article-section by py-3">
         <div className="container">
           {quotes.map((quote, index) => {
             return (
